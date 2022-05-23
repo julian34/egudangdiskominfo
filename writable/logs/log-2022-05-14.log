@@ -1,0 +1,18 @@
+CRITICAL - 2022-05-14 21:55:32 --> Argument 2 passed to CodeIgniter\BaseModel::delete() must be of the type bool, null given, called in C:\xampp\htdocs\simidisko\app\Models\Modeldetailbarangmasuk.php on line 31
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeldetailbarangmasuk.php(31): CodeIgniter\BaseModel->delete('detfaktur', NULL)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(377): App\Models\Modeldetailbarangmasuk->hapusFaktur(NULL)
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->hapusTransaksi('F-0001')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-14 21:57:44 --> Argument 2 passed to CodeIgniter\BaseModel::delete() must be of the type bool, null given, called in C:\xampp\htdocs\simidisko\app\Models\Modeldetailbarangmasuk.php on line 31
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeldetailbarangmasuk.php(31): CodeIgniter\BaseModel->delete('detfaktur', NULL)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(377): App\Models\Modeldetailbarangmasuk->hapusFaktur(NULL)
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->hapusTransaksi(NULL)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}

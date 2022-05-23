@@ -1,0 +1,160 @@
+ERROR - 2022-05-17 03:50:03 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 03:50:03 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-05-17 03:50:46 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 03:50:46 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-05-17 03:50:55 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 03:50:55 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-05-17 03:54:20 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 03:54:20 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-05-17 03:54:31 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 03:54:31 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-05-17 03:54:38 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 03:54:38 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-05-17 03:58:06 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 03:58:06 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-05-17 03:58:28 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 03:58:28 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, true)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array, true)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-05-17 03:59:18 --> Argument 2 passed to CodeIgniter\BaseModel::delete() must be of the type bool, array given, called in C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php on line 380
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete('kodeinv', Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-17 03:59:19 --> Argument 2 passed to CodeIgniter\BaseModel::delete() must be of the type bool, array given, called in C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php on line 380
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete('kodeinv', Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-17 04:30:16 --> Argument 2 passed to CodeIgniter\BaseModel::delete() must be of the type bool, null given, called in C:\xampp\htdocs\simidisko\app\Models\Modeldetailpinjambarang.php on line 31
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeldetailpinjambarang.php(31): CodeIgniter\BaseModel->delete('detkodeinv', NULL)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(379): App\Models\Modeldetailpinjambarang->hapusFaktur(NULL)
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi(NULL)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2022-05-17 04:31:53 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-17 04:31:53 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(379): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}

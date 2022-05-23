@@ -1,0 +1,579 @@
+CRITICAL - 2022-05-01 00:25:23 --> Call to a member function getName() on string
+#0 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->addprosess()
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-05-01 00:31:04 --> Undefined property: App\Controllers\Barang::$md
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->addprosess()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 01:07:34 --> Undefined property: App\Controllers\Barang::$md
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(167): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 167, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0001')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 01:07:43 --> Undefined property: App\Controllers\Barang::$md
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(167): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 167, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL00111')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 01:07:46 --> Undefined property: App\Controllers\Barang::$md
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(167): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 167, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL00111')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 01:08:07 --> Undefined index: katnama
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(171): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 171, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0001')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 01:08:13 --> Undefined index: katnama
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(171): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 171, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0001')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 01:08:42 --> Undefined index: katnama
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(171): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 171, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0001')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 01:18:21 --> Undefined variable: kategoribarang
+#0 C:\xampp\htdocs\simidisko\app\Views\barang\editform.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 56, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/editform', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(180): view('barang/editform', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0011')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 01:20:45 --> Undefined index: satid
+#0 C:\xampp\htdocs\simidisko\app\Views\barang\editform.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/editform', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(180): view('barang/editform', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0011')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 01:21:06 --> Undefined variable: satuanbarang
+#0 C:\xampp\htdocs\simidisko\app\Views\barang\editform.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/editform', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(180): view('barang/editform', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0011')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 01:21:08 --> Undefined variable: satuanbarang
+#0 C:\xampp\htdocs\simidisko\app\Views\barang\editform.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/editform', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(180): view('barang/editform', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0011')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 01:39:00 --> There is no data to update.
+#0 C:\xampp\htdocs\simidisko\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\simidisko\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\simidisko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(284): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 01:39:08 --> There is no data to update.
+#0 C:\xampp\htdocs\simidisko\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\simidisko\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\simidisko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(284): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 01:40:03 --> Undefined index: brgkode
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(289): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 289, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 01:41:06 --> unlink(): Invalid argument
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(): Inval...', 'C:\\xampp\\htdocs...', 266, Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(266): unlink('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 01:55:46 --> Undefined variable: cari
+#0 C:\xampp\htdocs\simidisko\app\Views\barang\index.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(28): view('barang/index', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 02:07:10 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:07:27 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:07:29 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:10:16 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:10:21 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:11:18 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:11:19 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:11:19 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:11:20 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:11:20 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:11:20 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 02:11:20 --> Call to a member function links() on null
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/index', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(46): view('barang/index', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2022-05-01 02:13:13 --> Unknown column 'ketnama' in 'where clause'
+CRITICAL - 2022-05-01 02:13:13 --> Unknown column 'ketnama' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(509): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(1084): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(36): CodeIgniter\BaseModel->paginate(10, 'barang')
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->index()
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-05-01 06:16:40 --> View themes, no current section.
+#0 C:\xampp\htdocs\simidisko\app\Views\barangmasuk\forminput.php(73): CodeIgniter\View\View->endSection('js')
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/for...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(12): view('barangmasuk/for...')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->index()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 06:17:21 --> View themes, no current section.
+#0 C:\xampp\htdocs\simidisko\app\Views\barangmasuk\forminput.php(73): CodeIgniter\View\View->endSection('jspage')
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/for...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(12): view('barangmasuk/for...')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->index()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 06:47:08 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 06:47:15 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 07:00:34 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 07:01:26 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 07:05:07 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 07:05:43 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 07:06:20 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 07:44:54 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 07:45:56 --> Undefined variable: faktur
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 08:04:18 --> Undefined variable: faktur
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 08:04:53 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 13:03:47 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 13:04:18 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 13:08:22 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 13:10:14 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(28): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 13:11:16 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(31): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 13:12:49 --> Call to undefined method App\Models\Modeltembarangmasuk::tabel
+#0 C:\xampp\htdocs\simidisko\app\Models\Modeltembarangmasuk.php(14): CodeIgniter\Model->__call('tabel', Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(31): App\Models\Modeltembarangmasuk->tampilDataTemp('')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-01 13:16:12 --> Undefined variable: nohal
+#0 C:\xampp\htdocs\simidisko\app\Views\barangmasuk\datatemp.php(14): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 14, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/dat...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(32): view('barangmasuk/dat...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 21:42:18 --> Undefined variable: dataTemp
+#0 C:\xampp\htdocs\simidisko\app\Views\barangmasuk\datatemp.php(14): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 14, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/dat...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(32): view('barangmasuk/dat...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 21:42:32 --> Undefined variable: dataTemp
+#0 C:\xampp\htdocs\simidisko\app\Views\barangmasuk\datatemp.php(14): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 14, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/dat...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(32): view('barangmasuk/dat...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-01 21:43:21 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getRusltArray()
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/dat...', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(32): view('barangmasuk/dat...', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->dataTemp()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-01 22:03:43 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->ambilDataBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 22:03:55 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->ambilDataBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 22:06:05 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->ambilDataBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 22:06:08 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->ambilDataBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 22:08:07 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->ambilDataBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-01 22:10:10 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->ambilDataBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}

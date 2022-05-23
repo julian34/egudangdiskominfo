@@ -1,0 +1,64 @@
+CRITICAL - 2022-05-02 21:16:09 --> Invalid file: barangmasuk/modal.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('barangmasuk/mod...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/mod...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(118): view('barangmasuk/mod...')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->cariDataBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-02 21:16:12 --> Invalid file: barangmasuk/modal.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('barangmasuk/mod...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/mod...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(118): view('barangmasuk/mod...')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->cariDataBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-02 21:16:16 --> Invalid file: barangmasuk/modal.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('barangmasuk/mod...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/mod...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(118): view('barangmasuk/mod...')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->cariDataBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-02 21:16:23 --> Invalid file: barangmasuk/modal.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('barangmasuk/mod...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/mod...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(118): view('barangmasuk/mod...')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->cariDataBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-02 21:58:48 --> Call to undefined method App\Models\Modelbarang::getResultArray
+#0 C:\xampp\htdocs\simidisko\app\Views\barangmasuk\detaildatabarang.php(14): CodeIgniter\Model->__call('getResultArray', Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/det...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(136): view('barangmasuk/det...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->detailCariBarang()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-02 21:58:55 --> Call to undefined method App\Models\Modelbarang::getResultArray
+#0 C:\xampp\htdocs\simidisko\app\Views\barangmasuk\detaildatabarang.php(14): CodeIgniter\Model->__call('getResultArray', Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barangmasuk/det...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(136): view('barangmasuk/det...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->detailCariBarang()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

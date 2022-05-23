@@ -1,0 +1,412 @@
+CRITICAL - 2022-05-16 01:29:32 --> Undefined index: katnama
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Satuan.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 94, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Satuan->editform('1')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Satuan))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-05-16 01:53:22 --> date() expects at most 2 parameters, 3 given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date() expects ...', 'C:\\xampp\\htdocs...', 24, Array)
+#1 C:\xampp\htdocs\simidisko\app\Models\Modelpinjambarang.php(24): date('y', 'd', 'm')
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(41): App\Models\Modelpinjambarang->renderKdinv()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->renderkdinv()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 02:00:23 --> syntax error, unexpected 'var' (T_VAR)
+#0 C:\xampp\htdocs\simidisko\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\simidisko\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Mode...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Mode...')
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(17): spl_autoload_call('App\\Models\\Mode...')
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(809): App\Controllers\Pinjambarang->__construct()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-16 02:02:24 --> Undefined variable: tgl
+#0 C:\xampp\htdocs\simidisko\app\Models\Modelpinjambarang.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(41): App\Models\Modelpinjambarang->renderKdinv()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->renderkdinv()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-16 02:31:03 --> Undefined index: tanggalInv
+#0 C:\xampp\htdocs\simidisko\app\Models\Modelbarang.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 34, Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(57): App\Models\Modelbarang->renderKode()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->addform()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-16 03:07:59 --> Undefined property: App\Controllers\Pinjambarang::$mdtembarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->dataTemp()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 03:08:08 --> Undefined property: App\Controllers\Pinjambarang::$mdtembarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->dataTemp()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 03:18:54 --> Undefined property: App\Controllers\Pinjambarang::$mdbarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(150): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 150, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 03:20:29 --> Undefined property: App\Controllers\Pinjambarang::$mdbarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(150): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 150, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 03:21:31 --> Undefined property: App\Controllers\Pinjambarang::$mdbarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(150): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 150, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 03:22:46 --> Undefined property: App\Controllers\Pinjambarang::$mdtembarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(105): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 105, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->simpanTemp()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 04:04:19 --> Undefined property: App\Controllers\Pinjambarang::$mdtembarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(182): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 182, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->selesaiTransaksi()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 04:04:28 --> Undefined property: App\Controllers\Pinjambarang::$mdtembarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(182): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 182, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->selesaiTransaksi()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 04:05:10 --> Allowed fields must be specified for model: App\Models\Modeldetailpinjambarang
+#0 C:\xampp\htdocs\simidisko\system\BaseModel.php(1138): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Mode...')
+#1 C:\xampp\htdocs\simidisko\system\BaseModel.php(713): CodeIgniter\BaseModel->doProtectFields(Array)
+#2 C:\xampp\htdocs\simidisko\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(206): CodeIgniter\Model->insert(Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->selesaiTransaksi()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2022-05-16 04:08:17 --> Duplicate entry 'INV2205160001' for key 'PRIMARY'
+CRITICAL - 2022-05-16 04:08:17 --> Duplicate entry 'INV2205160001' for key 'PRIMARY'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\simidisko\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(198): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->selesaiTransaksi()
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2022-05-16 04:13:41 --> date() expects parameter 2 to be int, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date() expects ...', 'C:\\xampp\\htdocs...', 24, Array)
+#1 C:\xampp\htdocs\simidisko\app\Models\Modelpinjambarang.php(24): date('y-m-d', '')
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(33): App\Models\Modelpinjambarang->renderKdinv()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->add()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+ERROR - 2022-05-16 04:47:15 --> Duplicate entry 'INV2205160001' for key 'PRIMARY'
+CRITICAL - 2022-05-16 04:47:15 --> Duplicate entry 'INV2205160001' for key 'PRIMARY'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\simidisko\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(198): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->selesaiTransaksi()
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2022-05-16 06:16:21 --> Undefined variable: cari
+#0 C:\xampp\htdocs\simidisko\app\Views\pinjambarang\viewdata.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 19, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/vi...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(28): view('pinjambarang/vi...')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->index()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-16 06:21:10 --> Undefined index: faktur
+#0 C:\xampp\htdocs\simidisko\app\Views\pinjambarang\viewdata.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 50, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/vi...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(54): view('pinjambarang/vi...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->index()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-16 06:21:13 --> Undefined index: faktur
+#0 C:\xampp\htdocs\simidisko\app\Views\pinjambarang\viewdata.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 50, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/vi...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(54): view('pinjambarang/vi...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->index()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-16 06:28:40 --> Undefined index: tglkodeinv
+#0 C:\xampp\htdocs\simidisko\app\Views\pinjambarang\viewdata.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/vi...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(54): view('pinjambarang/vi...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->index()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-16 06:44:58 --> Call to undefined method App\Models\Modelpinjambarang::tampildata_cari
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(39): CodeIgniter\Model->__call('tampildata_cari', Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->index()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 06:55:59 --> Call to undefined method App\Models\Modelpinjambarang::cekFaktur
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(66): CodeIgniter\Model->__call('cekFaktur', Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->edit('0073aedc75c84a0...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 06:57:23 --> Undefined index: jnsstakeholder
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(74): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 74, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->edit('0073aedc75c84a0...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 07:07:55 --> Invalid file: pinjambarang/detaildatabarang.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:08:06 --> Invalid file: pinjambarang/detaildatabarang.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:09:03 --> Invalid file: pinjambarang/detaildatabarang.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:22:37 --> Invalid file: pinjambarang/detaildatabarang.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:22:44 --> Invalid file: pinjambarang/detaildatabarang.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:26:44 --> Invalid file: pinjambarang/detaildatabarang.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:27:29 --> Invalid file: pinjambarang/detaildatapinjam.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:36:44 --> Invalid file: pinjambarang/detaildatapinjam.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:38:01 --> Invalid file: pinjambarang/detaildatapinjam.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pinjambarang/de...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-16 07:39:08 --> Undefined index: brgkode
+#0 C:\xampp\htdocs\simidisko\app\Views\pinjambarang\detaildatapinjam.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 18, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/de...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(199): view('pinjambarang/de...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->detailCariBarang()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-16 08:34:04 --> Undefined property: App\Controllers\Pinjambarang::$mddetailbarangmasuk
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(320): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 320, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->simpanDetail()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 08:43:20 --> Undefined variable: jnsstakeholder
+#0 C:\xampp\htdocs\simidisko\app\Views\pinjambarang\formedit.php(45): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 45, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('pinjambarang/fo...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(77): view('pinjambarang/fo...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->edit('0073aedc75c84a0...')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-16 08:47:13 --> Undefined property: App\Controllers\Pinjambarang::$mddetailbarangmasuk
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(320): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 320, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->simpanDetail()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 08:47:20 --> Undefined property: App\Controllers\Pinjambarang::$mddetailbarangmasuk
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(320): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 320, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->simpanDetail()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 08:49:29 --> Undefined property: App\Controllers\Pinjambarang::$mddetailbarangmasuk
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(362): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 362, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusItemDetail()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 08:49:37 --> Undefined property: App\Controllers\Pinjambarang::$mddetailbarangmasuk
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(362): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 362, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusItemDetail()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-16 08:52:17 --> Undefined property: App\Controllers\Pinjambarang::$mddetailbarangmasuk
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(287): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 287, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->editItem()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-05-16 08:54:24 --> Unknown column 'id' in 'where clause'
+CRITICAL - 2022-05-16 08:54:24 --> Unknown column 'id' in 'where clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `pi...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pi...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pi...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(2225): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pi...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\simidisko\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(380): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->hapusTransaksi('INV2205160002')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}

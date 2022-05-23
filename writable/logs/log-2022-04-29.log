@@ -1,0 +1,13 @@
+ERROR - 2022-04-29 23:10:48 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:12:09 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:13:02 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:14:55 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:15:14 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:15:16 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:17:39 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:17:41 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:17:43 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+ERROR - 2022-04-29 23:18:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR - 2022-04-29 23:18:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR - 2022-04-29 23:18:58 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+ERROR - 2022-04-29 23:19:15 --> Can't create table `dbgudang`.`barang` (errno: 150 "Foreign key constraint is incorrectly formed")
