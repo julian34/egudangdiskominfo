@@ -8,6 +8,7 @@ use App\Libraries\MY_TCPDF AS TCPDF;
 
 class PdfController extends BaseController
 {
+
     public function index()
     {
         //
@@ -20,25 +21,5 @@ class PdfController extends BaseController
         $dompdf->setPaper('A4', 'landscape');
         $dompdf->render();
         $dompdf->stream();
-    }
-
-    public function cetak()
-    {
-
-        // create new PDF document
-        $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-        
-        $pdf->AddPage();
-        
-        $html = view('invoice');
-        // Print text using writeHTMLCell()
-        $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
-        $pdf->write2DBarcode('INV2205250001', 'QRCODE,H', 0, 45, 30, 20, ['position' => 'R'], 'N');
-        // ---------------------------------------------------------
-        $this->response->setContentType('application/pdf');
-        // Close and output PDF document
-        // This method has several options, check the source code documentation for more information.
-        $pdf->Output('INV2205250001', 'I');
-
     }
 }
