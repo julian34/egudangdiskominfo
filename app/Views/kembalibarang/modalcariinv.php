@@ -12,7 +12,7 @@
             <div class="modal-body">
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Silakan Cari Barang Bedasakan Kode/Kegiatan"
+                    <input type="text" class="form-control" placeholder="Silakan Cari Barang Bedasakan Kode Invoice"
                         aria-label="" aria-describedby="basic-addon2" id="cari">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="tmbCariInv">
@@ -21,8 +21,6 @@
                     </div>
                 </div>
                 <div class="row viewdetaildata"></div>
-
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

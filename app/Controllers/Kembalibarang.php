@@ -8,6 +8,8 @@ use App\Controllers\BaseController;
 use App\Models\Modelkembalibarang;
 use App\Models\Modeldetailkembalibarang;
 use App\Models\Modelpinjambarang;
+use App\Models\Modeltemdetailpinjambarang;
+use App\Models\Modeldetailpinjambarang;
 // use App\Models\Modeltemdetailkembalibarang;
 
 use App\Models\Modelbarang;
@@ -22,9 +24,13 @@ class Kembalibarang extends BaseController
         $this->mKembali          = new Modelkembalibarang;
 
         $this->mPinjam           = new Modelpinjambarang;
+        $this->mDetPinjam        = new Modeldetailpinjambarang;
         
         $this->mDetKembali       = new Modeldetailkembalibarang;
-        // $this->mTemDetKembali    = new Modeltemdetailkembalibarang;
+      
+
+        $this->mTemDetPinjam    = new Modeltemdetailpinjambarang;
+
         $this->mdbarang         = new Modelbarang();
     }
 
@@ -42,14 +48,14 @@ class Kembalibarang extends BaseController
             $cari = session()->get('cari_kdinv');
         }
 
-        $totaldata = $cari ? $this->mKembali->tampildata_cari($cari)->countAllResults() : $this->mKembali->countAllResults();
+        $totaldata = $cari ? $this->mKembali->tampildata_cari($cari)->countAllResults() : $this->mKembali->tampildata()->countAllResults();
         
-        $dataBarangmasuk = $cari ? $this->mKembali->tampildata_cari($cari)->paginate(10, 'kembalialat') : $this->mKembali->paginate(10, 'kembalialat');
+        $dataBarang = $cari ? $this->mKembali->tampildata_cari($cari)->paginate(10, 'kembalialat') : $this->mKembali->tampildata()->paginate(10, 'kembalialat');
 
         $nohal = $this->request->getVar('page_kembalialat') ? $this->request->getVar('page_kembalialat') : 1;
 
         $data = [
-            'tampildata' => $dataBarangmasuk,
+            'tampildata' => $dataBarang,
             'pager'      => $this->mKembali->pager,
             'nohal'      => $nohal,
             'totaldata'  => $totaldata,
@@ -63,34 +69,6 @@ class Kembalibarang extends BaseController
         return view('kembalibarang/forminput');
     }
     
-
-    Public function adddetail(){
-        $data = [
-            'kodeinv' => $this->mKembali->renderKdinv()
-        ];
-        return view('kembalibarang/forminput',$data);
-    }
-
-
-    public function dataTabelList(){
-        if($this->request->isAJAX()){
-            $kodeinv     = $this->request->getPost('kodeinv');
-
-            $data  = [
-                'dataTemp' => $this->mTemDetKembali->tampilDataTemp($kodeinv) 
-            ];
-            
-            $json = [
-                'data'     => view('kembalibarang/datatemp',$data) 
-            ];
-            
-            echo json_encode($json);
-        
-        }else{
-            exit('maaf tidak bisa dipanggil');
-        }
-    }
-
     public function edit($kodeinv){
 
         $cekFaktur =  $this->mKembali->cekFaktur($kodeinv);
@@ -107,6 +85,33 @@ class Kembalibarang extends BaseController
             return view('kembalibarang/formedit',$data);
         }else{
             exit('maaf data tidak ditemukan');
+        }
+    }
+
+    Public function adddetail(){
+        $data = [
+            'kodeinv' => $this->mKembali->renderKdinv()
+        ];
+        return view('kembalibarang/forminput',$data);
+    }
+
+
+    public function dataTabelList(){
+        if($this->request->isAJAX()){
+            $kodeinv     = $this->request->getPost('kodeinv');
+
+            $data  = [
+                'dataTemp' => $this->mDetPinjam->dataDetail($kodeinv)
+            ];
+            
+            $json = [
+                'data'     => view('kembalibarang/datatemp',$data) 
+            ];
+            
+            echo json_encode($json);
+        
+        }else{
+            exit('maaf tidak bisa dipanggil');
         }
     }
 
@@ -155,14 +160,17 @@ class Kembalibarang extends BaseController
                     'error' => 'Data Inv tidak ditemukan'
                 ];
             }else{
-                // $data       = [
-                //     'kodebarang'    => $ambildata['brgkode'],
-                //     'namabarang'    => $ambildata['brgnama']
-                // ];
+                $data       = [
+                    'stakeholder'   => $ambildata['stakeholder'],
+                    'jnsstakholder' => $ambildata['jnsstakholder'],
+                    'kegiatan'      => $ambildata['kegiatan'],
+                    'lokasi'        => $ambildata['lokasi'],
+                    'tglpinjam'     => $ambildata['tglpinjam']
+                ];
     
                 $json = [
-                    // 'sukses' => $data
-                    'sukses' => 'data ada ada'
+                    'sukses' => $data
+                    // 'sukses' => 'data ada ada'
                 ];
             }
 
@@ -173,23 +181,53 @@ class Kembalibarang extends BaseController
         }
     }
 
+    //Prosess
 
-    //proses
-    function dataTemp(){
+    function selesaiTransaksi(){
         if($this->request->isAJAX()){
-            $kodeinv     = $this->request->getPost('kodeinv');
-            
-            $data  = [
-                'dataTemp' => $this->mTemDetKembali->tampilDataTemp($kodeinv) 
-            ];
-            
-            $json = [
-                'data'     => view('kembalibarang/datatemp',$data) 
-            ];
+            $kodeinv         = $this->request->getPost('kodeinv');
+            $tglkembali      = strtotime($this->request->getPost('tglkembali'));
+
+            $dataTemp = $this->mDetPinjam->getWhere([
+                'detkodeinv' => $kodeinv
+            ]);
+
+            if($dataTemp->getNumRows() == 0){
+                $json = [
+                    'error' => 'Maaf,  belum ada item untuk No. Invoice '.$kodeinv.' !'
+                ];
+            }else{
+                // Simpan Ke Tabel Barang Masuk 
+                $this->mKembali->insert([
+                'kodeinv'           => $kodeinv,
+                'tglkembali'        => date('Y-m-d',$tglkembali),
+                'status'            => 'kembali'
+                ]);
+
+                // simpan ke Tabel detail Barang Masuk
+                foreach($dataTemp->getResultArray() as $row):
+                    $this->mDetKembali->insert([
+                        'detkodeinv'     => $row['detkodeinv'],
+                        'detbrgkode'     => $row['detbrgkode'],
+                        'detjml'         => $row['detjml']   
+                    ]);
+                endforeach;
+
+                //hapus data dari tabel temp berdasarkan
+                // $this->mdtembarang->emptyTable();
+
+
+                $json = [
+                    'sukses' => 'Transaksi No. Invoice '.$kodeinv.' Berhasil Disimpan'
+                ];
+            }
+
             echo json_encode($json);
-        }else{
+
+        }else {
             exit('maaf tidak bisa dipanggil');
         }
     }
+
 
 }

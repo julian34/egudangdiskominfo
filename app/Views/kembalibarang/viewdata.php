@@ -51,7 +51,7 @@ Pengembalian Peralatan
         ?>
         <tr>
             <td><?= $nomor++; ?></td>
-            <td><?= $row['kodeinv']; ?></td>
+            <td><?= $row['kkdinv']; ?></td>
             <td><?= $row['kegiatan']; ?></td>
             <td><?= date('d-m-Y',strtotime($row['tglpinjam'])); ?></td>
             <td><?= date('d-m-Y',strtotime($row['tglkembali'])); ?></td>
@@ -60,18 +60,18 @@ Pengembalian Peralatan
             <td>
                 <?php 
                     $db = \Config\Database::connect();
-                    $jmlItem = $db->table('detailkembalibarang')->where('detkodeinv',$row['kodeinv'])->countAllResults();
+                    $jmlItem = $db->table('detailkembalibarang')->where('detkodeinv',$row['kkdinv'])->countAllResults();
                 ?>
                 <span style="cursor:pointer; font-weight: bold; color:blue"
-                    onclick="detailItem('<?= $row['kodeinv']; ?>')"><?= number_format($jmlItem, 0, ",", "."); ?></span>
+                    onclick="detailItem('<?= $row['kkdinv']; ?>')"><?= number_format($jmlItem, 0, ",", "."); ?></span>
             </td>
             <td>
                 <button type="button" class="btn btn-sm btn-info" title="edit data"
-                    onclick="edit('<?= sha1($row['kodeinv']); ?>')">
+                    onclick="edit('<?= sha1($row['kkdinv']); ?>')">
                     <i class="fa fa-edit"></i>
                 </button>
 
-                <form method="POST" action="/kembalibarang/hapusTransaksi/<?= $row['kodeinv']?>" style="display:inline;"
+                <form method="POST" action="/kembalibarang/hapusTransaksi/<?= $row['kkdinv']?>" style="display:inline;"
                     onsubmit="hapus()">
                     <input type="hidden" value="DELETE" name="_method">
                     <button type="submit" class="btn btn-sm btn-danger" title="hapus data">

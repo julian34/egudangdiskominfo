@@ -8,7 +8,7 @@ class Modeldetailkembalibarang extends Model
 {
     protected $table            = 'detailkembalibarang';
     protected $primaryKey       = 'iddetail';
-    protected $allowedFields    = ['detkodeinv','detbrgkode','detjml'];
+    protected $allowedFields    = ['detkodeinv','detbrgkode','detjml','status'];
 
     public function dataDetail($faktur){
         return $this->table('detailkembalibarang')

@@ -58,45 +58,10 @@ Transaksi kembali Peralatan
 
 <div class="card">
     <div class="card-header bg-primary">
-        Input Barang
+        Barang
     </div>
     <div class="card-body">
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="">Kode Barang</label>
-                <div class="input-group mb-4">
-                    <input type="text" class="form-control" placeholder="Kode Barang" name="kdbarang" id="kdbarang"
-                        aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="tombolCariBarang"><i
-                                class="fa fa-search"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="">Nama Barang</label>
-                <input type="text" class="form-control" name="namabarang" id="namabarang" readonly>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="">Jumlah</label>
-                <input type="number" class="form-control" name="jumlah" id="jumlah">
-            </div>
-            <div class="form-group col-md-1">
-                <label for="">Aksi</label>
-                <div class="input-group">
-                    <button type="button" class="btn btn-sm btn-info" title="Tambah Item" id="tombolTambahItem">
-                        <i class="fa fa-plus-square"></i>
-                    </button>
-                    &nbsp;
-                    <button type="button" class="btn btn-sm btn-warning" title="Reload Item" id="tombolReload">
-                        <i class="fa fa-sync-alt"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
         <div class="row" id="tampilDataTemp"></div>
-
         <div class="row justify-content-end">
             <button class="btn btn-lg btn-success" id="tombolSelesaiTransaksi">
                 <i class="fa fa-save"></i> Selesai Transaksi
@@ -115,16 +80,17 @@ Transaksi kembali Peralatan
 <script src="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 
 <script>
-function dataTabelList() {
-    let kdin = $('#kodeinv').val();
+function dataTemp() {
+    let kodeinv = $('#kodeinv').val();
+
     $.ajax({
         type: "post",
-        url: "kemablibarang/dataTabelList",
+        url: "/kembalibarang/dataTabelList",
         data: {
-            kodeinv: kdin
+            kodeinv: kodeinv
         },
         dataType: "json",
-        success: function(response) {
+        success: function(respons) {
             if (respons.data) {
                 $('#tampilDataTemp').html(respons.data);
             }
@@ -158,7 +124,56 @@ function cariDataPinInv() {
     });
 }
 
+function ambildatabarang() {
+    let kodeinv = $('#kodeinv').val();
+    $.ajax({
+        type: "post",
+        url: "/kembalibarang/ambilDataInv",
+        data: {
+            kodeinv: kodeinv
+        },
+        dataType: "json",
+        success: function(e) {
+
+            if (e.error) {
+                alert(e.error);
+            }
+
+            if (e.sukses) {
+                let data = e.sukses;
+                $('#tglpinjam').val(data.tglpinjam);
+                $('#stakeholder').val(data.stakeholder);
+                $('#jnsstakeholder').val(data.jnsstakholder);
+                $('#lokasi').val(data.lokasi);
+                $('#kegiatan').val(data.kegiatan);
+            }
+
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(xhr.status + '\n' + thrownError);
+        }
+    });
+}
+
+
 $(document).ready(function() {
+
+
+    $('#kodeinv').change(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "post",
+            url: "/kembalibarang/dataDetailKodeinv",
+            data: {
+                kodeinv: e
+            },
+            dataType: "jason",
+            success: function(a) {
+                $("#tglpinjam").val(a.tglpinjam);
+            }
+        });
+    });
+
     $('#tombolCariInv').click(function(e) {
         e.preventDefault();
         $.ajax({
@@ -175,6 +190,96 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('#tombolSelesaiTransaksi').click(function(e) {
+        e.preventDefault();
+        // alert('jadi');
+        let kodeinv = $('#kodeinv').val();
+        let kodebarng = $('#kdbarang').val();
+        let jumlah = $('#jumlah').val();
+        let tglpinjam = $('#tglpinjam').val();
+        let kegiatan = $('#kegiatan').val();
+        let jnsstakeholder = $('#jnsstakeholder').val();
+        let stakeholder = $('#stakeholder').val();
+        let lokasi = $('#lokasi').val();
+
+        if (kodeinv.length == 0) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops...',
+                text: 'Kode Invoice Wajib Disi',
+                timer: 1000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            });
+        } else {
+            Swal.fire({
+                title: 'Selesai Transaksi ?',
+                text: "Yakin, Transaksi ini Disimpan ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Simpan!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "post",
+                        url: "/kembalibarang/selesaiTransaksi",
+                        data: {
+                            kodeinv: kodeinv,
+                            kegiatan: kegiatan,
+                            jnsstakeholder: jnsstakeholder,
+                            stakeholder: stakeholder,
+                            tglpinjam: tglpinjam,
+                            lokasi: lokasi
+                        },
+                        dataType: "json",
+                        success: function(e) {
+                            if (e.error) {
+                                Swal.fire({
+                                    title: 'Warning',
+                                    icon: 'warning',
+                                    text: e.error
+                                });
+                            }
+
+                            if (e.sukses) {
+                                Swal.fire({
+                                    title: 'Success Transaksi!',
+                                    text: e.success,
+                                    icon: 'success'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.reload();
+                                    }
+                                });
+                            }
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(xhr.status + '\n' + thrownError);
+                        }
+                    });
+                }
+            })
+        }
+    });
+
+
 });
 </script>
 

@@ -26,10 +26,11 @@
 </table>
 <script>
 function pilih(e) {
-    $('#kdbarang').val(e);
-    $('#modalcaribarang').on('hidden.bs.modal', function(e) {
+    $('#kodeinv').val(e);
+    $('#modalcariinv').on('hidden.bs.modal', function(e) {
         ambildatabarang();
+        dataTemp();
     })
-    $('#modalcaribarang').modal('hide');
+    $('#modalcariinv').modal('hide');
 }
 </script>

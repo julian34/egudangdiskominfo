@@ -11,9 +11,16 @@ class Modelkembalibarang extends Model
     protected $allowedFields    = ['kodeinv','tglkembali','created_at','updated_at'];
     protected $useTimestamps    = true; 
 
+    public function tampildata(){
+        return $this->table('kembalibarang')->select('pinjambarang.kodeinv as kkdinv, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
+                    ->join('pinjambarang','kkodeinv=kodeinv');
+    }
+   
+    
     public function tampildata_cari($cari){
-        return $this->table('kembalibarang') 
-        ->join('pinjambarang','kodeinv=kodeinv')->like('kembalibarang.kodeinv',$cari);
+        return $this->table('kembalibarang')
+                    ->join('pinjambarang','kodeinv=kodeinv')
+                    ->like('kembalibarang.kodeinv',$cari);
     }
 
     public function cekFaktur($faktur){
