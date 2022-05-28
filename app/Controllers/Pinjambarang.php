@@ -10,6 +10,8 @@ use App\Models\Modeltemdetailpinjambarang;
 
 use App\Models\Modelbarang;
 
+use App\Libraries\MY_TCPDF AS TCPDF;
+
 
 class Pinjambarang extends BaseController
 {
@@ -434,8 +436,76 @@ class Pinjambarang extends BaseController
         }
     }
     
-    public function printInvPdf(){
-        
+    public function printInvPdf($kodeinv){
+            // create new PDF document
+            $cekFaktur =  $this->mPinjam->cekFaktur($kodeinv);
+            if($cekFaktur->getNumRows() > 0){
+                $row = $cekFaktur->getRowArray();
+
+                
+
+                $data = [ 
+                    'kodeinv'           => $row['kodeinv'],
+                    'tglpinjam'         => $row['tglpinjam'],
+                    'kegiatan'          => $row['kegiatan'],
+                    'stakeholder'       => $row['stakeholder'],
+                    'jnsstakholder'     => $row['jnsstakholder'],
+                    'lokasi'            => $row['lokasi'],
+                    'hari'              => $this->hari(date('D',strtotime($row['tglpinjam']))),
+                    'dataTemp'          => $this->mDetPinjam->dataDetail($row['kodeinv']) 
+                ];
+                
+                $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+                $pdf->AddPage();
+                $html = view('invoice',$data);
+                // Print text using writeHTMLCell()
+                $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+                $pdf->write2DBarcode($data['kodeinv'], 'QRCODE,H', 0, 45, 30, 20, ['position' => 'R'], 'N');
+                // ---------------------------------------------------------
+                $this->response->setContentType('application/pdf');
+                // Close and output PDF document
+                // This method has several options, check the source code documentation for more information.
+                $pdf->Output('diskoinfo-pinjam-'.$data['kodeinv'].'.pdf', 'I');
+            }else{
+                exit('maaf data tidak ditemukan');
+            }
+    }
+
+    function hari($d){
+            switch($d){
+                case 'Sun':
+                    $hari_ini = "Minggu";
+                break;
+         
+                case 'Mon':			
+                    $hari_ini = "Senin";
+                break;
+         
+                case 'Tue':
+                    $hari_ini = "Selasa";
+                break;
+         
+                case 'Wed':
+                    $hari_ini = "Rabu";
+                break;
+         
+                case 'Thu':
+                    $hari_ini = "Kamis";
+                break;
+         
+                case 'Fri':
+                    $hari_ini = "Jumat";
+                break;
+         
+                case 'Sat':
+                    $hari_ini = "Sabtu";
+                break;
+                
+                default:
+                    $hari_ini = "Tidak di ketahui";		
+                break;
+            }
+            return $hari_ini;
     }
 
 }

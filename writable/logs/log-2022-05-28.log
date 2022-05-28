@@ -978,3 +978,95 @@ CRITICAL - 2022-05-28 07:14:30 --> Invalid file: invoice.php
 #6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #8 {main}
+CRITICAL - 2022-05-28 09:07:31 --> syntax error, unexpected ')', expecting ';' or '{'
+#0 C:\xampp\htdocs\simidisko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('pinjambarang/in...')
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('pinjambarang/in...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-28 09:17:49 --> Undefined variable: cellspacingx
+#0 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(18258): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 18258, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(5916): TCPDF->writeHTML('<!-- DEBUG-VIEW...', true, false, true, true, '')
+#2 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(17238): TCPDF->MultiCell(189.99764444444, 0, '<!-- DEBUG-VIEW...', 0, '', 0, 1, 10.00125, 10.00125, true, 0, true, true, 0, 'T', false)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(456): TCPDF->writeHTMLCell(0, 0, '', '', '<!-- DEBUG-VIEW...', 0, 1, 0, true, '', true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-28 09:19:06 --> Undefined variable: cellspacingx
+#0 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(18258): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 18258, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(5916): TCPDF->writeHTML('<!-- DEBUG-VIEW...', true, false, true, true, '')
+#2 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(17238): TCPDF->MultiCell(189.99764444444, 0, '<!-- DEBUG-VIEW...', 0, '', 0, 1, 10.00125, 10.00125, true, 0, true, true, 0, 'T', false)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(456): TCPDF->writeHTMLCell(0, 0, '', '', '<!-- DEBUG-VIEW...', 0, 1, 0, true, '', true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-28 09:19:21 --> Undefined variable: cellspacingx
+#0 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(18258): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 18258, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(5916): TCPDF->writeHTML('<!-- DEBUG-VIEW...', true, false, true, true, '')
+#2 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(17238): TCPDF->MultiCell(189.99764444444, 0, '<!-- DEBUG-VIEW...', 0, '', 0, 1, 10.00125, 10.00125, true, 0, true, true, 0, 'T', false)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(456): TCPDF->writeHTMLCell(0, 0, '', '', '<!-- DEBUG-VIEW...', 0, 1, 0, true, '', true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-28 09:36:34 --> Call to undefined method App\Models\Modeldetailpinjambarang::tampilDataTemp
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(454): CodeIgniter\Model->__call('tampilDataTemp', Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-28 09:39:38 --> Undefined index: cols
+#0 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(17071): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 17071, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(17343): TCPDF->getHtmlDomArray('<div class="ran...')
+#2 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(5916): TCPDF->writeHTML('<!-- DEBUG-VIEW...', true, false, true, true, '')
+#3 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(17238): TCPDF->MultiCell(189.99764444444, 0, '<!-- DEBUG-VIEW...', 0, '', 0, 1, 10.00125, 10.00125, true, 0, true, true, 0, 'T', false)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(461): TCPDF->writeHTMLCell(0, 0, '', '', '<!-- DEBUG-VIEW...', 0, 1, 0, true, '', true)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-28 09:52:36 --> Undefined variable: kodeinv
+#0 C:\xampp\htdocs\simidisko\app\Views\invoice.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('invoice', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\PdfController.php(33): view('invoice')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\PdfController->cetak()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PdfController))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-28 09:52:41 --> Undefined variable: kodeinv
+#0 C:\xampp\htdocs\simidisko\app\Views\invoice.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('invoice', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\PdfController.php(33): view('invoice')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\PdfController->cetak()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PdfController))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-28 09:52:53 --> Call to undefined function App\Controllers\hari()
+#0 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}

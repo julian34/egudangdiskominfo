@@ -31,7 +31,6 @@ class MY_TCPDF extends TCPDF {
         $this->SetX(40);
         $this->Cell(0, 2, 'Jln. Soa Siu Dok 2 Bawah Jayapura Papua, 0967 524140-537324-537378, https://diskominfo.papua.go.id', 0, 1, '', 0, '', 0);
         // QRCODE,H : QR-CODE Best error correction
-        $this->write2DBarcode('https://sobatcdoing.com', 'QRCODE,H', 0, 45, 30, 20, ['position' => 'R'], 'N');
         $style = array('width' => 0.25, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0));
         $this->Line(15, 30, 200, 30, $style);
     }

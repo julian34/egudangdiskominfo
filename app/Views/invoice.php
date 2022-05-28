@@ -6,23 +6,23 @@
     <table cellpadding="0" class="invtabel">
         <tr>
             <th width="25%">No. Invoice</th>
-            <th width="75%">: <strong>INV2205250001</strong></th>
+            <th width="75%">: <strong><?php echo $kodeinv; ?></strong></th>
         </tr>
         <tr>
             <th width="25%">Tanggal Penggunaan</th>
-            <th width="75%">: <strong>25 - 05 - 2022</strong></th>
+            <th width="75%">: <strong><?php echo $hari.', '.date('d M Y',strtotime($tglpinjam)); ?></strong></th>
         </tr>
         <tr>
             <th width="25%">Stakeholder</th>
-            <th width="75%">: <strong>PEMPROV PAPUA</strong></th>
+            <th width="75%">: <strong><?php echo $stakeholder; ?></strong> (<?php echo $jnsstakholder; ?>)</th>
         </tr>
         <tr>
             <th width="25%">Lokasi</th>
-            <th width="75%">: <strong>Sasana Krida</strong></th>
+            <th width="75%">: <strong><?php echo $lokasi; ?></strong></th>
         </tr>
         <tr>
             <th width="25%">Kegiatan</th>
-            <th width="75%">: Pelantikan Kepala Sekolah SMA, SMK, SLB Se - Provinsi Papua<strong></strong></th>
+            <th width="75%">: <?php echo $kegiatan; ?><strong></strong></th>
         </tr>
     </table>
     <p></p>
@@ -32,11 +32,20 @@
             <th width="12%" style="height: 20px"><strong>Satuan</strong></th>
             <th width="8%" style="height: 20px;text-align:center"><strong>Qty</strong></th>
         </tr>
+
+        <?php 
+            $nomor = 1;
+            foreach($dataTemp->getResultArray() as $row) :
+        ?>
+
         <tr>
-            <td style="height: 20px">Hollyland Mars 400S PRO SDI-HDMI Wireless Video Transmission System</td>
-            <td style="height: 20px;">Unit</td>
-            <td style="height: 20px;text-align:center">1</td>
+            <td style="height: 20px"><?= $row['brgnama'] ?></td>
+            <td style="height: 20px;"><?= $row['satnama'] ?></td>
+            <td style="height: 20px;text-align:center"><?= $row['detjml'] ?></td>
         </tr>
+
+        <?php endforeach; ?>
+
     </table>
     <p>&nbsp;</p>
     <table cellpadding="4">
@@ -52,8 +61,8 @@
                 <p></p>
                 <p></p>
                 <span style="text-align:center;" class="ttdnama"><b><u>M. ANSHAR IRIANTO NATSIR,
-                            SE.</u></b></span>
-                <span style="text-align:center;">NIP.197110241999031003</span>
+                            SE.</u></b></span><br>
+                <span style="text-align:center;">NIP. 197110241999031003</span>
             </td>
         </tr>
     </table>
