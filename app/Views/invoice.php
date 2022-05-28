@@ -41,11 +41,6 @@
             <td style="height: 20px;"><?= $row['satnama'] ?></td>
             <td style="height: 20px;text-align:center"><?= $row['detjml'] ?></td>
         </tr>
-        <?php  $nomor++;
-        if($nomor == 10):
-        ?>
-        <br pagebreak="true" />
-        <?php $nomor = 1; endif; ?>
         <?php endforeach; ?>
     </table>
     <p>&nbsp;</p>

@@ -472,7 +472,7 @@ class Pinjambarang extends BaseController
                 $pdf->setHeaderTemplateAutoreset(true);
                 
                 $pdf->SetMargins(10, 12, 10, true);
-                $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+                $pdf->SetAutoPageBreak(TRUE, 20);
                 $pdf->AddPage();
                
                 
