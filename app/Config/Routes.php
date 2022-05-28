@@ -45,6 +45,7 @@ $routes->delete('/barang/hapus/(:any)', 'Barang::hapus/$1');
 $routes->get('/pinjambarang/hapusTransaksi/(:any)', 'Pinjambarang::index');
 $routes->delete('/pinjambarang/hapusTransaksi/(:any)', 'Pinjambarang::hapusTransaksi/$1');
 
+$routes->get('/pdf/cetak', 'PdfController::cetak');
 
 /*
  * --------------------------------------------------------------------
