@@ -402,7 +402,6 @@ class Pinjambarang extends BaseController
       
         session()->setFlashdata($pesan);
         return redirect()->to('/pinjambarang/index');
-
     }
 
     Public function renderKodeInv(){
