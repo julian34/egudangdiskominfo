@@ -6,28 +6,24 @@ use CodeIgniter\Model;
 
 class Modeldetailkembalibarang extends Model
 {
-    protected $table            = 'detailpinjambarang';
+    protected $table            = 'detailkembalibarang';
     protected $primaryKey       = 'iddetail';
     protected $allowedFields    = ['detkodeinv','detbrgkode','detjml'];
 
     public function dataDetail($faktur){
-        return $this->table('detailpinjambarang')
+        return $this->table('detailkembalibarang')
         ->join('barang','brgkode=detbrgkode')
         ->where('detkodeinv',$faktur)->get();
     }
 
     public function ambilTotalBarang($faktur){
-        $query = $this->table('detailpinjambarang')->where('detkodeinv',$faktur)->countAllResults();
+        $query = $this->table('detailkembalibarang')->where('detkodeinv',$faktur)->countAllResults();
         return $query;
     }
 
     public function ambilDetailBerdasarkanID($id){
-        return $this->table('detailpinjambarang')
+        return $this->table('detailkembalibarang')
         ->join('barang','brgkode=detbrgkode')
         ->where('iddetail',$id)->get();
-    }
-
-    public function hapusInv($faktur){
-        return $this->table('detailpinjambarang')->delete('detkodeinv',$faktur);
     }
 }

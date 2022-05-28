@@ -2,18 +2,18 @@
 
 
 <?= $this->section('judul')?>
-Pinjam Peralatan
+Pengembalian Peralatan
 <?= $this->endSection('judul')?>
 
 <?= $this->section('subjudul')?>
-<?= form_button('','<i class="fa fa-plus-circle"></i> Data Peminjaman',[
+<?= form_button('','<i class="fa fa-plus-circle"></i> Data Pengembalian',[
 'class'=>'btn btn-primary',
-'onclick' => "location.href=('" . site_url('pinjambarang/add') . "')"
+'onclick' => "location.href=('" . site_url('kembalibarang/add') . "')"
 ]) ?>
 <?= $this->endSection('subjudul')?>
 <?= $this->section('isi')?>
 <?= session()->getFlashdata('sukses'); ?>
-<?= form_open('pinjambarang/index'); ?>
+<?= form_open('kembalibarang/index'); ?>
 <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="Cari Berdasarkan Faktur..." aria-label="cari-barang"
         aria-describedby="button-addon2" name="cari" value="<?= $cari; ?>" autofocus>
@@ -60,7 +60,7 @@ Pinjam Peralatan
             <td>
                 <?php 
                     $db = \Config\Database::connect();
-                    $jmlItem = $db->table('detailpinjambarang')->where('detkodeinv',$row['kodeinv'])->countAllResults();
+                    $jmlItem = $db->table('detailkembalibarang')->where('detkodeinv',$row['kodeinv'])->countAllResults();
                 ?>
                 <span style="cursor:pointer; font-weight: bold; color:blue"
                     onclick="detailItem('<?= $row['kodeinv']; ?>')"><?= number_format($jmlItem, 0, ",", "."); ?></span>
@@ -71,7 +71,7 @@ Pinjam Peralatan
                     <i class="fa fa-edit"></i>
                 </button>
 
-                <form method="POST" action="/pinjambarang/hapusTransaksi/<?= $row['kodeinv']?>" style="display:inline;"
+                <form method="POST" action="/kembalibarang/hapusTransaksi/<?= $row['kodeinv']?>" style="display:inline;"
                     onsubmit="hapus()">
                     <input type="hidden" value="DELETE" name="_method">
                     <button type="submit" class="btn btn-sm btn-danger" title="hapus data">
@@ -85,7 +85,7 @@ Pinjam Peralatan
 </table>
 
 <div class="float-left mt-4">
-    <?= $pager->links('pinjambarang','paging'); ?>
+    <?= $pager->links('kembalibarang','paging'); ?>
 </div>
 
 
@@ -99,7 +99,7 @@ function detailItem(kodeinv) {
     // alert('muncul');
     $.ajax({
         type: "post",
-        url: "/pinjambarang/detailItem",
+        url: "/kembalibarang/detailItem",
         data: {
             kodeinv: kodeinv
         },

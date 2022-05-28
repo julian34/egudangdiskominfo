@@ -210,9 +210,7 @@ function ambildatabarang() {
 $(document).ready(function() {
     dataTemp();
 
-    $('#tglfaktur').datepicker({
-        format: 'yyyy-dd-mm'
-    });
+    // $('#tglfaktur').datepicker();
 
     $('#kdbarang').keydown(function(e) {
         if (e.keyCode == 13) {

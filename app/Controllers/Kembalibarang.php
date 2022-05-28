@@ -4,17 +4,23 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
+
+use App\Models\Modelkembalibarang;
+use App\Models\Modeldetailkembalibarang;
+// use App\Models\Modeltemdetailkembalibarang;
+
 use App\Models\Modelbarang;
+
+
 
 class Kembalibarang extends BaseController
 {
 
     public function __construct()
     {
-        // $this->mPinjam          = new Modelpinjambarang;
-        // $this->mDetPinjam       = new Modeldetailpinjambarang;
-        // $this->mTemDetPinjam    = new Modeltemdetailpinjambarang;
-
+        $this->mKembali          = new Modelkembalibarang;
+        $this->mDetKembali       = new Modeldetailkembalibarang;
+        // $this->mTemDetKembali    = new Modeltemdetailkembalibarang;
         $this->mdbarang         = new Modelbarang();
     }
 
@@ -27,20 +33,20 @@ class Kembalibarang extends BaseController
         if(isset($tombolcari)){
             $cari = $this->request->getPost('cari');
             session()->set('cari_kdinv',$cari);
-            redirect()->to('/pinjambarang/index');
+            redirect()->to('/kembalibarang/index');
         }else{
             $cari = session()->get('cari_kdinv');
         }
 
-        $totaldata = $cari ? $this->mPinjam->tampildata_cari($cari)->countAllResults() : $this->mPinjam->countAllResults();
+        $totaldata = $cari ? $this->mKembali->tampildata_cari($cari)->countAllResults() : $this->mKembali->countAllResults();
         
-        $dataBarangmasuk = $cari ? $this->mPinjam->tampildata_cari($cari)->paginate(10, 'pinjamalat') : $this->mPinjam->paginate(10, 'pinjamalat');
+        $dataBarangmasuk = $cari ? $this->mKembali->tampildata_cari($cari)->paginate(10, 'kembalialat') : $this->mKembali->paginate(10, 'kembalialat');
 
-        $nohal = $this->request->getVar('page_pinjamalat') ? $this->request->getVar('page_pinjamalat') : 1;
+        $nohal = $this->request->getVar('page_kembalialat') ? $this->request->getVar('page_kembalialat') : 1;
 
         $data = [
             'tampildata' => $dataBarangmasuk,
-            'pager'      => $this->mPinjam->pager,
+            'pager'      => $this->mKembali->pager,
             'nohal'      => $nohal,
             'totaldata'  => $totaldata,
             'cari'       => $cari 
@@ -50,30 +56,64 @@ class Kembalibarang extends BaseController
     }
 
     public function add(){
-        return view('kembalibarang/forminv');
+        return view('kembalibarang/forminput');
     }
+    
 
     Public function adddetail(){
         $data = [
-            'kodeinv' => $this->mPinjam->renderKdinv()
+            'kodeinv' => $this->mKembali->renderKdinv()
         ];
-        return view('pinjambarang/forminput',$data);
+        return view('kembalibarang/forminput',$data);
+    }
+
+
+    public function dataTabelList(){
+        if($this->request->isAJAX()){
+            $kodeinv     = $this->request->getPost('kodeinv');
+
+            $data  = [
+                'dataTemp' => $this->mTemDetKembali->tampilDataTemp($kodeinv) 
+            ];
+            
+            $json = [
+                'data'     => view('kembalibarang/datatemp',$data) 
+            ];
+            
+            echo json_encode($json);
+        
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
+    public function cariDataBarang(){
+        if($this->request->isAJAX()){
+
+            $json = [
+                'data'     => view('kembalibarang/modalcariinv') 
+            ];
+            
+            echo json_encode($json);
+        } else {
+            exit('maaf tidak bisa dipanggil');
+        }
     }
 
     public function edit($kodeinv){
 
-        $cekFaktur =  $this->mPinjam->cekFaktur($kodeinv);
+        $cekFaktur =  $this->mKembali->cekFaktur($kodeinv);
         if($cekFaktur->getNumRows() > 0){
             $row = $cekFaktur->getRowArray();
             $data = [ 
                 'kodeinv'           => $row['kodeinv'],
-                'tglpinjam'         => $row['tglpinjam'],
+                'tglkembali'         => $row['tglkembali'],
                 'kegiatan'          => $row['kegiatan'],
                 'stakeholder'       => $row['stakeholder'],
                 'jnsstakholder'    => $row['jnsstakholder'],
                 'lokasi'            => $row['lokasi'],
             ];
-            return view('pinjambarang/formedit',$data);
+            return view('kembalibarang/formedit',$data);
         }else{
             exit('maaf data tidak ditemukan');
         }
@@ -85,11 +125,11 @@ class Kembalibarang extends BaseController
             $kodeinv     = $this->request->getPost('kodeinv');
             
             $data  = [
-                'dataTemp' => $this->mTemDetPinjam->tampilDataTemp($kodeinv) 
+                'dataTemp' => $this->mTemDetKembali->tampilDataTemp($kodeinv) 
             ];
             
             $json = [
-                'data'     => view('pinjambarang/datatemp',$data) 
+                'data'     => view('kembalibarang/datatemp',$data) 
             ];
             echo json_encode($json);
         }else{

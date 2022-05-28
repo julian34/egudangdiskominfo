@@ -6,17 +6,18 @@ use CodeIgniter\Model;
 
 class Modelkembalibarang extends Model
 {
-    protected $table            = 'pinjambarang';
-    protected $primaryKey       = 'kodeinv';
-    protected $allowedFields    = ['kodeinv','stakeholder','jnsstakholder','kegiatan','lokasi','tglpinjam','filependukung','created_at','updated_at'];
+    protected $table            = 'kembalibarang';
+    protected $primaryKey       = 'idkembrg';
+    protected $allowedFields    = ['kodeinv','tglkembali','created_at','updated_at'];
     protected $useTimestamps    = true; 
 
     public function tampildata_cari($cari){
-        return $this->table('pinjambarang')->like('kodeinv',$cari);
+        return $this->table('kembalibarang') 
+        ->join('pinjambarang','kodeinv=kodeinv')->like('kembalibarang.kodeinv',$cari);
     }
 
     public function cekFaktur($faktur){
-        return $this->table('pinjambarang')->getWhere([
+        return $this->table('kembalibarang')->getWhere([
             'sha1(kodeinv)' => $faktur
         ]);
     }

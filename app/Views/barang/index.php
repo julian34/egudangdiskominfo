@@ -78,7 +78,7 @@ Manajemen Data Barang
 </table>
 
 <div class="float-left mt-4">
-    <?= $pager->links('kategori','paging'); ?>
+    <?= $pager->links('barang','paging'); ?>
 </div>
 
 

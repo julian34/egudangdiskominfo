@@ -24,7 +24,7 @@ Transaksi Pinjam Peralatan
     </div>
     <div class="form-group col-md-6">
         <label for="">Tanggal Peminjaman</label>
-        <input type="date" class="form-control" name="tglpinjam" id="tglpinjam" value="<?= date('Y-m-d') ?>">
+        <input type="date" class="form-control" name="tglpinjam" id="tglpinjam" value="">
     </div>
     <div class="form-group col-md-6">
         <label for="">Stakeholder</label>
@@ -232,9 +232,7 @@ function ambildatabarang() {
 $(document).ready(function() {
     dataTemp();
 
-    $('#tglpinjam').datepicker({
-        format: 'yyyy-dd-mm'
-    });
+    // $('#tglpinjam').datepicker();
 
     $('#kdbarang').keydown(function(e) {
         if (e.keyCode == 13) {

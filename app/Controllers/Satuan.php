@@ -91,7 +91,7 @@ class Satuan extends BaseController
         if($rwd){
             $data = [
                 'id'    => $id,
-                'nama'  => $rwd['katnama']
+                'nama'  => $rwd['satnama']
             ];
 
             return view('satuan/editform',$data);
@@ -105,7 +105,7 @@ class Satuan extends BaseController
         $id = $this->request->getVar('idsatuan');
         
         $data = [
-            'katnama' => $this->request->getVar('namasatuan')
+            'satnama' => $this->request->getVar('namasatuan')
         ];
         
         $valid = [
