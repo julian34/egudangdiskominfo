@@ -56,8 +56,9 @@ class Pinjambarang extends BaseController
     }
 
     public function add(){
+        $tglPin = NULL;
         $data = [
-            'kodeinv' => $this->mPinjam->renderKdinv()
+            'kodeinv' => $this->mPinjam->renderKdinv($tglPin)
         ];
         return view('pinjambarang/forminput',$data);
     }
@@ -402,6 +403,36 @@ class Pinjambarang extends BaseController
         session()->setFlashdata($pesan);
         return redirect()->to('/pinjambarang/index');
 
+    }
+
+    Public function renderKodeInv(){
+        if($this->request->isAJAX()){
+            // $kodeinv    = $this->request->getPost('kodeinv');
+            // $kodebarang = $this->request->getPost('kodebarang');
+            // $jumlah     = $this->request->getPost('jumlah');
+
+
+            // $dataDetail   = [
+            //     'detkodeinv'     => $kodeinv,
+            //     'detbrgkode'     => $kodebarang,
+            //     'detjml'         => $jumlah    
+            // ];
+
+            // $modelDetBarang = $this->mDetPinjam->insert($dataDetail);
+            $tglPin     = $this->request->getPost('tglpinjam');
+            $kodeinv    = $this->mPinjam->renderKdinv($tglPin);
+
+            $json = [
+                'sukses'    => 'Item berhasil ditambahkan',
+                'tglpinjam' => $tglPin,
+                'kodeinv'   => $kodeinv
+            ];
+
+            echo json_encode($json);
+            
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
     }
     
 

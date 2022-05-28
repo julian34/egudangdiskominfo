@@ -1,0 +1,54 @@
+CRITICAL - 2022-05-27 21:15:59 --> Too few arguments to function App\Models\Modelpinjambarang::renderKdinv(), 0 passed in C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php on line 60 and exactly 1 expected
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(60): App\Models\Modelpinjambarang->renderKdinv()
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->add()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-27 21:16:46 --> Too few arguments to function App\Models\Modelpinjambarang::renderKdinv(), 0 passed in C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php on line 60 and exactly 1 expected
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(60): App\Models\Modelpinjambarang->renderKdinv()
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->add()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-27 21:16:47 --> Too few arguments to function App\Models\Modelpinjambarang::renderKdinv(), 0 passed in C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php on line 60 and exactly 1 expected
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(60): App\Models\Modelpinjambarang->renderKdinv()
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->add()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-27 21:30:41 --> date_format() expects parameter 1 to be DateTimeInterface, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date_format() e...', 'C:\\xampp\\htdocs...', 42, Array)
+#1 C:\xampp\htdocs\simidisko\app\Models\Modelpinjambarang.php(42): date_format('2022-05-31', 'ymd')
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(423): App\Models\Modelpinjambarang->renderKdinv('2022-05-31')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->renderKodeInv()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-27 21:30:55 --> date() expects parameter 2 to be int, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date() expects ...', 'C:\\xampp\\htdocs...', 42, Array)
+#1 C:\xampp\htdocs\simidisko\app\Models\Modelpinjambarang.php(42): date('2022-05-28', 'ymd')
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(423): App\Models\Modelpinjambarang->renderKdinv('2022-05-28')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->renderKodeInv()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-05-27 21:31:55 --> date() expects parameter 2 to be int, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date() expects ...', 'C:\\xampp\\htdocs...', 42, Array)
+#1 C:\xampp\htdocs\simidisko\app\Models\Modelpinjambarang.php(42): date('1653714000', 'ymd')
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(423): App\Models\Modelpinjambarang->renderKdinv('2022-05-28')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->renderKodeInv()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}

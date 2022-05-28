@@ -24,7 +24,7 @@ Transaksi Pinjam Peralatan
     </div>
     <div class="form-group col-md-6">
         <label for="">Tanggal Peminjaman</label>
-        <input type="date" class="form-control" name="tglpinjam" id="tglpinjam" value="">
+        <input type="date" class="form-control" name="tglpinjam" id="tglpinjam" value="<?= date('Y-m-d') ?>">
     </div>
     <div class="form-group col-md-6">
         <label for="">Stakeholder</label>
@@ -228,17 +228,36 @@ function ambildatabarang() {
     });
 }
 
+function renderKodeInv() {
+    let tglpinjam = $('#tglpinjam').val();
+    $.ajax({
+        type: "post",
+        url: "/pinjambarang/renderKodeInv",
+        data: {
+            tglpinjam: tglpinjam
+        },
+        dataType: "json",
+        success: function(e) {
+            $('#tglpinjam').val(e.tglpinjam);
+            $('#kodeinv').val(e.kodeinv);
+        }
+    });
+}
+
 
 $(document).ready(function() {
     dataTemp();
-
-    // $('#tglpinjam').datepicker();
 
     $('#kdbarang').keydown(function(e) {
         if (e.keyCode == 13) {
             e.preventDefault();
             ambildatabarang();
         }
+    });
+
+    $('#tglpinjam').change(function(e) {
+        e.preventDefault();
+        renderKodeInv();
     });
 
     $('#tombolSelesaiTransaksi').click(function(e) {
