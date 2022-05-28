@@ -7,6 +7,7 @@ use App\Controllers\BaseController;
 
 use App\Models\Modelkembalibarang;
 use App\Models\Modeldetailkembalibarang;
+use App\Models\Modelpinjambarang;
 // use App\Models\Modeltemdetailkembalibarang;
 
 use App\Models\Modelbarang;
@@ -19,6 +20,9 @@ class Kembalibarang extends BaseController
     public function __construct()
     {
         $this->mKembali          = new Modelkembalibarang;
+
+        $this->mPinjam           = new Modelpinjambarang;
+        
         $this->mDetKembali       = new Modeldetailkembalibarang;
         // $this->mTemDetKembali    = new Modeltemdetailkembalibarang;
         $this->mdbarang         = new Modelbarang();
@@ -87,19 +91,6 @@ class Kembalibarang extends BaseController
         }
     }
 
-    public function cariDataBarang(){
-        if($this->request->isAJAX()){
-
-            $json = [
-                'data'     => view('kembalibarang/modalcariinv') 
-            ];
-            
-            echo json_encode($json);
-        } else {
-            exit('maaf tidak bisa dipanggil');
-        }
-    }
-
     public function edit($kodeinv){
 
         $cekFaktur =  $this->mKembali->cekFaktur($kodeinv);
@@ -118,6 +109,70 @@ class Kembalibarang extends BaseController
             exit('maaf data tidak ditemukan');
         }
     }
+
+    //
+    public function cariDataInv(){
+        if($this->request->isAJAX()){
+
+            $json = [
+                'data'     => view('kembalibarang/modalcariinv')
+            ];
+
+            echo json_encode($json);
+        } else {
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
+    public function detailCariInv(){
+         if($this->request->isAJAX()){
+            $cari = $this->request->getPost('cari');
+            
+            $data = $this->mPinjam->tampildata_cari($cari)->get();
+
+            if($data != null){
+                $json = [
+                        'data' => view('kembalibarang/detaildatapinjam',[
+                            'tampildata' => $data
+                        ])
+                    ];
+                
+                echo json_encode($json); 
+            }
+
+        } else {
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
+    public function ambilDataInv(){
+        if($this->request->isAJAX()){
+            $kodeinv        = $this->request->getPost('kodeinv');
+            $ambildata      = $this->mPinjam->find($kodeinv);
+
+            if($ambildata == NULL){
+                $json = [
+                    'error' => 'Data Inv tidak ditemukan'
+                ];
+            }else{
+                // $data       = [
+                //     'kodebarang'    => $ambildata['brgkode'],
+                //     'namabarang'    => $ambildata['brgnama']
+                // ];
+    
+                $json = [
+                    // 'sukses' => $data
+                    'sukses' => 'data ada ada'
+                ];
+            }
+
+            echo json_encode($json);
+            
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
 
     //proses
     function dataTemp(){

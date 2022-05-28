@@ -135,6 +135,29 @@ function dataTabelList() {
     });
 }
 
+function cariDataPinInv() {
+    let cari = $('#cari').val();
+    $.ajax({
+        type: "post",
+        url: "/kembalibarang/detailCariInv",
+        data: {
+            cari: cari
+        },
+        dataType: "json",
+        beforeSend: function(e) {
+            $('.viewdetaildata').html('<i class="fa fa-spin fa-spinner"></i>')
+        },
+        success: function(e) {
+            if (e.data) {
+                $('.viewdetaildata').html(e.data);
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(xhr.status + '\n' + thrownError);
+        }
+    });
+}
+
 $(document).ready(function() {
     $('#tombolCariInv').click(function(e) {
         e.preventDefault();
