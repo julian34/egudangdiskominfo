@@ -133,7 +133,7 @@ class Kembalibarang extends BaseController
          if($this->request->isAJAX()){
             $cari = $this->request->getPost('cari');
             
-            $data = $this->mPinjam->tampildata_cari($cari)->get();
+            $data = $this->mPinjam->tampildata_cari_modal($cari)->get();
 
             if($data != null){
                 $json = [
@@ -218,7 +218,7 @@ class Kembalibarang extends BaseController
 
 
                 $json = [
-                    'sukses' => 'Transaksi No. Invoice '.$kodeinv.' Berhasil Disimpan'
+                    'sukses' => 'Transaksi No. Invoice '.$kodeinv.' | '.date('Y-m-d',$tglkembali).' Berhasil Disimpan'
                 ];
             }
 

@@ -195,13 +195,7 @@ $(document).ready(function() {
         e.preventDefault();
         // alert('jadi');
         let kodeinv = $('#kodeinv').val();
-        let kodebarng = $('#kdbarang').val();
-        let jumlah = $('#jumlah').val();
-        let tglpinjam = $('#tglpinjam').val();
-        let kegiatan = $('#kegiatan').val();
-        let jnsstakeholder = $('#jnsstakeholder').val();
-        let stakeholder = $('#stakeholder').val();
-        let lokasi = $('#lokasi').val();
+        let tglkembali = $('#tglkembali').val();
 
         if (kodeinv.length == 0) {
             Swal.fire({
@@ -242,11 +236,7 @@ $(document).ready(function() {
                         url: "/kembalibarang/selesaiTransaksi",
                         data: {
                             kodeinv: kodeinv,
-                            kegiatan: kegiatan,
-                            jnsstakeholder: jnsstakeholder,
-                            stakeholder: stakeholder,
-                            tglpinjam: tglpinjam,
-                            lokasi: lokasi
+                            tglkembali: tglkembali
                         },
                         dataType: "json",
                         success: function(e) {

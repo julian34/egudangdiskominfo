@@ -247,7 +247,7 @@ class Pinjambarang extends BaseController
                 endforeach;
 
                 //hapus data dari tabel temp berdasarkan
-                $this->mTemDetPinjam->emptyTable();
+                // $this->mTemDetPinjam->emptyTable();
 
 
                 $json = [
@@ -435,5 +435,8 @@ class Pinjambarang extends BaseController
         }
     }
     
+    public function printInvPdf(){
+        
+    }
 
 }

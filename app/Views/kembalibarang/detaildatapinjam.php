@@ -12,6 +12,8 @@
         <?php 
             $nomor = 1;
             foreach($tampildata->getResultArray() as $row):
+
+            if($row['status'] != 'kembali'):
         ?>
         <tr>
             <td><?= $nomor++ ?></td>
@@ -21,7 +23,8 @@
             <td><button type="button" class="btn btn-sm btn-info"
                     onclick="pilih('<?= $row['kodeinv'] ?>')">pilih</button></td>
         </tr>
-        <?php endforeach; ?>
+        <?php endif; 
+        endforeach; ?>
     </tbody>
 </table>
 <script>

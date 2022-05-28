@@ -60,7 +60,7 @@ Pengembalian Peralatan
             <td>
                 <?php 
                     $db = \Config\Database::connect();
-                    $jmlItem = $db->table('detailkembalibarang')->where('detkodeinv',$row['kkdinv'])->countAllResults();
+                    $jmlItem = $db->table('detailpinjambarang')->where('detkodeinv',$row['kkdinv'])->countAllResults();
                 ?>
                 <span style="cursor:pointer; font-weight: bold; color:blue"
                     onclick="detailItem('<?= $row['kkdinv']; ?>')"><?= number_format($jmlItem, 0, ",", "."); ?></span>
