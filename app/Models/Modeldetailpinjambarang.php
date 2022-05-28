@@ -13,6 +13,7 @@ class Modeldetailpinjambarang extends Model
     public function dataDetail($faktur){
         return $this->table('detailpinjambarang')
         ->join('barang','brgkode=detbrgkode')
+        ->join('satuan','brgsatid=satid','left')
         ->where('detkodeinv',$faktur)->get();
     }
 
