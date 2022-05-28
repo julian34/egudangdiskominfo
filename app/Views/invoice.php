@@ -32,20 +32,21 @@
             <th width="12%" style="height: 20px"><strong>Satuan</strong></th>
             <th width="8%" style="height: 20px;text-align:center"><strong>Qty</strong></th>
         </tr>
-
         <?php 
             $nomor = 1;
             foreach($dataTemp->getResultArray() as $row) :
         ?>
-
         <tr>
             <td style="height: 20px"><?= $row['brgnama'] ?></td>
             <td style="height: 20px;"><?= $row['satnama'] ?></td>
             <td style="height: 20px;text-align:center"><?= $row['detjml'] ?></td>
         </tr>
-
+        <?php  $nomor++;
+        if($nomor == 10):
+        ?>
+        <br pagebreak="true" />
+        <?php $nomor = 1; endif; ?>
         <?php endforeach; ?>
-
     </table>
     <p>&nbsp;</p>
     <table cellpadding="4">

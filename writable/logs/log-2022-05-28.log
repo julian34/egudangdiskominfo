@@ -1070,3 +1070,58 @@ CRITICAL - 2022-05-28 09:52:53 --> Call to undefined function App\Controllers\ha
 #3 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #5 {main}
+CRITICAL - 2022-05-28 10:31:32 --> A non-numeric value encountered
+#0 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(17671): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp\\htdocs...', 17671, Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(467): TCPDF->writeHTML(0, 0, '', '', '<!-- DEBUG-VIEW...', 0, 1, 0, true, '', true)
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-05-28 10:33:22 --> Cannot access protected property App\Libraries\MY_TCPDF::$page
+#0 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-05-28 11:28:36 --> Undefined variable: pdf
+#0 C:\xampp\htdocs\simidisko\app\Views\invoice.php(6): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('invoice', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(475): view('invoice', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-05-28 11:28:49 --> Call to undefined method CodeIgniter\View\View::write2DBarcode()
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('invoice', Array, true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(475): view('invoice', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-28 11:38:20 --> Undefined variable: sty
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(478): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 478, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->printInvPdf('b6eff3d7fdd81ef...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-28 11:45:00 --> Undefined index: kegiatan
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(80): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 80, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}

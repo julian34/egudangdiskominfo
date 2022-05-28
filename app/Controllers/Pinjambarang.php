@@ -454,13 +454,40 @@ class Pinjambarang extends BaseController
                     'hari'              => $this->hari(date('D',strtotime($row['tglpinjam']))),
                     'dataTemp'          => $this->mDetPinjam->dataDetail($row['kodeinv']) 
                 ];
+
+                // set margins
+                $sty = [
+                    'position' => 'R',
+                    // 'border' => 2,
+                    // 'padding' => 'auto',
+                    // 'fgcolor' => array(0,0,0),
+                    // 'bgcolor' => array(255,255,255)
+                ];
                 
+                
+
                 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+                
+               
+                $pdf->setHeaderTemplateAutoreset(true);
+                
+                $pdf->SetMargins(10, 12, 10, true);
+                $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
                 $pdf->AddPage();
+               
+                
+                $pdf->SetMargins(10, 35, 10, true);
+               
+                
                 $html = view('invoice',$data);
                 // Print text using writeHTMLCell()
+                
+                $pdf->write2DBarcode($data['kodeinv'], 'QRCODE,H', 0, 45, 30, 20, $sty, 'N');
+                $pdf->SetXY(5, 10);
                 $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
-                $pdf->write2DBarcode($data['kodeinv'], 'QRCODE,H', 0, 45, 30, 20, ['position' => 'R'], 'N');
+                
+                $pdf->lastPage();
+           
                 // ---------------------------------------------------------
                 $this->response->setContentType('application/pdf');
                 // Close and output PDF document
