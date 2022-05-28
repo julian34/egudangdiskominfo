@@ -111,7 +111,7 @@ class Satuan extends BaseController
         $valid = [
             'namasatuan' => [
                 'label' => 'satuan',
-                'rules'  => 'required|is_unique[satuan.katnama]',
+                'rules'  => 'required|is_unique[satuan.satnama]',
                 'errors' => [
                     'required'  => '{field} Tidak Boleh Kosong',
                     'is_unique' => '{field} Sudah Terdata'
