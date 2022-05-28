@@ -960,3 +960,21 @@ CRITICAL - 2022-05-28 03:15:13 --> Cannot add or update a child row: a foreign k
 #11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #13 {main}
+CRITICAL - 2022-05-28 07:01:53 --> Undefined index: kegiatan
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(80): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 80, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-28 07:14:30 --> Invalid file: invoice.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('invoice.php')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('invoice', Array, true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\PdfController.php(74): view('invoice')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\PdfController->cetak()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PdfController))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
