@@ -67,10 +67,15 @@ Pengembalian Peralatan
             </td>
             <td>
                 <button type="button" class="btn btn-sm btn-info" title="edit data"
+                    onclick="print('<?= sha1($row['kkdinv']); ?>')">
+                    <i class="fa fa-print"></i>
+                </button>
+                &nbsp;
+                <button type="button" class="btn btn-sm btn-info" title="edit data"
                     onclick="edit('<?= sha1($row['kkdinv']); ?>')">
                     <i class="fa fa-edit"></i>
                 </button>
-
+                &nbsp;
                 <form method="POST" action="/kembalibarang/hapusTransaksi/<?= $row['kkdinv']?>" style="display:inline;"
                     onsubmit="hapus()">
                     <input type="hidden" value="DELETE" name="_method">
@@ -126,6 +131,10 @@ function hapus(id) {
     } else {
         return false;
     }
+}
+
+function print(id) {
+    window.location.href = ('printInvPdf/') + id;
 }
 </script>
 
