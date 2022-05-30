@@ -95,6 +95,7 @@ Pinjam Peralatan
 <div class="viewModal" style="display: none;"></div>
 <?= $this->endSection('isi')?>
 
+
 <?= $this->Section('jspage')?>
 
 <script>

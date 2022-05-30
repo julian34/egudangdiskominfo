@@ -14,6 +14,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.min.css">
+    <?= $this->renderSection('csspage'); ?>
 </head>
 
 <body class="hold-transition sidebar-mini">

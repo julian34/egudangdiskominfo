@@ -54,7 +54,7 @@ class Lpb extends BaseController
             'cari'       => $cari 
         ];
 
-        return view('kembalibarang/viewdata',$data);
+        return view('laporan/viewdata',$data);
     }
 
     public function add(){
@@ -86,7 +86,6 @@ class Lpb extends BaseController
         ];
         return view('kembalibarang/forminput',$data);
     }
-
 
     public function dataTabelList(){
         if($this->request->isAJAX()){
@@ -319,6 +318,5 @@ class Lpb extends BaseController
         }
         return $hari_ini;
     }
-
     
 }
