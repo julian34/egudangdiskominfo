@@ -123,6 +123,8 @@ $(document).ready(function() {
             success: function(response) {
                 $('.listdatalpb').show();
                 $('.listdatalpb').html(response.data);
+                $('#tglawal').val(start.format('MMMM D, YYYY'));
+                $('#tglakhir').val(end.format('MMMM D, YYYY'));
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 alert(xhr.status + '\n' + thrownError);

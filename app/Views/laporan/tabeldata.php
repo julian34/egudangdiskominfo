@@ -1,9 +1,13 @@
-<div>
-    <?= form_button('','<i class="fa fa-print"></i> Cetak',[
-'class'=>'btn btn-info',
-'onclick' => "print()"
-]) ?>
+<?= form_open('lpb/printLap'); ?>
+<div class="input-group mb-3">
+    <input type="hidden" id='tglawal' name="tglawal">
+    <input type="hidden" id='tglakhir' name="tglakhir">
 </div>
+<?= 
+form_submit('submitprint','Print',[
+    'class'=>'btn btn-info',
+    ]);?>
+<?= form_close(); ?>
 <br />
 <div>
     <table class="table table-striped table-borderd" style="width: 100%;">
