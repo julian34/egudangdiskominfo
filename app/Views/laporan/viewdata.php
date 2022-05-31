@@ -62,13 +62,13 @@ function detailItem(kodeinv) {
 function print() {
     $.ajax({
         type: "POST",
-        url: "/print",
+        url: "printLap",
         data: {
-
+            tanggal: $('#reservation').val(),
         },
         dataType: "json",
         success: function(response) {
-
+            alert(response);
         }
     });
 }
@@ -93,10 +93,10 @@ function print() {
 // }
 
 
-$('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-    startdate = moment(event.start).format('YYYY-MM-DD');
-    enddate = moment(event.end).format('Y-MM-DD');
-});
+// $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+//     startdate = ;
+//     enddate = moment(event.end).format('Y-MM-DD');
+// });
 
 $(document).ready(function() {
     $('#reservation').daterangepicker({

@@ -1,7 +1,7 @@
 <div>
     <?= form_button('','<i class="fa fa-print"></i> Cetak',[
 'class'=>'btn btn-info',
-'onclick' => "location.href=('" . site_url('lpb/printdata') . "')"
+'onclick' => "print()"
 ]) ?>
 </div>
 <br />
