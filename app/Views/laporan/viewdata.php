@@ -60,11 +60,15 @@ function detailItem(kodeinv) {
 }
 
 function print() {
+    var start = moment().subtract(29, 'days');
+    var end = moment();
     $.ajax({
         type: "POST",
         url: "printLap",
         data: {
             tanggal: $('#reservation').val(),
+            startDate: start.format('MMMM D, YYYY'),
+            endDate: end.format('MMMM D, YYYY'),
         },
         dataType: "json",
         success: function(response) {
@@ -72,6 +76,7 @@ function print() {
         }
     });
 }
+
 
 // function listdata() {
 //     startdate = moment(event.start).format('YYYY-MM-DD');
@@ -99,9 +104,35 @@ function print() {
 // });
 
 $(document).ready(function() {
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+        console.log("Callback has been called!");
+        console.log(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $.ajax({
+            type: "POST",
+            url: "listdata",
+            data: {
+                tanggal: $('#reservation').val(),
+                startDate: start.format('MMMM D, YYYY'),
+                endDate: end.format('MMMM D, YYYY'),
+            },
+            dataType: "json",
+            success: function(response) {
+                $('.listdatalpb').show();
+                $('.listdatalpb').html(response.data);
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + '\n' + thrownError);
+            }
+        });
+    }
+
     $('#reservation').daterangepicker({
-            startDate: moment().subtract('days', 29),
-            endDate: moment(),
+            startDate: start,
+            endDate: end,
             minDate: '01/01/2020',
             dateLimit: {
                 days: 60
@@ -135,30 +166,19 @@ $(document).ready(function() {
                 ],
                 firstDay: 0
             }
-        },
-        function(start, end) {
-            console.log("Callback has been called!");
-            startDate = start;
-            endDate = end;
-            $.ajax({
-                type: "POST",
-                url: "listdata",
-                data: {
-                    tanggal: $('#reservation').val(),
-                    startDate: startDate.format('D MMMM YYYY'),
-                    endDate: endDate.format('D MMMM YYYY'),
-                },
-                dataType: "json",
-                success: function(response) {
-                    $('.listdatalpb').show();
-                    $('.listdatalpb').html(response.data);
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status + '\n' + thrownError);
-                }
-            });
-            console.log(startDate.format('D MMMM YYYY') + ' - ' + endDate.format('D MMMM YYYY'))
-        });
+        }, cb
+        // function(start, end) {
+        //     console.log("Callback has been called!");
+        //     startDate = start;
+        //     endDate = end;
+        //    
+        //     console.log(startDate.format('D MMMM YYYY') + ' - ' + endDate.format('D MMMM YYYY'))
+        // }
+    );
+
+
+
+
 });
 </script>
 

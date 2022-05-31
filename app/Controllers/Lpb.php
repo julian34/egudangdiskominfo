@@ -86,7 +86,7 @@ class Lpb extends BaseController
             foreach ($hasil as $key) {
                 $data = $key;
             }
-            echo json_encode('suskses | ['.$data.'] '.$tglawal.' | '.$tglakhir.' | '.$tanggal);
+            echo json_encode('suskses | '.$tglawal.' | '.$tglakhir.' | '.$tanggal);
         }else{
             exit('maaf tidak bisa dipanggil');
         }
