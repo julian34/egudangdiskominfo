@@ -64,7 +64,7 @@ class Lpb extends BaseController
             $tglakhir   = $this->request->getPost('endDate');
             // $data = explode(' - ', $tanggal);
             $data  = [
-                'tampildata' => $this->mKembali->tampildata()->get()
+                'tampildata' => $this->mKembali->laporanpb($tglawal,$tglakhir)->get()
             ];
 
             $json = [

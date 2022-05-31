@@ -29,5 +29,17 @@ class Modelkembalibarang extends Model
             'sha1(kodeinv)' => $faktur
         ]);
     }
+
+    public function laporanpb($startDate,$endDate){
+
+        $array = ['tglpinjam >=' => date('Y-m-d',strtotime($startDate)), 'tglpinjam <=' => date('Y-m-d',strtotime($endDate))];
+        
+        return $this->table('kembalibarang')
+        ->select('pinjambarang.kodeinv as kkdinv, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
+        ->join('pinjambarang','pinjambarang.kodeinv=kembalibarang.kodeinv')
+        ->where($array)
+        ->groupBy('tglpinjam')
+        ->orderBy('tglpinjam', 'ASC');
+    }
     
 }

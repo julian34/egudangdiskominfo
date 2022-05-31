@@ -122,7 +122,7 @@ $(document).ready(function() {
                 monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
                     'September', 'October', 'November', 'December'
                 ],
-                firstDay: 1
+                firstDay: 0
             }
         },
         function(start, end) {
