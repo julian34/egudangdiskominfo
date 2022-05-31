@@ -8,6 +8,7 @@ Laporan Penggunaan Peralatan
 <?= $this->section('subjudul')?>
 <?= $this->endSection('subjudul')?>
 <?= $this->section('isi')?>
+
 <?= session()->getFlashdata('sukses'); ?>
 <div class="form-group mb-3">
     <label>Range Tanggal:</label>
@@ -58,8 +59,18 @@ function detailItem(kodeinv) {
     });
 }
 
-function print(id) {
-    window.location.href = ('printInvPdf/') + id;
+function print() {
+    $.ajax({
+        type: "POST",
+        url: "/print",
+        data: {
+
+        },
+        dataType: "json",
+        success: function(response) {
+
+        }
+    });
 }
 
 // function listdata() {
