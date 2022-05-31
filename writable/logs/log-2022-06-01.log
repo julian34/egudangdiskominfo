@@ -1,0 +1,57 @@
+CRITICAL - 2022-06-01 01:06:22 --> Invalid file: App\Views\login.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('App\\Views\\login...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('App\\Views\\login', Array, true)
+#2 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(429): view('App\\Views\\login', Array)
+#3 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(57): Myth\Auth\Controllers\AuthController->_render('App\\Views\\login', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->login()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-01 01:19:08 --> Invalid file: App\Views\login.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('App\\Views\\login...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('App\\Views\\login', Array, true)
+#2 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(429): view('App\\Views\\login', Array)
+#3 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(57): Myth\Auth\Controllers\AuthController->_render('App\\Views\\login', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->login()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-01 01:19:14 --> Invalid file: App\Views\login.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('App\\Views\\login...')
+#1 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('App\\Views\\login', Array, true)
+#2 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(429): view('App\\Views\\login', Array)
+#3 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(57): Myth\Auth\Controllers\AuthController->_render('App\\Views\\login', Array)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->login()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-01 01:21:00 --> Invalid file: App\Views\layout.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('App\\Views\\layou...')
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(226): CodeIgniter\View\View->render('App\\Views\\layou...', Array, true)
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('App\\Views\\Auth\\...', Array, true)
+#3 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(429): view('App\\Views\\Auth\\...', Array)
+#4 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(57): Myth\Auth\Controllers\AuthController->_render('App\\Views\\Auth\\...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->login()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-01 01:21:01 --> Invalid file: App\Views\layout.php
+#0 C:\xampp\htdocs\simidisko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('App\\Views\\layou...')
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(226): CodeIgniter\View\View->render('App\\Views\\layou...', Array, true)
+#2 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('App\\Views\\Auth\\...', Array, true)
+#3 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(429): view('App\\Views\\Auth\\...', Array)
+#4 C:\xampp\htdocs\simidisko\vendor\myth\auth\src\Controllers\AuthController.php(57): Myth\Auth\Controllers\AuthController->_render('App\\Views\\Auth\\...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->login()
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
