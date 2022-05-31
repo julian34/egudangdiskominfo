@@ -39,6 +39,7 @@ return array(
     'PhpCsFixer\\' => array($vendorDir . '/friendsofphp/php-cs-fixer/src'),
     'Nexus\\PHPUnit\\Extension\\' => array($vendorDir . '/nexusphp/tachycardia/src'),
     'Nexus\\CsConfig\\' => array($vendorDir . '/nexusphp/cs-config/src'),
+    'Myth\\Auth\\' => array($vendorDir . '/myth/auth/src'),
     'Laminas\\Escaper\\' => array($vendorDir . '/laminas/laminas-escaper/src'),
     'Kint\\' => array($vendorDir . '/kint-php/kint/src'),
     'FontLib\\' => array($vendorDir . '/phenx/php-font-lib/src/FontLib'),
