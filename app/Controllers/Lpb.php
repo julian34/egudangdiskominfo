@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
+
 use App\Models\Modelkembalibarang;
 use App\Models\Modeldetailkembalibarang;
 use App\Models\Modelpinjambarang;
@@ -82,18 +83,54 @@ class Lpb extends BaseController
             $tanggal    = $this->request->getPost('tanggal');
             $tglawal    = $this->request->getPost('startDate');
             $tglakhir   = $this->request->getPost('endDate');
-            $hasil      = explode("-", $tanggal);
-            foreach ($hasil as $key) {
-                $data = $key;
-            }
-            echo json_encode('suskses | '.$tglawal.' | '.$tglakhir.' | '.$tanggal);
+            $data  = [
+                'tampildata' => $this->mKembali->laporanpb($tglawal,$tglakhir)->get()
+            ];
+            // $hasil      = explode("-", $tanggal);
+
+
+            // foreach ($hasil as $key) {
+            //     $data = $key;
+            // }
+
+                // set margins
+                $sty = [
+                    'position' => 'R',
+                    // 'border' => 2,
+                    // 'padding' => 'auto',
+                    // 'fgcolor' => array(0,0,0),
+                    // 'bgcolor' => array(255,255,255)
+                ];
+            
+                $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+         
+           
+                $pdf->setHeaderTemplateAutoreset(true);
+                
+                $pdf->SetMargins(10, 50, 10, true);
+                $pdf->SetAutoPageBreak(TRUE, 20);
+                $pdf->AddPage('L');
+               
+                
+                $pdf->SetMargins(10, 35, 10, true);
+               
+                
+                $html = view('laporan/laporanpdf',$data);
+
+                $pdf->SetXY(5, 10);
+                $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+                
+                $pdf->lastPage();
+           
+                // ---------------------------------------------------------
+                $this->response->setContentType('application/pdf');
+                // Close and output PDF document
+                // This method has several options, check the source code documentation for more information.
+                $pdf->Output(WRITEPATH . 'download/Laporan Penggunaan Peralatan.pdf', 'D');
+            // echo json_encode('suskses | '.$tglawal.' | '.$tglakhir.' | '.$tanggal);
         }else{
             exit('maaf tidak bisa dipanggil');
         }
-    }
-
-    public function printInvPdf(){
-        // create new PDF document
     }
 
     function hari($d){

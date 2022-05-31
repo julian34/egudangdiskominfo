@@ -94,3 +94,78 @@ CRITICAL - 2022-05-31 02:10:56 --> Array to string conversion
 #4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #6 {main}
+CRITICAL - 2022-05-31 03:10:45 --> Argument 2 passed to CodeIgniter\HTTP\RedirectResponse::to() must be of the type int or null, string given, called in C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php on line 88
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(88): CodeIgniter\HTTP\RedirectResponse->to('lpb/printPdf', 'May 2, 2022')
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->printLap()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-31 03:15:29 --> syntax error, unexpected ')'
+#0 C:\xampp\htdocs\simidisko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('lpb/index')
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('lpb/index')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-05-31 03:21:46 --> fopen(): remote host file access not supported, file://Laporan Penggunaan Peralatan.pdf
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(): remote...', 'C:\\xampp\\htdocs...', 1842, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\include\tcpdf_static.php(1842): fopen('file://Laporan ...', 'wb')
+#2 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(7749): TCPDF_STATIC::fopenLocal('file://Laporan ...', 'wb')
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(130): TCPDF->Output('Laporan Penggun...', 'F')
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->printLap()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-31 03:28:57 --> fopen(file://C:\xampp\htdocs\simidisko\writable\download/): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(file://C:...', 'C:\\xampp\\htdocs...', 1842, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\include\tcpdf_static.php(1842): fopen('file://C:\\xampp...', 'wb')
+#2 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(7749): TCPDF_STATIC::fopenLocal('file://C:\\xampp...', 'wb')
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(130): TCPDF->Output('C:\\xampp\\htdocs...', 'F')
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->printLap()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-31 03:29:47 --> fopen(file://C:\xampp\htdocs\simidisko\writable\download/): failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(file://C:...', 'C:\\xampp\\htdocs...', 1842, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\include\tcpdf_static.php(1842): fopen('file://C:\\xampp...', 'wb')
+#2 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(7749): TCPDF_STATIC::fopenLocal('file://C:\\xampp...', 'wb')
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(130): TCPDF->Output('C:\\xampp\\htdocs...', 'F')
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->printLap()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-05-31 03:30:19 --> fopen(file://C:\xampp\htdocs\simidisko\writable\download): failed to open stream: Permission denied
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(file://C:...', 'C:\\xampp\\htdocs...', 1842, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\include\tcpdf_static.php(1842): fopen('file://C:\\xampp...', 'wb')
+#2 C:\xampp\htdocs\simidisko\vendor\tecnickcom\tcpdf\tcpdf.php(7749): TCPDF_STATIC::fopenLocal('file://C:\\xampp...', 'wb')
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(130): TCPDF->Output('C:\\xampp\\htdocs...', 'F')
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->printLap()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2022-05-31 03:44:08 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-05-31 03:44:08 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#2 C:\xampp\htdocs\simidisko\system\Model.php(509): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(44): CodeIgniter\Model->countAllResults()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->index()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
