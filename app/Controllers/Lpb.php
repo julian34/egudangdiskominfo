@@ -79,19 +79,13 @@ class Lpb extends BaseController
     }
 
     public function printLap(){
-        if($this->request->isAJAX()){
+        // if($this->request->isAJAX()){
             $tanggal    = $this->request->getPost('tanggal');
             $tglawal    = $this->request->getPost('startDate');
             $tglakhir   = $this->request->getPost('endDate');
             $data  = [
                 'tampildata' => $this->mKembali->laporanpb($tglawal,$tglakhir)->get()
             ];
-            // $hasil      = explode("-", $tanggal);
-
-
-            // foreach ($hasil as $key) {
-            //     $data = $key;
-            // }
 
                 // set margins
                 $sty = [
@@ -128,9 +122,6 @@ class Lpb extends BaseController
                 // This method has several options, check the source code documentation for more information.
                 $pdf->Output(WRITEPATH . 'download/Laporan Penggunaan Peralatan.pdf', 'D');
             // echo json_encode('suskses | '.$tglawal.' | '.$tglakhir.' | '.$tanggal);
-        }else{
-            exit('maaf tidak bisa dipanggil');
-        }
     }
 
     function hari($d){
