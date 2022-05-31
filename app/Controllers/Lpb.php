@@ -57,6 +57,26 @@ class Lpb extends BaseController
         return view('laporan/viewdata',$data);
     }
 
+    public function listdata(){
+        if($this->request->isAJAX()){
+            $tanggal    = $this->request->getPost('tanggal');
+            $tglawal    = $this->request->getPost('startDate');
+            $tglakhir   = $this->request->getPost('endDate');
+            // $data = explode(' - ', $tanggal);
+            $data  = [
+                'tampildata' => $this->mKembali->tampildata()->get()
+            ];
+
+            $json = [
+                'data'     => view('laporan/tabeldata',$data) 
+            ];
+            
+            echo json_encode($json);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
     public function add(){
         return view('kembalibarang/forminput');
     }

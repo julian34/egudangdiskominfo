@@ -38,12 +38,13 @@ class Pinjambarang extends BaseController
         }else{
             $cari = session()->get('cari_kdinv');
         }
-
+        
         $totaldata = $cari ? $this->mPinjam->tampildata_cari($cari)->countAllResults() : $this->mPinjam->countAllResults();
         
         $dataBarangmasuk = $cari ? $this->mPinjam->tampildata_cari($cari)->paginate(10, 'pinjamalat') : $this->mPinjam->paginate(10, 'pinjamalat');
 
         $nohal = $this->request->getVar('page_pinjamalat') ? $this->request->getVar('page_pinjamalat') : 1;
+
 
         $data = [
             'tampildata' => $dataBarangmasuk,
