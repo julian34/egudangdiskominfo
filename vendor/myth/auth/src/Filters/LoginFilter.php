@@ -32,17 +32,17 @@ class LoginFilter implements FilterInterface
 			'reset-password',
 		];
 
-		$current = (string) current_url(true)
-		->setHost('')
-		->setScheme('')
-		->stripQuery('token');
+// 		$current = (string) current_url(true)
+// 		->setHost('')
+// 		->setScheme('')
+// 		->stripQuery('token');
 
-		$config = config(App::class); 
- if($config->forceGlobalSecureRequests) 
- { 
- 	# Remove "https:/" 
- 	$current = substr($current, 7); 
- } 
+// 		$config = config(App::class); 
+//  if($config->forceGlobalSecureRequests) 
+//  { 
+//  	# Remove "https:/" 
+//  	$current = substr($current, 7); 
+//  } 
   
  
 

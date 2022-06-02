@@ -38,10 +38,7 @@ Options All -Indexes
 	RewriteCond %{HTTP:Authorization} .
 	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-	RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteRule ^ index.php [L]
-RewriteRule !^(public/|index.php) [NC,F]
+
 
 </IfModule>
 

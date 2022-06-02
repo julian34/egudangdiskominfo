@@ -92,7 +92,7 @@ function dataTemp() {
 
     $.ajax({
         type: "post",
-        url: "/barangmasuk/dataTemp",
+        url: "<?= site_url('barangmasuk/dataTemp') ?>",
         data: {
             faktur: faktur
         },
@@ -129,7 +129,7 @@ function hapusItem(id) {
 
             $.ajax({
                 type: "post",
-                url: "/barangmasuk/hapusTempList",
+                url: "<?= site_url('barangmasuk/hapusTempList') ?>",
                 data: {
                     id: id
                 },
@@ -157,7 +157,7 @@ function cariDataBarang() {
 
     $.ajax({
         type: "post",
-        url: "/barangmasuk/detailCariBarang",
+        url: "<?= site_url('barangmasuk/detailCariBarang') ?>",
         data: {
             cari: cari
         },
@@ -180,7 +180,7 @@ function ambildatabarang() {
     let kodebarang = $('#kdbarang').val();
     $.ajax({
         type: "post",
-        url: "/barangmasuk/ambilDataBarang",
+        url: "<?= site_url('barangmasuk/ambilDataBarang') ?>",
         data: {
             kodebarang: kodebarang
         },
@@ -260,7 +260,7 @@ $(document).ready(function() {
                 if (result.isConfirmed) {
                     $.ajax({
                         type: "post",
-                        url: "/barangmasuk/selesaiTransaksi",
+                        url: "<?= site_url('barangmasuk/selesaiTransaksi') ?>",
                         data: {
                             faktur: faktur,
                             tglfaktur: $('#tglfaktur').val()
@@ -376,7 +376,7 @@ $(document).ready(function() {
         } else {
             $.ajax({
                 type: "post",
-                url: "/barangmasuk/simpanTemp",
+                url: "<?= site_url('barangmasuk/simpanTemp') ?>",
                 data: {
                     faktur: faktur,
                     kodebarang: kodebarng,
@@ -406,7 +406,7 @@ $(document).ready(function() {
     $('#tombolCariBarang').click(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "/barangmasuk/cariDataBarang",
+            url: "<?= site_url('barangmasuk/cariDataBarang') ?>",
             dataType: "json",
             success: function(response) {
                 if (response.data) {
