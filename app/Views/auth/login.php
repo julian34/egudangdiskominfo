@@ -11,7 +11,7 @@
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
                 <?= view('App\Auth\_message_block') ?>
-                <form action="<?= route_to('login') ?>" method="post">
+                <form action="<?= base_url('login') ?>" method="post">
                     <?= csrf_field() ?>
                     <?php if ($config->validFields === ['email']): ?>
                     <div class="input-group mb-3">

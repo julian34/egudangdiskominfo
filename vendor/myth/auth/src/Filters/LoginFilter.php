@@ -17,36 +17,51 @@ class LoginFilter implements FilterInterface
 	 */
 	public function before(RequestInterface $request, $params = null)
 	{
-		if (! function_exists('logged_in'))
+		if (! function_exists('logged_in')) {
+            helper('auth');
+        }
+
+
+		$names = [
+			'login',
+			'logout',
+			'register',
+			'activate-account',
+			'resend-activate-account',
+			'forgot',
+			'reset-password',
+		];
+
+		$current = (string) current_url(true)
+		->setHost('')
+		->setScheme('')
+		->stripQuery('token');
+
+		$config = config(App::class); 
+ if($config->forceGlobalSecureRequests) 
+ { 
+ 	# Remove "https:/" 
+ 	$current = substr($current, 7); 
+ } 
+  
+ 
+
+		foreach ($names as $name)
 		{
-			helper('auth');
+			if (url_is(route_to($name)))
+			{
+				// Make sure this isn't already a Myth\Auth routes.
+				return;
+			}
 		}
 
-		$current = (string)current_url(true)
-			->setHost('')
-			->setScheme('')
-			->stripQuery('token');
-
-		$config = config(App::class);
-		if($config->forceGlobalSecureRequests)
-		{
-			# Remove "https:/"
-			$current = substr($current, 7);
-		}
-
-		// Make sure this isn't already a login route
-		if (in_array((string)$current, [route_to('login'), route_to('forgot'), route_to('reset-password'), route_to('register'), route_to('activate-account')]))
-		{
-			return;
-		}
-
-		// if no user is logged in then send to the login form
 		$authenticate = service('authentication');
 		if (! $authenticate->check())
 		{
 			session()->set('redirect_url', current_url());
 			return redirect('login');
 		}
+		
 	}
 
 	/**

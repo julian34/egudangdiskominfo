@@ -33,17 +33,17 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Main::index');
 
-// $routes->get('/kategori/hapus/(:any)', 'Kategori::index');
-// $routes->delete('/kategori/hapus/(:any)', 'Kategori::hapus/$1');
+$routes->get('/kategori/hapus/(:any)', 'Kategori::index');
+$routes->delete('/kategori/hapus/(:any)', 'Kategori::hapus/$1');
 
-// $routes->get('/satuan/hapus/(:any)', 'Satuan::index');
-// $routes->delete('/satuan/hapus/(:any)', 'Satuan::hapus/$1');
+$routes->get('/satuan/hapus/(:any)', 'Satuan::index');
+$routes->delete('/satuan/hapus/(:any)', 'Satuan::hapus/$1');
 
-// $routes->get('/barang/hapus/(:any)', 'Barang::index');
-// $routes->delete('/barang/hapus/(:any)', 'Barang::hapus/$1');
+$routes->get('/barang/hapus/(:any)', 'Barang::index');
+$routes->delete('/barang/hapus/(:any)', 'Barang::hapus/$1');
 
-// $routes->get('/pinjambarang/hapusTransaksi/(:any)', 'Pinjambarang::index');
-// $routes->delete('/pinjambarang/hapusTransaksi/(:any)', 'Pinjambarang::hapusTransaksi/$1');
+$routes->get('/pinjambarang/hapusTransaksi/(:any)', 'Pinjambarang::index');
+$routes->delete('/pinjambarang/hapusTransaksi/(:any)', 'Pinjambarang::hapusTransaksi/$1');
 
 
 

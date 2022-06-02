@@ -43,17 +43,21 @@ class AuthController extends Controller
 	{
 		// No need to show a login form if the user
 		// is already logged in.
-		if ($this->auth->check())
-		{
-			$redirectURL = session('redirect_url') ?? site_url('/');
-			unset($_SESSION['redirect_url']);
+		// if ($this->auth->check())
+		// {
+		// 	$redirectURL = session('redirect_url') ?? site_url('/');
+		// 	unset($_SESSION['redirect_url']);
 
-			return redirect()->to($redirectURL);
-		}
+		// 	return redirect()->to($redirectURL);
+		// }
+		$redirectURL = session('redirect_url') ?? previous_url() ?? site_url('/');
+if ($redirectURL == url_to('Myth\Auth\Controllers\AuthController::logout')) {
+    $redirectURL = site_url('/');
+}
 
         // Set a return URL if none is specified
-        $_SESSION['redirect_url'] = session('redirect_url') ?? previous_url() ?? site_url('/');
-
+        // $_SESSION['redirect_url'] = session('redirect_url') ?? previous_url() ?? site_url('/');
+		$_SESSION['redirect_url'] = $redirectURL;
 		return $this->_render($this->config->views['login'], ['config' => $this->config]);
 	}
 
