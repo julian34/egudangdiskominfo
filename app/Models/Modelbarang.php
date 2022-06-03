@@ -12,8 +12,9 @@ class Modelbarang extends Model
 
     public function tampildata(){
         return $this->table('barang')
-        ->join('kategori','brgkatid=katid')
-        ->join('satuan','brgsatid=satid');
+        ->select('brgkode,brgnama,katnama,satnama,brgharga,brgstok')
+        ->join('kategori','barang.brgkatid=kategori.katid')
+        ->join('satuan','barang.brgsatid=satuan.satid');
     }
 
     public function tampildata_cari($cari){
