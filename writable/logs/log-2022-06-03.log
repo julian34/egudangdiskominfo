@@ -29,3 +29,10 @@ CRITICAL - 2022-06-03 14:25:39 --> Undefined variable: auth
 #9 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #10 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #11 {main}
+CRITICAL - 2022-06-03 14:52:47 --> _get_uri() requires a valid baseURL.
+#0 C:\xampp\htdocs\simidisko\system\Helpers\url_helper.php(170): _get_uri('')
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(453): current_url(true)
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\simidisko\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\simidisko\spark(63): CodeIgniter\CLI\Console->run()
+#5 {main}
