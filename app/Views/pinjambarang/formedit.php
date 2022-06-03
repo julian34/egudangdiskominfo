@@ -113,7 +113,7 @@ function dataDetail() {
 
     $.ajax({
         type: "post",
-        url: "/pinjambarang/dataDetail",
+        url: "<?= site_url('pinjambarang/dataDetail') ?>",
         data: {
             kodeinv: kodeinv
         },
@@ -144,7 +144,7 @@ function hapusItem(id) {
 
             $.ajax({
                 type: "post",
-                url: "/pinjambarang/hapusTempList",
+                url: "<?= site_url('pinjambarang/hapusTempList') ?>",
                 data: {
                     id: id
                 },
@@ -171,7 +171,7 @@ function editItem(id) {
     $('#idDetail').val(id);
     $.ajax({
         type: "post",
-        url: "/pinjambarang/editItem",
+        url: "<?= site_url('pinjambarang/editItem') ?>",
         data: {
             idDetail: $('#idDetail').val()
         },
@@ -207,7 +207,7 @@ function hapusItem(id) {
 
             $.ajax({
                 type: "post",
-                url: "/pinjambarang/hapusItemDetail",
+                url: "<?= site_url('pinjambarang/hapusItemDetail') ?>",
                 data: {
                     id: id
                 },
@@ -235,7 +235,7 @@ function cariDataBarang() {
 
     $.ajax({
         type: "post",
-        url: "/pinjambarang/detailCariBarang",
+        url: "<?= site_url('pinjambarang/detailCariBarang') ?>",
         data: {
             cari: cari
         },
@@ -258,7 +258,7 @@ function ambildatabarang() {
     let kodebarang = $('#kdbarang').val();
     $.ajax({
         type: "post",
-        url: "/pinjambarang/ambilDataBarang",
+        url: "<?= site_url('pinjambarang/ambilDataBarang') ?>",
         data: {
             kodebarang: kodebarang
         },
@@ -392,7 +392,7 @@ $(document).ready(function() {
         } else {
             $.ajax({
                 type: "post",
-                url: "/pinjambarang/simpanDetail",
+                url: "<?= site_url('pinjambarang/simpanDetail') ?>",
                 data: {
                     kodeinv: kodeinv,
                     kodebarang: kodebarng,
@@ -421,7 +421,7 @@ $(document).ready(function() {
     $('#tombolCariBarang').click(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "/pinjambarang/cariDataBarang",
+            url: "<?= site_url('pinjambarang/cariDataBarang') ?>",
             dataType: "json",
             success: function(response) {
                 if (response.data) {
@@ -444,7 +444,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "post",
-            url: "/pinjambarang/updateItem",
+            url: "<?= site_url('pinjambarang/updateItem') ?>",
             data: {
                 iddetail: $('#idDetail').val(),
                 kodeinv: kodeinv,

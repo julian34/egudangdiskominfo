@@ -103,7 +103,7 @@ function detailItem(kodeinv) {
     // alert('muncul');
     $.ajax({
         type: "post",
-        url: "/pinjambarang/detailItem",
+        url: "<?= site_url('pinjambarang/detailItem') ?>",
         data: {
             kodeinv: kodeinv
         },

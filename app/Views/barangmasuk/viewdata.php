@@ -95,7 +95,7 @@ function detailItem(faktur) {
     // alert('muncul');
     $.ajax({
         type: "post",
-        url: "/barangmasuk/detailItem",
+        url: "<?= site_url('barangmasuk/detailItem') ?>",
         data: {
             faktur: faktur
         },

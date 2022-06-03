@@ -114,7 +114,7 @@ function dataTemp() {
 
     $.ajax({
         type: "post",
-        url: "/pinjambarang/dataTemp",
+        url: "<?= site_url('pinjambarang/dataTemp')?>",
         data: {
             kodeinv: kodeinv
         },
@@ -151,7 +151,7 @@ function hapusItem(id) {
 
             $.ajax({
                 type: "post",
-                url: "/pinjambarang/hapusTempList",
+                url: "<?= site_url('pinjambarang/hapusTempList')?>",
                 data: {
                     id: id
                 },
@@ -179,7 +179,7 @@ function cariDataBarang() {
 
     $.ajax({
         type: "post",
-        url: "/pinjambarang/detailCariBarang",
+        url: "<?= site_url('pinjambarang/detailCariBarang')?>",
         data: {
             cari: cari
         },
@@ -202,7 +202,7 @@ function ambildatabarang() {
     let kodebarang = $('#kdbarang').val();
     $.ajax({
         type: "post",
-        url: "/pinjambarang/ambilDataBarang",
+        url: "<?= site_url('pinjambarang/ambilDataBarang')?>",
         data: {
             kodebarang: kodebarang
         },
@@ -232,7 +232,7 @@ function renderKodeInv() {
     let tglpinjam = $('#tglpinjam').val();
     $.ajax({
         type: "post",
-        url: "/pinjambarang/renderKodeInv",
+        url: "<?= site_url('pinjambarang/renderKodeInv')?>",
         data: {
             tglpinjam: tglpinjam
         },
@@ -309,7 +309,7 @@ $(document).ready(function() {
                 if (result.isConfirmed) {
                     $.ajax({
                         type: "post",
-                        url: "/pinjambarang/selesaiTransaksi",
+                        url: "<?= site_url('pinjambarang/selesaiTransaksi')?>",
                         data: {
                             kodeinv: kodeinv,
                             kegiatan: kegiatan,
@@ -457,7 +457,7 @@ $(document).ready(function() {
         } else {
             $.ajax({
                 type: "post",
-                url: "/pinjambarang/simpanTemp",
+                url: "<?= site_url('pinjambarang/simpanTemp')?>",
                 data: {
                     kodeinv: kodeinv,
                     kodebarang: kodebarng,
@@ -487,7 +487,7 @@ $(document).ready(function() {
     $('#tombolCariBarang').click(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "/pinjambarang/cariDataBarang",
+            url: "<?= site_url('pinjambarang/cariDataBarang')?>",
             dataType: "json",
             success: function(response) {
                 if (response.data) {
