@@ -98,6 +98,16 @@ class Pinjambarang extends BaseController
         }
     }
 
+    public function listdetailitem($kodeinv){
+        if($this->request->isAJAX()){
+            $builder    =  $this->mDetPinjam->dataDetailModal($kodeinv);
+            return DataTable::of($builder)->addNumbering()
+            ->toJson(TRUE);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
     public function detailItem(){
         if($this->request->isAJAX()){
             $kodeinv         = $this->request->getPost('kodeinv');
@@ -465,21 +475,9 @@ class Pinjambarang extends BaseController
 
     Public function renderKodeInv(){
         if($this->request->isAJAX()){
-            // $kodeinv    = $this->request->getPost('kodeinv');
-            // $kodebarang = $this->request->getPost('kodebarang');
-            // $jumlah     = $this->request->getPost('jumlah');
-
-
-            // $dataDetail   = [
-            //     'detkodeinv'     => $kodeinv,
-            //     'detbrgkode'     => $kodebarang,
-            //     'detjml'         => $jumlah    
-            // ];
-
-            // $modelDetBarang = $this->mDetPinjam->insert($dataDetail);
             $tglPin     = $this->request->getPost('tglpinjam');
             $kodeinv    = $this->mPinjam->renderKdinv($tglPin);
-
+            
             $json = [
                 'sukses'    => 'Item berhasil ditambahkan',
                 'tglpinjam' => $tglPin,

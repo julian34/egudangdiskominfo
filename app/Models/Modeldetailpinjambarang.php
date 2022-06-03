@@ -17,6 +17,15 @@ class Modeldetailpinjambarang extends Model
         ->where('detkodeinv',$faktur)->get();
     }
 
+    public function dataDetailModal($faktur){
+        return 
+        $this->table('detailpinjambarang')
+        ->select('brgkode,brgnama,detjml')
+        ->join('barang','barang.brgkode=detailpinjambarang.detbrgkode')
+        ->where('detailpinjambarang.detkodeinv',$faktur);
+    }
+
+
     public function ambilTotalBarang($faktur){
         $query = $this->table('detailpinjambarang')->where('detkodeinv',$faktur)->countAllResults();
         return $query;

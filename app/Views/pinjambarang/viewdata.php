@@ -56,6 +56,27 @@ function detailItem(kodeinv) {
             $('.viewModal').html(response.data).show();
             $('#modalDetailItem').modal('show');
             $('#modalDetailItemTitle').text('Detail Item | No. Invoice : ' + kodeinv);
+            $('#tabeldetailitem').DataTable({
+                processing: true,
+                serverSide: true,
+                scrollX: true,
+                ajax: "<?= site_url('pinjambarang/listdetailitem') ?>/" + kodeinv,
+                columns: [{
+                        data: '',
+                        orderable: false
+                    },
+                    {
+                        data: 'brgkode'
+                    },
+                    {
+                        data: 'brgnama'
+                    },
+                    {
+                        data: 'detjml',
+                        orderable: false
+                    }
+                ]
+            });
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert(xhr.status + '\n' + thrownError);

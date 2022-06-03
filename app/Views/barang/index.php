@@ -57,7 +57,11 @@ $(document).ready(function() {
         processing: true,
         serverSide: true,
         scrollX: true,
-        ajax: "<?= site_url('barang/listtabeldata') ?>"
+        ajax: "<?= site_url('barang/listtabeldata') ?>",
+        columnDefs: [{
+            targets: [0, -1],
+            orderable: false
+        }, ]
     });
 });
 </script>
