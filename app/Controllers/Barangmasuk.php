@@ -26,8 +26,7 @@ class Barangmasuk extends BaseController
         //
         return view('barangmasuk/forminput');
     }
-
-   
+    
     function dataTemp(){
         if($this->request->isAJAX()){
             $faktur     = $this->request->getPost('faktur');
@@ -197,197 +196,208 @@ class Barangmasuk extends BaseController
         }
     }
 
-   public function data(){
-       return view('barangmasuk/viewdata');
-   }
+    public function data(){
+        return view('barangmasuk/viewdata');
+    }
 
-   public function listtabeldata(){
-    if($this->request->isAJAX()){
-        $builder    = $this->mdbarangmasuk->tampildata();
-        return DataTable::of($builder)->addNumbering()
-        ->add('jmlalat', function($row){
-            $db      = \Config\Database::connect();
-            $jmlItem = $db->table('detailbarangmasuk')->where('detfaktur',$row->faktur)->countAllResults();
-            return 
-            "<span style='cursor:pointer; font-weight: bold; color:blue'
-            onclick='detailItem(\"$row->faktur\")'>".number_format($jmlItem, 0, ',', '.')."</span>";
-        })
-        ->add('aksi', function($row){
-        return
-            "<button type='button' class='btn btn-sm btn-info' title='edit data' onclick='edit(\"$row->faktur\")'><i
-                class='fa fa-edit'></i>
-        </button>
-        <form method='POST' action='/satuan/hapus/$row->faktur' style='display:inline;' onsubmit='hapus()'><input type='hidden'
-                value='DELETE' name='_method'>
-            <button type='submit' class='btn btn-sm btn-danger' title='hapus data'>
-                <i class='fa fa-trash-alt'></i>
+    public function listtabeldata(){
+        if($this->request->isAJAX()){
+            $builder    = $this->mdbarangmasuk->tampildata();
+            return DataTable::of($builder)->addNumbering()
+            ->add('jmlalat', function($row){
+                $db       = \Config\Database::connect();
+                $jmlItem  = $db->table('detailbarangmasuk')->where('detfaktur',$row->faktur)->countAllResults();
+                $kdfaktur = sha1($row->faktur);
+                return 
+                "<span style='cursor:pointer; font-weight: bold; color:blue'
+                onclick='detailItem(\"$row->faktur\")'>".number_format($jmlItem, 0, ',', '.')."</span>";
+            })
+            ->add('aksi', function($row){
+            $kdfaktur = sha1($row->faktur);
+            return
+                "<button type='button' class='btn btn-sm btn-info' title='edit data' onclick='edit(\"$kdfaktur\")'><i
+                    class='fa fa-edit'></i>
             </button>
-        </form>";
-        })->toJson(TRUE);
-    }else{
-        exit('maaf tidak bisa dipanggil');
-    }
-  }
-
-public function detailItem(){
-    if($this->request->isAJAX()){
-    $faktur = $this->request->getPost('faktur');
-
-    $detailBarangMasuk = $this->mddetailbarangmasuk->dataDetail($faktur);
-
-    $data = [
-    'tampildatadetail' => $detailBarangMasuk
-    ];
-
-    $json = [
-    'data' => view('barangmasuk/modaldetailitem',$data)
-    ];
-
-    echo json_encode($json);
-
-    } else {
-    exit('maaf tidak bisa dipanggil');
-    }
-    }
-
-    public function edit($faktur){
-    $cekFaktur = $this->mdbarangmasuk->cekFaktur($faktur);
-    if($cekFaktur->getNumRows() > 0){
-    $row = $cekFaktur->getRowArray();
-    $data = [
-    'nofaktur' => $row['faktur'],
-    'tanggal' => $row['tglfaktur'],
-    ];
-    return view('barangmasuk/formedit',$data);
-    }else{
-    exit('maaf data tidak ditemukan');
-    }
-}
-
-public function dataDetail(){
-    if($this->request->isAJAX()){
-        $faktur = $this->request->getPost('faktur');
-
-        $data = [
-        'dataDetail' => $this->mddetailbarangmasuk->dataDetail($faktur),
-        ];
-
-        $totalBarang = number_format($this->mddetailbarangmasuk->ambilTotalBarang($faktur),0, ",",".");
-
-        $json = [
-        'data' => view('barangmasuk/datadetail',$data),
-        'totalBarang' => $totalBarang
-        ];
-        echo json_encode($json);
-
-        } else {
-        exit('maaf tidak bisa dipanggil');
+            <form method='POST' action='/barangmasuk/hapusTransaksi/$row->faktur' style='display:inline;' onsubmit='hapus()'><input type='hidden'
+                    value='DELETE' name='_method'>
+                <button type='submit' class='btn btn-sm btn-danger' title='hapus data'>
+                    <i class='fa fa-trash-alt'></i>
+                </button>
+            </form>";
+            })->toJson(TRUE);
+        }else{
+            exit('maaf tidak bisa dipanggil');
         }
     }
 
-public function editItem(){
-if($this->request->isAJAX()){
-$idDetail = $this->request->getPost('idDetail');
-$ambildata = $this->mddetailbarangmasuk->ambilDetailBerdasarkanID($idDetail);
+    public function listdetailitem($faktur){
+        if($this->request->isAJAX()){
+            $builder    = $this->mddetailbarangmasuk->dataDetail($faktur);
+            return DataTable::of($builder)->addNumbering()
+            ->toJson(TRUE);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
 
-$row = $ambildata->getRowArray();
+    public function detailItem(){
+        if($this->request->isAJAX()){
+            $faktur = $this->request->getPost('faktur');
 
-$data = [
-'kodebarang' => $row['detbrgkode'],
-'namabarang' => $row['brgnama'],
-'jumlah' => $row['detjml']
-];
+            $detailBarangMasuk = $this->mddetailbarangmasuk->dataDetail($faktur);
 
-$json = [
-'sukses' => $data
-];
+            $data = [
+            'tampildatadetail' => $detailBarangMasuk
+            ];
 
-echo json_encode($json);
-} else {
-exit('maaf tidak bisa dipanggil');
-}
-}
+            $json = [
+            'data' => view('barangmasuk/modaldetailitem',$data)
+            ];
 
-public function simpanDetail(){
-if($this->request->isAJAX()){
-$faktur = $this->request->getPost('faktur');
-$kodebarang = $this->request->getPost('kodebarang');
-$jumlah = $this->request->getPost('jumlah');
+            echo json_encode($json);
 
+        } else {
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
 
-$dataDetail = [
-'detfaktur' => $faktur,
-'detbrgkode' => $kodebarang,
-'detjml' => $jumlah
-];
+    public function edit($faktur){
+        $cekFaktur = $this->mdbarangmasuk->cekFaktur($faktur);
+        if($cekFaktur->getNumRows() > 0){
+            $row = $cekFaktur->getRowArray();
+            $data = [
+            'nofaktur'  => $row['faktur'],
+            'tanggal'   => $row['tglfaktur'],
+            ];
+            return view('barangmasuk/formedit',$data);
+        }else{
+            exit('maaf data tidak ditemukan');
+        }
+    }
 
-$modelDetBarang = $this->mddetailbarangmasuk->insert($dataDetail);
+    public function dataDetail(){
+        if($this->request->isAJAX()){
+            $json = [
+            'data' => view('barangmasuk/datadetail'),
+            ];
+            echo json_encode($json);
+            } else {
+                exit('maaf tidak bisa dipanggil');
+            }
+    }
 
-$json = [
-'sukses' => 'Item berhasil ditambahkan'
-];
+    public function dataDetailedit(){
+        if($this->request->isAJAX()){
+            $faktur     = $this->request->getPost('faktur');
+                
+            $data  = [
+                'dataDetail'    =>  $this->mddetailbarangmasuk->dataDetailEdit($faktur)->get(),
+            ];
+            
+            $totalBarang = number_format($this->mddetailbarangmasuk->ambilTotalBarang($faktur),0, ",",".");
 
-echo json_encode($json);
+            $json = [
+                'data'     => view('barangmasuk/datadetail',$data),
+                'totalBarang'   => $totalBarang
+            ];
+            echo json_encode($json);
+        } else {
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
 
-}else{
-exit('maaf tidak bisa dipanggil');
-}
-}
+    public function editItem(){
+        if($this->request->isAJAX()){
+            $idDetail  = $this->request->getPost('idDetail');
+            $ambildata = $this->mddetailbarangmasuk->ambilDetailBerdasarkanID($idDetail);
+            $row = $ambildata->getRowArray();
+            $data = [
+            'kodebarang' => $row['detbrgkode'],
+            'namabarang' => $row['brgnama'],
+            'jumlah' => $row['detjml']
+            ];
 
-public function updateItem(){
-if($this->request->isAJAX()){
-$faktur = $this->request->getPost('faktur');
-$kodebarang = $this->request->getPost('kodebarang');
-$jumlah = $this->request->getPost('jumlah');
-$iddetail = $this->request->getPost('iddetail');
+            $json = [
+            'sukses' => $data
+            ];
 
-$dataDetail = [
-'detjml' => $jumlah
-];
+            echo json_encode($json);
+        } else {
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
 
-$modedetailBarang = $this->mddetailbarangmasuk->update($iddetail,$dataDetail);
+    public function simpanDetail(){
+        if($this->request->isAJAX()){
+            $faktur = $this->request->getPost('faktur');
+            $kodebarang = $this->request->getPost('kodebarang');
+            $jumlah = $this->request->getPost('jumlah');
 
-$json = [
-'sukses' => 'Item berhasil ditambahkan'
-];
+            $dataDetail = [
+            'detfaktur' => $faktur,
+            'detbrgkode' => $kodebarang,
+            'detjml' => $jumlah
+            ];
 
-echo json_encode($json);
+            $modelDetBarang = $this->mddetailbarangmasuk->insert($dataDetail);
 
-}else{
-exit('maaf tidak bisa dipanggil');
-}
-}
+            $json = [
+            'sukses' => 'Item berhasil ditambahkan'
+            ];
 
-public function hapusItemDetail(){
-if($this->request->isAJAX()){
+            echo json_encode($json);
 
-$id = $this->request->getPost('id');
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
 
-$this->mddetailbarangmasuk->delete($id);
+    public function updateItem(){
+        if($this->request->isAJAX()){
+            $faktur = $this->request->getPost('faktur');
+            $kodebarang = $this->request->getPost('kodebarang');
+            $jumlah = $this->request->getPost('jumlah');
+            $iddetail = $this->request->getPost('iddetail');
+            $dataDetail = [
+            'detjml' => $jumlah
+            ];
+            $modedetailBarang = $this->mddetailbarangmasuk->update($iddetail,$dataDetail);
+            $json = [
+            'sukses' => 'Item berhasil ditambahkan'
+            ];
+            echo json_encode($json);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
 
-$json = [
-'sukses' => 'Item berhasil dihapus'
-];
+    public function hapusItemDetail(){
+        if($this->request->isAJAX()){
 
-echo json_encode($json);
+            $id = $this->request->getPost('id');
 
-}else{
-exit('maaf tidak bisa dipanggil');
-}
-}
+            $this->mddetailbarangmasuk->delete($id);
 
-public function hapusTransaksi($faktur){
+            $json = [
+            'sukses' => 'Item berhasil dihapus'
+            ];
 
-$this->mddetailbarangmasuk->hapusFaktur($faktur);
-$this->mdbarangmasuk->delete($faktur);
+            echo json_encode($json);
 
-$pesan = [
-'sukses' => '<div class="alert alert-success">Delete Data Success</div>'
-];
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
 
-session()->setFlashdata($pesan);
-return redirect()->to('/barangmasuk/data');
+    public function hapusTransaksi($faktur){
+        $this->mddetailbarangmasuk->hapusFaktur($faktur);
+        $this->mdbarangmasuk->delete($faktur);
 
-}
+        $pesan = [
+        'sukses' => '<div class="alert alert-success">Delete Data Success</div>'
+        ];
+        session()->setFlashdata($pesan);
+        return redirect()->to('/barangmasuk/data');
+    }
 
 }

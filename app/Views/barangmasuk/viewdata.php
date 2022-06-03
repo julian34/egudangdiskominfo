@@ -55,6 +55,27 @@ function detailItem(faktur) {
             $('.viewModal').html(response.data).show();
             $('#modalDetailItem').modal('show');
             $('#modalDetailItemTitle').text('Detail Item | No. Faktur : ' + faktur);
+            $('#tabeldetailitem').DataTable({
+                processing: true,
+                serverSide: true,
+                scrollX: true,
+                ajax: "<?= site_url('barangmasuk/listdetailitem') ?>/" + faktur,
+                columns: [{
+                        data: '',
+                        orderable: false
+                    },
+                    {
+                        data: 'brgkode'
+                    },
+                    {
+                        data: 'brgnama'
+                    },
+                    {
+                        data: 'detjml',
+                        orderable: false
+                    }
+                ]
+            });
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert(xhr.status + '\n' + thrownError);

@@ -71,7 +71,6 @@ class Kembalibarang extends BaseController
     }
     
     public function edit($kodeinv){
-
         $cekFaktur =  $this->mKembali->cekFaktur($kodeinv);
         if($cekFaktur->getNumRows() > 0){
             $row = $cekFaktur->getRowArray();

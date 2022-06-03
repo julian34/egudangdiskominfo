@@ -96,7 +96,7 @@ function dataDetail() {
 
     $.ajax({
         type: "post",
-        url: "<?= site_url('barangmasuk/dataDetail') ?>",
+        url: "<?= site_url('barangmasuk/dataDetailedit') ?>",
         data: {
             faktur: faktur
         },

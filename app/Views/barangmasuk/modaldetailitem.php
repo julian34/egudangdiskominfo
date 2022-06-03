@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <table>
+                <table class="table table-striped table-bordered" style="width: 100%;" id="tabeldetailitem">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -21,18 +21,7 @@
                     </thead>
                     <tbody>
                     <tbody>
-                        <?php 
-                                $nomor = 1;
-                                foreach($tampildatadetail->getResultArray() as $row) :
-                            ?>
 
-                        <tr>
-                            <td><?= $nomor++; ?></td>
-                            <td><?= $row['detbrgkode']; ?></td>
-                            <td><?= $row['brgnama']; ?></td>
-                            <td style="text-align: center;"><?= number_format($row['detjml'],0, ",","."); ?></td>
-                        </tr>
-                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
