@@ -14,7 +14,7 @@ Transaksi kembali Peralatan
 
 
 <?= $this->section('isi')?>
-<input type="hidden" id='idkembrg' value="<?= $idkembrg ?>">
+<input type="hidden" name="idkembrg" id='idkembrg' value="<?= $idkembrg ?>">
 
 <div class="form-row">
     <div class="form-group col-md-6">
@@ -218,6 +218,7 @@ $(document).ready(function() {
         // alert('jadi');
         let kodeinv = $('#kodeinv').val();
         let tglkembali = $('#tglkembali').val();
+        let idkembrg = $('#idkembrg').val();
 
         if (kodeinv.length == 0) {
             Swal.fire({
@@ -258,7 +259,8 @@ $(document).ready(function() {
                         url: "<?= site_url('kembalibarang/updateItem') ?>",
                         data: {
                             kodeinv: kodeinv,
-                            tglkembali: tglkembali
+                            tglkembali: tglkembali,
+                            idkembrg: idkembrg,
                         },
                         dataType: "json",
                         success: function(e) {
