@@ -16,3 +16,16 @@ Main connection [MySQLi]: No connection could be made because the target machine
 #10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #12 {main}
+CRITICAL - 2022-06-03 14:25:39 --> Undefined variable: auth
+#0 C:\xampp\htdocs\simidisko\app\Views\main\layout.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 61, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\View\View.php(226): CodeIgniter\View\View->render('main/layout', Array, true)
+#4 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('kategori/index', Array, true)
+#5 C:\xampp\htdocs\simidisko\app\Controllers\Kategori.php(44): view('kategori/index', Array)
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kategori->index()
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kategori))
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
