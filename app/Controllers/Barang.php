@@ -128,7 +128,7 @@ session()->setFlashdata($pesan);
 return redirect()->to('/barang/addform');
 }else{
 
-$pathGambar = '';
+$pathGambar = 'default-150x150.png';
 $gambar = $_FILES['brggambar']['name'];
 
 $data = [
