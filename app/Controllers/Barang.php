@@ -56,6 +56,9 @@ class Barang extends BaseController
         if($this->request->isAJAX()){
             $builder = $this->barang->tampildata();
             return DataTable::of($builder)->addNumbering()
+            ->format('brgharga', function($value){
+                return 'Rp. '.number_format($value, 0,'.',',');
+            })
             ->add('aksi', function($row){
                 return 
                 "<button type='button' class='btn btn-sm btn-info' title='edit data'

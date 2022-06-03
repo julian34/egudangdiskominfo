@@ -11,43 +11,36 @@ Manajemen Data Barang
 'onclick' => "location.href=('" . site_url('barang/addform') . "')"
 ]) ?>
 <?= $this->endSection('subjudul')?>
-
-
 <?= $this->section('isi')?>
 <?= session()->getFlashdata('sukses'); ?>
-<?= form_open('barang/index'); ?>
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Cari data Kode Barang, Nama Barang, Kategori"
-        aria-label="cari-barang" aria-describedby="button-addon2" name="cari" value="<?= $cari; ?>">
-    <div class="input-group-append">
-        <button class="btn btn-outline-primary" type="submit" id="tombolcari" name="tombolcari">
-            <i class="fa fa-search"></i>
-        </button>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="col-lg grid-margin">
+            <table class="table table-striped table-bordered" style="width: 100%;" id="tablelistdata">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Kategori</th>
+                        <th>Satuan</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-<?= form_close(); ?>
-<span class="badge badge-success">
-    <h5><?= "Total Data : ".$totaldata; ?> </h5>
-</span>
-<br />
-<table class="table table-striped table-bordered" style="width: 100%;" id="tablelistdata">
-    <thead>
-        <tr>
-            <th style="width: 2%;">No</th>
-            <th>Kode Barang</th>
-            <th>Nama Barang</th>
-            <th>Kategori</th>
-            <th>Satuan</th>
-            <th>Harga</th>
-            <th>Stok</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-</table>
 <?= $this->endSection('isi')?>
+
+<?= $this->Section('csspage')?>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+<?= $this->endSection('csspage')?>
 
 <?= $this->Section('jspage')?>
 <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
