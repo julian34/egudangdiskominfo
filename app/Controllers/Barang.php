@@ -49,7 +49,7 @@ class Barang extends BaseController
             }else{
             exit('maaf tidak bisa dipanggil');
             }
-}
+    }
 
 public function addform(){
 $selects = [

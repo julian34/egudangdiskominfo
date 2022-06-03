@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Modelsatuan;
 
+use \Hermawan\DataTables\DataTable;
+
 class Satuan extends BaseController
 {
     protected $vd;
@@ -42,6 +44,28 @@ class Satuan extends BaseController
         ];
 
         return view('satuan/index', $data);
+    }
+
+    
+    public function listtabeldata(){
+        if($this->request->isAJAX()){
+            $builder    = $this->md->tampildata();
+            return DataTable::of($builder)->addNumbering()
+            ->add('aksi', function($row){
+                return 
+                "<button type='button' class='btn btn-sm btn-info' title='edit data'
+                onclick='edit(\"$row->satid\")'><i class='fa fa-edit'></i>
+                </button>
+                <form method='POST' action='/satuan/hapus/$row->satid' style='display:inline;' onsubmit='hapus()'><input type='hidden' value='DELETE' name='_method'>
+                    <button type='submit' class='btn btn-sm btn-danger' title='hapus data'>
+                    <i class='fa fa-trash-alt'></i>
+                    </button>
+                </form>";
+            })
+            ->toJson(TRUE);
+            }else{
+            exit('maaf tidak bisa dipanggil');
+            }
     }
 
     public function addform(){
