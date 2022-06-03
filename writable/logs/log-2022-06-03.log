@@ -524,3 +524,81 @@ CRITICAL - 2022-06-03 19:16:59 --> Unknown column 'aksi' in 'order clause'
 #11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #13 {main}
+CRITICAL - 2022-06-03 20:07:07 --> Undefined property: stdClass::$satid
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(243): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 243, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Barangmasuk->App\Controllers\{closure}(Object(stdClass))
+#2 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(252): Hermawan\DataTables\DataTable->toJson(true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->listtabeldata()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-03 20:07:19 --> Undefined property: stdClass::$satid
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(243): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 243, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Barangmasuk->App\Controllers\{closure}(Object(stdClass))
+#2 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(252): Hermawan\DataTables\DataTable->toJson(true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->listtabeldata()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2022-06-03 20:11:21 --> Unknown column 'jmlalat' in 'order clause'
+CRITICAL - 2022-06-03 20:11:21 --> Unknown column 'jmlalat' in 'order clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `faktur`...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `faktur`...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `faktur`...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `faktur`...', Array, false)
+#4 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(219): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(70): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(252): Hermawan\DataTables\DataTable->toJson(true)
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->listtabeldata()
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2022-06-03 20:11:23 --> Unknown column 'jmlalat' in 'order clause'
+CRITICAL - 2022-06-03 20:11:23 --> Unknown column 'jmlalat' in 'order clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `faktur`...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `faktur`...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `faktur`...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `faktur`...', Array, false)
+#4 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(219): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(70): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(252): Hermawan\DataTables\DataTable->toJson(true)
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->listtabeldata()
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2022-06-03 20:11:27 --> Unknown column 'jmlalat' in 'order clause'
+CRITICAL - 2022-06-03 20:11:27 --> Unknown column 'jmlalat' in 'order clause'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `faktur`...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `faktur`...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `faktur`...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `faktur`...', Array, false)
+#4 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(219): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(70): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(252): Hermawan\DataTables\DataTable->toJson(true)
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->listtabeldata()
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2022-06-03 20:13:43 --> Undefined variable: data
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Barangmasuk.php(201): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 201, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barangmasuk->data()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barangmasuk))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}

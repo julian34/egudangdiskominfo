@@ -14,6 +14,10 @@ class Modelbarangmasuk extends Model
         return $this->table('barangmasuk')->like('faktur',$cari);
     }
 
+    public function tampildata(){
+        return $this->table('barangmasuk')->select('faktur,tglfaktur');
+    }
+
     public function cekFaktur($faktur){
         return $this->table('barangmasuk')->getWhere([
             'sha1(faktur)' => $faktur

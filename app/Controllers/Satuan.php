@@ -20,30 +20,7 @@ class Satuan extends BaseController
     
     public function index()
     {
-        //
-
-        $tombolcari = $this->request->getPost('tombolcari');
-
-        if(isset($tombolcari)){
-            $cari = $this->request->getPost('cari');
-            session()->set('cari_satuan',$cari);
-            redirect()->to('/satuan/index');
-        }else{
-            $cari = session()->get('cari_satuan');
-        }
-
-         $dataSatuan = $cari ? $this->md->cariData($cari)->paginate(5, 'satuan') : $this->md->paginate(5, 'satuan');
-
-        $nohal = $this->request->getVar('page_satuan') ? $this->request->getVar('page_satuan') : 1;
-        $data = [
-            // 'tampildata' => $this->md->findAll()
-            'tampildata' => $dataSatuan,
-            'pager'      => $this->md->pager,
-            'nohal'      => $nohal,
-            'cari'       => $cari 
-        ];
-
-        return view('satuan/index', $data);
+        return view('satuan/index');
     }
 
     
