@@ -10,8 +10,9 @@ use App\Models\Modeltemdetailpinjambarang;
 
 use App\Models\Modelbarang;
 
+//Paket
 use App\Libraries\MY_TCPDF AS TCPDF;
-
+use \Hermawan\DataTables\DataTable;
 
 class Pinjambarang extends BaseController
 {
@@ -58,6 +59,41 @@ class Pinjambarang extends BaseController
         return view('pinjambarang/viewdata',$data);
     }
 
+    public function listtabeldata(){
+        if($this->request->isAJAX()){
+            $builder    =  $this->mPinjam->tampildata();
+            return DataTable::of($builder)->addNumbering()
+            ->add('jmlalat', function($row){
+                $db       = \Config\Database::connect();
+                $jmlItem  = $db->table('detailpinjambarang')->where('detkodeinv',$row->kodeinv)->countAllResults();
+                return 
+                "<span style='cursor:pointer; font-weight: bold; color:blue'
+                onclick='detailItem(\"$row->kodeinv\")'>".number_format($jmlItem, 0, ',', '.')."</span>";
+            })
+            ->add('aksi', function($row){
+            $kdkodeinv = sha1($row->kodeinv);
+            return
+            "<button type='button' class='btn btn-sm btn-info' title='edit data'
+            onclick='print(\"$kdkodeinv\")'>
+            <i class='fa fa-print'></i>
+            </button>
+            &nbsp;
+            <button type='button' class='btn btn-sm btn-info' title='edit data' onclick='edit(\"$kdkodeinv\")'><i
+                    class='fa fa-edit'></i>
+            </button>
+            &nbsp;
+            <form method='POST' action='/pinjambarang/hapusTransaksi/$row->kodeinv' style='display:inline;' onsubmit='hapus()'><input type='hidden'
+                    value='DELETE' name='_method'>
+                <button type='submit' class='btn btn-sm btn-danger' title='hapus data'>
+                    <i class='fa fa-trash-alt'></i>
+                </button>
+            </form>";
+            })->toJson(TRUE);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
     public function add(){
         $tglPin = NULL;
         $data = [
@@ -68,9 +104,9 @@ class Pinjambarang extends BaseController
 
     public function edit($kodeinv){
 
-        $cekFaktur =  $this->mPinjam->cekFaktur($kodeinv);
-        if($cekFaktur->getNumRows() > 0){
-            $row = $cekFaktur->getRowArray();
+        $cekkodeinv =  $this->mPinjam->cekkodeinv($kodeinv);
+        if($cekkodeinv->getNumRows() > 0){
+            $row = $cekkodeinv->getRowArray();
             $data = [ 
                 'kodeinv'           => $row['kodeinv'],
                 'tglpinjam'         => $row['tglpinjam'],
@@ -227,7 +263,7 @@ class Pinjambarang extends BaseController
 
             if($dataTemp->getNumRows() == 0){
                 $json = [
-                    'error' => 'Maaf,  belum ada item untuk No. Faktur '.$kodeinv.' !'
+                    'error' => 'Maaf,  belum ada item untuk No. kodeinv '.$kodeinv.' !'
                 ];
             }else{
                 // Simpan Ke Tabel Barang Masuk 

@@ -15,6 +15,10 @@ class Modelpinjambarang extends Model
         return $this->table('pinjambarang')->like('kodeinv',$cari);
     }
 
+    public function tampildata(){
+        return $this->table('pinjambarang')->select('kodeinv,tglpinjam,kegiatan,stakeholder,lokasi');
+    }
+
     public function tampildata_cari_modal($cari){
         return $this->table('pinjambarang')->select('pinjambarang.kodeinv as kodeinv, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi,status')
         ->join('kembalibarang','kembalibarang.kodeinv=pinjambarang.kodeinv','left')->like('pinjambarang.kodeinv',$cari);
