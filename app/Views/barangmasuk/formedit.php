@@ -96,7 +96,7 @@ function dataDetail() {
 
     $.ajax({
         type: "post",
-        url: "/barangmasuk/dataDetail",
+        url: "<?= site_url('barangmasuk/dataDetail') ?>",
         data: {
             faktur: faktur
         },
@@ -127,7 +127,7 @@ function hapusItem(id) {
 
             $.ajax({
                 type: "post",
-                url: "/barangmasuk/hapusTempList",
+                url: "<?= site_url('barangmasuk/hapusTempList') ?>",
                 data: {
                     id: id
                 },
@@ -154,7 +154,7 @@ function editItem(id) {
     $('#idDetail').val(id);
     $.ajax({
         type: "post",
-        url: "/barangmasuk/editItem",
+        url: "<?= site_url('barangmasuk/editItem') ?>",
         data: {
             idDetail: $('#idDetail').val()
         },
@@ -190,7 +190,7 @@ function hapusItem(id) {
 
             $.ajax({
                 type: "post",
-                url: "/barangmasuk/hapusItemDetail",
+                url: "<?= site_url('barangmasuk/hapusItemDetail') ?>",
                 data: {
                     id: id
                 },
@@ -218,7 +218,7 @@ function cariDataBarang() {
 
     $.ajax({
         type: "post",
-        url: "/barangmasuk/detailCariBarang",
+        url: "<?= site_url('barangmasuk/detailCariBarang') ?>",
         data: {
             cari: cari
         },
@@ -241,7 +241,7 @@ function ambildatabarang() {
     let kodebarang = $('#kdbarang').val();
     $.ajax({
         type: "post",
-        url: "/barangmasuk/ambilDataBarang",
+        url: "<?= site_url('barangmasuk/ambilDataBarang ') ?>",
         data: {
             kodebarang: kodebarang
         },
@@ -375,7 +375,7 @@ $(document).ready(function() {
         } else {
             $.ajax({
                 type: "post",
-                url: "/barangmasuk/simpanDetail",
+                url: "<?= site_url('barangmasuk/simpanDetail ') ?>",
                 data: {
                     faktur: faktur,
                     kodebarang: kodebarng,
@@ -404,7 +404,7 @@ $(document).ready(function() {
     $('#tombolCariBarang').click(function(e) {
         e.preventDefault();
         $.ajax({
-            url: "/barangmasuk/cariDataBarang",
+            url: "<?= site_url('barangmasuk/cariDataBarang ') ?>",
             dataType: "json",
             success: function(response) {
                 if (response.data) {
@@ -427,7 +427,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "post",
-            url: "/barangmasuk/updateItem",
+            url: "<?= site_url('barangmasuk/updateItem ') ?>",
             data: {
                 iddetail: $('#idDetail').val(),
                 faktur: faktur,

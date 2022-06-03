@@ -24,7 +24,7 @@ class App extends BaseConfig
      * @var string
      */
     public $baseURL = BASE;
-
+    // public $baseURL = '';
     /**
      * --------------------------------------------------------------------------
      * Index File
@@ -36,7 +36,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $indexPage = 'index.php';
+    public $indexPage = '';
 
     /**
      * --------------------------------------------------------------------------
@@ -108,7 +108,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $appTimezone = 'America/Chicago';
+    public $appTimezone = 'Asia/Jayapura';
 
     /**
      * --------------------------------------------------------------------------
