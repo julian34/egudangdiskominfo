@@ -15,7 +15,6 @@ class Modelkategori extends Model
     }
     
     public function tampildata(){
-        return $this->table('kategori')->select('katnama, katid')
-        ->orderBy('katnama', 'ASC');
+        return $this->table('kategori')->select('katnama, katid');
     }
 }

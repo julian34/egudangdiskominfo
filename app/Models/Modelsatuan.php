@@ -15,7 +15,6 @@ class Modelsatuan extends Model
     }
 
     public function tampildata(){
-        return $this->table('satuan')->select('satnama, satid')
-        ->orderBy('satnama', 'ASC');
+        return $this->table('satuan')->select('satnama, satid');
     }
 }

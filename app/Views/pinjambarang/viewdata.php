@@ -21,7 +21,7 @@ Pinjam Peralatan
                     <tr>
                         <th>No</th>
                         <th>Invoice</th>
-                        <th>Tanggal Pemakaian</th>
+                        <th style="width:15%">Tanggal Pemakaian</th>
                         <th>Kegiatan</th>
                         <th>Stakeholder</th>
                         <th>Lokasi</th>
@@ -55,7 +55,7 @@ function detailItem(kodeinv) {
         success: function(response) {
             $('.viewModal').html(response.data).show();
             $('#modalDetailItem').modal('show');
-            $('#modalDetailItemTitle').text('Detail Item | No. Faktur : ' + kodeinv);
+            $('#modalDetailItemTitle').text('Detail Item | No. Invoice : ' + kodeinv);
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert(xhr.status + '\n' + thrownError);
@@ -86,7 +86,8 @@ $(document).ready(function() {
                 data: 'kodeinv'
             },
             {
-                data: 'tglpinjam'
+                data: 'tanggalpemakaian',
+                name: 'tglpinjam'
             },
             {
                 data: 'kegiatan'

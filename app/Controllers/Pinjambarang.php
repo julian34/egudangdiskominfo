@@ -63,6 +63,10 @@ class Pinjambarang extends BaseController
         if($this->request->isAJAX()){
             $builder    =  $this->mPinjam->tampildata();
             return DataTable::of($builder)->addNumbering()
+            ->add('tanggalpemakaian', function($row){
+                $hari = $this->hari(date('D', strtotime($row->tglpinjam)));
+                return $hari.", ".date('d-m-Y',strtotime($row->tglpinjam));
+            })
             ->add('jmlalat', function($row){
                 $db       = \Config\Database::connect();
                 $jmlItem  = $db->table('detailpinjambarang')->where('detkodeinv',$row->kodeinv)->countAllResults();
@@ -90,6 +94,22 @@ class Pinjambarang extends BaseController
             </form>";
             })->toJson(TRUE);
         }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
+    public function detailItem(){
+        if($this->request->isAJAX()){
+            $kodeinv         = $this->request->getPost('kodeinv');
+            $detaildata      = $this->mDetPinjam->dataDetail($kodeinv);
+            $data = [
+            'tampildatadetail' => $detaildata
+            ];
+            $json = [
+            'data' => view('pinjambarang/modaldetailitem',$data)
+            ];
+            echo json_encode($json);
+        } else {
             exit('maaf tidak bisa dipanggil');
         }
     }
@@ -475,12 +495,9 @@ class Pinjambarang extends BaseController
     
     public function printInvPdf($kodeinv){
             // create new PDF document
-            $cekFaktur =  $this->mPinjam->cekFaktur($kodeinv);
+            $cekFaktur =  $this->mPinjam->cekkodeinv($kodeinv);
             if($cekFaktur->getNumRows() > 0){
                 $row = $cekFaktur->getRowArray();
-
-                
-
                 $data = [ 
                     'kodeinv'           => $row['kodeinv'],
                     'tglpinjam'         => $row['tglpinjam'],
@@ -491,7 +508,6 @@ class Pinjambarang extends BaseController
                     'hari'              => $this->hari(date('D',strtotime($row['tglpinjam']))),
                     'dataTemp'          => $this->mDetPinjam->dataDetail($row['kodeinv']) 
                 ];
-
                 // set margins
                 $sty = [
                     'position' => 'R',
@@ -500,12 +516,8 @@ class Pinjambarang extends BaseController
                     // 'fgcolor' => array(0,0,0),
                     // 'bgcolor' => array(255,255,255)
                 ];
-                
-                
-
                 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
                 
-               
                 $pdf->setHeaderTemplateAutoreset(true);
                 
                 $pdf->SetMargins(10, 12, 10, true);

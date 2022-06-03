@@ -24,7 +24,6 @@ class Modelpinjambarang extends Model
         ->join('kembalibarang','kembalibarang.kodeinv=pinjambarang.kodeinv','left')->like('pinjambarang.kodeinv',$cari);
     }
 
-
     public function renderKdinv($tglPin){
             if($tglPin == null){
                 $urutan = 0;    
@@ -53,9 +52,9 @@ class Modelpinjambarang extends Model
             return $kodeBarang;
     }
 
-    public function cekFaktur($faktur){
+    public function cekkodeinv($kodeinv){
         return $this->table('pinjambarang')->getWhere([
-            'sha1(kodeinv)' => $faktur
+            'sha1(kodeinv)' => $kodeinv
         ]);
     }
     
