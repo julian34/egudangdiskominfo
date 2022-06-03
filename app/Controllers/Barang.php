@@ -54,7 +54,8 @@ class Barang extends BaseController
 
     public function listtabeldata(){
         if($this->request->isAJAX()){
-            $builder = $this->barang->tampildata();
+            $builder    = $this->barang->tampildata();
+            $tomboledit = 'edit("")';  
             return DataTable::of($builder)->addNumbering()
             ->format('brgharga', function($value){
                 return 'Rp. '.number_format($value, 0,'.',',');
@@ -62,7 +63,7 @@ class Barang extends BaseController
             ->add('aksi', function($row){
                 return 
                 "<button type='button' class='btn btn-sm btn-info' title='edit data'
-                onclick='edit('$row->brgkode')'><i class='fa fa-edit'></i>
+                onclick='edit(\"$row->brgkode\")'><i class='fa fa-edit'></i>
                 </button>
                 <form method='POST' action='/barang/hapus/$row->brgkode' style='display:inline;' onsubmit='hapus()'><input type='hidden' value='DELETE' name='_method'>
                     <button type='submit' class='btn btn-sm btn-danger' title='hapus data'>
