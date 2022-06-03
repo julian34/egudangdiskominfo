@@ -24,41 +24,15 @@ class Barang extends BaseController
 
     public function index()
     {
-
-        $tombolcari = $this->request->getPost('tombolcari');
-
-        if(isset($tombolcari)){
-            $cari = $this->request->getPost('cari');
-            session()->set('cari_barang',$cari);
-            redirect()->to('/barang/index');
-        }else{
-            $cari = session()->get('cari_barang');
-        }
-
-        $totaldata = $cari ? $this->barang->tampildata_cari($cari)->countAllResults() : $this->barang->tampildata()->countAllResults();
-        
-        $dataBarang = $cari ? $this->barang->tampildata_cari($cari)->paginate(10, 'barang') : $this->barang->tampildata()->paginate(10, 'barang');
-
-        $nohal = $this->request->getVar('page_barang') ? $this->request->getVar('page_barang') : 1;
-
-        $data = [
-            'tampildata' => $dataBarang,
-            'pager'      => $this->barang->pager,
-            'nohal'      => $nohal,
-            'totaldata'  => $totaldata,
-            'cari'       => $cari 
-        ];
-
-        return view('barang/index',$data);
+        return view('barang/index');
     }
 
     public function listtabeldata(){
         if($this->request->isAJAX()){
             $builder    = $this->barang->tampildata();
-            $tomboledit = 'edit("")';  
             return DataTable::of($builder)->addNumbering()
             ->format('brgharga', function($value){
-                return 'Rp. '.number_format($value, 0,'.',',');
+                return 'Rp. '.number_format($value, 0,'.',',').',-';
             })
             ->add('aksi', function($row){
                 return 
@@ -70,11 +44,11 @@ class Barang extends BaseController
                     <i class='fa fa-trash-alt'></i>
                     </button>
                 </form>";
-}, 'last')
-->toJson();
-}else{
-exit('maaf tidak bisa dipanggil');
-}
+            }, 'last')
+            ->toJson();
+            }else{
+            exit('maaf tidak bisa dipanggil');
+            }
 }
 
 public function addform(){
