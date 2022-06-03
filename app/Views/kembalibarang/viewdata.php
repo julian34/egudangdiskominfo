@@ -13,87 +13,30 @@ Pengembalian Peralatan
 <?= $this->endSection('subjudul')?>
 <?= $this->section('isi')?>
 <?= session()->getFlashdata('sukses'); ?>
-<?= form_open('kembalibarang/index'); ?>
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Cari Berdasarkan Faktur..." aria-label="cari-barang"
-        aria-describedby="button-addon2" name="cari" value="<?= $cari; ?>" autofocus>
-    <div class="input-group-append">
-        <button class="btn btn-outline-primary" type="submit" id="tombolcari" name="tombolcari">
-            <i class="fa fa-search"></i>
-        </button>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="col-lg grid-margin">
+            <table class="table table-striped table-bordered" style="width: 100%;" id="tablelistdata">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th>Invoice</th>
+                        <th>Kegiatan</th>
+                        <th style="width: 15%;">Tanggal Pemakaian</th>
+                        <th style="width: 15%;">Tanggal Pegembalian</th>
+                        <th>Stakeholder</th>
+                        <th>Lokasi</th>
+                        <th>Jumlah Item</th>
+                        <th style="width: 15%;">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-<?= form_close(); ?>
-<span class="badge badge-success">
-    <h5><?= "Total Data : ".$totaldata; ?> </h5>
-</span>
-<br />
-<table class="table table-striped table-borderd" style="width: 100%;">
-    <thead>
-        <tr>
-            <th style="width: 5%;">No</th>
-            <th>Invoice</th>
-            <th>Kegiatan</th>
-            <th>Tanggal Pinjam</th>
-            <th>Tanggal Kembali</th>
-            <th>Stakeholder</th>
-            <th>Lokasi</th>
-            <th>Jumlah Item</th>
-            <th style="width: 15%;">Aksi</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <?php 
-            $nomor=1 + (($nohal - 1) * 5);
-            // $nomor = 1;
-            foreach ($tampildata as $row) :
-        ?>
-        <tr>
-            <td><?= $nomor++; ?></td>
-            <td><?= $row['kkdinv']; ?></td>
-            <td><?= $row['kegiatan']; ?></td>
-            <td><?= date('d-m-Y',strtotime($row['tglpinjam'])); ?></td>
-            <td><?= date('d-m-Y',strtotime($row['tglkembali'])); ?></td>
-            <td><?= $row['stakeholder']; ?></td>
-            <td><?= $row['lokasi']; ?></td>
-            <td>
-                <?php 
-                    $db = \Config\Database::connect();
-                    $jmlItem = $db->table('detailpinjambarang')->where('detkodeinv',$row['kkdinv'])->countAllResults();
-                ?>
-                <span style="cursor:pointer; font-weight: bold; color:blue"
-                    onclick="detailItem('<?= $row['kkdinv']; ?>')"><?= number_format($jmlItem, 0, ",", "."); ?></span>
-            </td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info" title="edit data"
-                    onclick="print('<?= sha1($row['kkdinv']); ?>')">
-                    <i class="fa fa-print"></i>
-                </button>
-                &nbsp;
-                <button type="button" class="btn btn-sm btn-info" title="edit data"
-                    onclick="edit('<?= sha1($row['kkdinv']); ?>')">
-                    <i class="fa fa-edit"></i>
-                </button>
-                &nbsp;
-                <form method="POST" action="/kembalibarang/hapusTransaksi/<?= $row['kkdinv']?>" style="display:inline;"
-                    onsubmit="hapus()">
-                    <input type="hidden" value="DELETE" name="_method">
-                    <button type="submit" class="btn btn-sm btn-danger" title="hapus data">
-                        <i class="fa fa-trash-alt"></i>
-                    </button>
-                </form>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-
-<div class="float-left mt-4">
-    <?= $pager->links('kembalibarang','paging'); ?>
-</div>
-
-
 <div class="viewModal" style="display: none;"></div>
 <?= $this->endSection('isi')?>
 
@@ -104,7 +47,7 @@ function detailItem(kodeinv) {
     // alert('muncul');
     $.ajax({
         type: "post",
-        url: "/kembalibarang/detailItem",
+        url: "<?= site_url('kembalibarang/detailItem') ?>",
         data: {
             kodeinv: kodeinv
         },
@@ -112,7 +55,28 @@ function detailItem(kodeinv) {
         success: function(response) {
             $('.viewModal').html(response.data).show();
             $('#modalDetailItem').modal('show');
-            $('#modalDetailItemTitle').text('Detail Item | No. Faktur : ' + kodeinv);
+            $('#modalDetailItemTitle').text('Detail Item | No. Invoice : ' + kodeinv);
+            $('#tabeldetailitem').DataTable({
+                processing: true,
+                serverSide: true,
+                scrollX: true,
+                ajax: "<?= site_url('kembalibarang/listdetailitem') ?>/" + kodeinv,
+                columns: [{
+                        data: '',
+                        orderable: false
+                    },
+                    {
+                        data: 'brgkode'
+                    },
+                    {
+                        data: 'brgnama'
+                    },
+                    {
+                        data: 'detjml',
+                        orderable: false
+                    }
+                ]
+            });
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert(xhr.status + '\n' + thrownError);
@@ -136,6 +100,47 @@ function hapus(id) {
 function print(id) {
     window.location.href = ('printInvPdf/') + id;
 }
-</script>
 
+$(document).ready(function() {
+    var tabel = $('#tablelistdata').DataTable({
+        processing: true,
+        serverSide: true,
+        scrollX: true,
+        ajax: "<?= site_url('kembalibarang/listtabeldata') ?>",
+        columns: [{
+                data: '',
+                orderable: false
+            },
+            {
+                data: 'kkdinv'
+            },
+            {
+                data: 'kegiatan'
+            },
+            {
+                data: 'tanggalpemakaian',
+                name: 'tglpinjam'
+            },
+            {
+                data: 'tanggalpengembalian',
+                name: 'tglkembali'
+            },
+            {
+                data: 'stakeholder'
+            },
+            {
+                data: 'lokasi'
+            },
+            {
+                data: 'jmlalat',
+                orderable: false
+            },
+            {
+                data: 'aksi',
+                orderable: false
+            },
+        ]
+    });
+});
+</script>
 <?= $this->endSection('jspage')?>

@@ -15,13 +15,12 @@ use App\Models\Modeldetailpinjambarang;
 use App\Models\Modelbarang;
 
 use App\Libraries\MY_TCPDF AS TCPDF;
-
+use \Hermawan\DataTables\DataTable;
 
 class Kembalibarang extends BaseController
 {
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->mKembali          = new Modelkembalibarang;
 
         $this->mPinjam           = new Modelpinjambarang;
@@ -34,7 +33,6 @@ class Kembalibarang extends BaseController
 
         $this->mdbarang         = new Modelbarang();
     }
-
 
     public function index()
     {
@@ -66,6 +64,75 @@ class Kembalibarang extends BaseController
         return view('kembalibarang/viewdata',$data);
     }
 
+    public function listtabeldata(){
+        if($this->request->isAJAX()){
+            $builder    =  $this->mKembali->tampildata();
+            return DataTable::of($builder)->addNumbering()
+            ->add('tanggalpemakaian', function($row){
+                $hari = $this->hari(date('D', strtotime($row->tglpinjam)));
+                return $hari.", ".date('d-m-Y',strtotime($row->tglpinjam));
+            })
+            ->add('tanggalpengembalian', function($row){
+                $hari = $this->hari(date('D', strtotime($row->tglkembali)));
+                return $hari.", ".date('d-m-Y',strtotime($row->tglkembali));
+            })
+            ->add('jmlalat', function($row){
+                $db       = \Config\Database::connect();
+                $jmlItem  = $db->table('detailpinjambarang')->where('detkodeinv',$row->kkdinv)->countAllResults();
+                return 
+                "<span style='cursor:pointer; font-weight: bold; color:blue'
+                onclick='detailItem(\"$row->kkdinv\")'>".number_format($jmlItem, 0, ',', '.')."</span>";
+            })
+            ->add('aksi', function($row){
+            $kdkodeinv = sha1($row->kkdinv);
+            return
+            "<button type='button' class='btn btn-sm btn-info' title='edit data'
+            onclick='print(\"$kdkodeinv\")'>
+            <i class='fa fa-print'></i>
+            </button>
+            &nbsp;
+            <button type='button' class='btn btn-sm btn-info' title='edit data' onclick='edit(\"$kdkodeinv\")'><i
+                    class='fa fa-edit'></i>
+            </button>
+            &nbsp;
+            <form method='POST' action='/kembalibarang/hapusTransaksi/$row->idkembrg' style='display:inline;' onsubmit='hapus()'><input type='hidden'
+                    value='DELETE' name='_method'>
+                <button type='submit' class='btn btn-sm btn-danger' title='hapus data'>
+                    <i class='fa fa-trash-alt'></i>
+                </button>
+            </form>";
+            })->toJson(TRUE);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
+    public function listdetailitem($kodeinv){
+        if($this->request->isAJAX()){
+            $builder    =  $this->mDetPinjam->dataDetailModal($kodeinv);
+            return DataTable::of($builder)->addNumbering()
+            ->toJson(TRUE);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
+    public function detailItem(){
+        if($this->request->isAJAX()){
+            $kodeinv         = $this->request->getPost('kodeinv');
+            $detaildata      = $this->mDetPinjam->dataDetail($kodeinv);
+            $data = [
+            'tampildatadetail' => $detaildata
+            ];
+            $json = [
+            'data' => view('pinjambarang/modaldetailitem',$data)
+            ];
+            echo json_encode($json);
+        } else {
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
     public function add(){
         return view('kembalibarang/forminput');
     }
@@ -76,10 +143,12 @@ class Kembalibarang extends BaseController
             $row = $cekFaktur->getRowArray();
             $data = [ 
                 'kodeinv'           => $row['kodeinv'],
-                'tglkembali'         => $row['tglkembali'],
+                'idkembrg'          => $row['idkembrg'],
+                'tglkembali'        => $row['tglkembali'],
+                'tglpinjam'         => $row['tglpinjam'],
                 'kegiatan'          => $row['kegiatan'],
                 'stakeholder'       => $row['stakeholder'],
-                'jnsstakholder'    => $row['jnsstakholder'],
+                'jnsstakholder'     => $row['jnsstakholder'],
                 'lokasi'            => $row['lokasi'],
             ];
             return view('kembalibarang/formedit',$data);
@@ -94,7 +163,6 @@ class Kembalibarang extends BaseController
         ];
         return view('kembalibarang/forminput',$data);
     }
-
 
     public function dataTabelList(){
         if($this->request->isAJAX()){
@@ -114,6 +182,28 @@ class Kembalibarang extends BaseController
             exit('maaf tidak bisa dipanggil');
         }
     }
+
+    public function dataDetail(){
+        if($this->request->isAJAX()){
+            $kodeinv     = $this->request->getPost('kodeinv');
+            
+            $data  = [
+                'dataDetail'    =>  $this->mDetPinjam->dataDetail($kodeinv),
+            ];
+            
+            $totalBarang = number_format($this->mDetPinjam ->ambilTotalBarang($kodeinv),0, ",",".");
+
+            $json = [
+                'data'     => view('kembalibarang/datadetail',$data),
+                'totalBarang'   => $totalBarang
+            ];
+            echo json_encode($json);
+        
+        } else {
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+    
 
     //
     public function cariDataInv(){
@@ -181,6 +271,46 @@ class Kembalibarang extends BaseController
         }
     }
 
+    public function updateItem(){
+        if($this->request->isAJAX()){
+            $kodeinv      = $this->request->getPost('kodeinv');
+            $tglkembali   = $this->request->getPost('tglkembali');
+            $idkembrg       = $this->request->getPost('idkembrg');
+            // $iddetail     = $this->request->getPost('iddetail');
+
+            // $dataDetail   = [
+            //     'detjml'        => $jumlah    
+            // ];
+
+            $datakembali = [
+                'tglkembali'    => $tglkembali
+            ];
+
+            $this->mKembali->update($idkembrg,$datakembali);
+            // $modedetailBarang = $this->mDetPinjam->update($iddetail,$dataDetail);
+
+            $json = [
+                'sukses' => 'Item berhasil ditambahkan'
+            ];
+
+            echo json_encode($json);
+            
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
+    public function hapusTransaksi($kodeinv){
+    
+        $pesan = [
+            'sukses' => '<div class="alert alert-success">Delete Data Success</div>' 
+        ];
+
+        $this->mKembali->delete($kodeinv);
+        session()->setFlashdata($pesan);
+        return redirect()->to('/kembalibarang/index');
+    }
+
     //Prosess
 
     function selesaiTransaksi(){
@@ -231,11 +361,9 @@ class Kembalibarang extends BaseController
 
     public function printInvPdf($kodeinv){
         // create new PDF document
-        $cekFaktur =  $this->mPinjam->cekFaktur($kodeinv);
+        $cekFaktur =  $this->mPinjam->cekkodeinv($kodeinv);
         if($cekFaktur->getNumRows() > 0){
             $row = $cekFaktur->getRowArray();
-
-            
 
             $data = [ 
                 'kodeinv'           => $row['kodeinv'],
