@@ -37,6 +37,10 @@ class Kategori extends BaseController
                     <i class='fa fa-trash-alt'></i>
                     </button>
                 </form>";
+            })->postQuery(function($builder){
+
+                $builder->orderBy('katnama', 'asc');
+        
             })
             ->toJson(TRUE);
             }else{
