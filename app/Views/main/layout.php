@@ -115,19 +115,19 @@
                         </li>
                         <li class="nav-header">SETTING</li>
                         <li class="nav-item">
-                            <a href="<?=site_url('barangmasuk/data')?>" class="nav-link">
+                            <a href="<?=site_url('usermag/index')?>" class="nav-link">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p class="text">Users</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=site_url('barangmasuk/data')?>" class="nav-link">
+                            <a href="<?=site_url()?>" class="nav-link">
                                 <i class="nav-icon fa fa-user-circle"></i>
                                 <p class="text">Group</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?=site_url('barangmasuk/data')?>" class="nav-link">
+                            <a href="<?=site_url()?>" class="nav-link">
                                 <i class="nav-icon fa fa-user-secret"></i>
                                 <p class="text">Permission</p>
                             </a>
