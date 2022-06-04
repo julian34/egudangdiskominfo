@@ -36,32 +36,7 @@ class Kembalibarang extends BaseController
 
     public function index()
     {
-        
-        $tombolcari = $this->request->getPost('tombolcari');
-       
-        if(isset($tombolcari)){
-            $cari = $this->request->getPost('cari');
-            session()->set('cari_kdinv',$cari);
-            redirect()->to('/kembalibarang/index');
-        }else{
-            $cari = session()->get('cari_kdinv');
-        }
-
-        $totaldata = $cari ? $this->mKembali->tampildata_cari($cari)->countAllResults() : $this->mKembali->tampildata()->countAllResults();
-        
-        $dataBarang = $cari ? $this->mKembali->tampildata_cari($cari)->paginate(10, 'kembalialat') : $this->mKembali->tampildata()->paginate(10, 'kembalialat');
-
-        $nohal = $this->request->getVar('page_kembalialat') ? $this->request->getVar('page_kembalialat') : 1;
-
-        $data = [
-            'tampildata' => $dataBarang,
-            'pager'      => $this->mKembali->pager,
-            'nohal'      => $nohal,
-            'totaldata'  => $totaldata,
-            'cari'       => $cari 
-        ];
-
-        return view('kembalibarang/viewdata',$data);
+        return view('kembalibarang/viewdata');
     }
 
     public function listtabeldata(){
