@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Modelsatuan;
 
+use \Hermawan\DataTables\DataTable;
+
 class Satuan extends BaseController
 {
     protected $vd;
@@ -18,30 +20,33 @@ class Satuan extends BaseController
     
     public function index()
     {
-        //
+        return view('satuan/index');
+    }
 
-        $tombolcari = $this->request->getPost('tombolcari');
+    
+    public function listtabeldata(){
+        if($this->request->isAJAX()){
+            $builder    = $this->md->tampildata();
+            return DataTable::of($builder)->addNumbering()
+            ->add('aksi', function($row){
+                return 
+                "<button type='button' class='btn btn-sm btn-info' title='edit data'
+                onclick='edit(\"$row->satid\")'><i class='fa fa-edit'></i>
+                </button>
+                <form method='POST' action='/satuan/hapus/$row->satid' style='display:inline;' onsubmit='hapus()'><input type='hidden' value='DELETE' name='_method'>
+                    <button type='submit' class='btn btn-sm btn-danger' title='hapus data'>
+                    <i class='fa fa-trash-alt'></i>
+                    </button>
+                </form>";
+            })->postQuery(function($builder){
 
-        if(isset($tombolcari)){
-            $cari = $this->request->getPost('cari');
-            session()->set('cari_satuan',$cari);
-            redirect()->to('/satuan/index');
-        }else{
-            $cari = session()->get('cari_satuan');
-        }
-
-         $dataSatuan = $cari ? $this->md->cariData($cari)->paginate(5, 'satuan') : $this->md->paginate(5, 'satuan');
-
-        $nohal = $this->request->getVar('page_satuan') ? $this->request->getVar('page_satuan') : 1;
-        $data = [
-            // 'tampildata' => $this->md->findAll()
-            'tampildata' => $dataSatuan,
-            'pager'      => $this->md->pager,
-            'nohal'      => $nohal,
-            'cari'       => $cari 
-        ];
-
-        return view('satuan/index', $data);
+                $builder->orderBy('satnama', 'asc');
+        
+            })
+            ->toJson(TRUE);
+            }else{
+            exit('maaf tidak bisa dipanggil');
+            }
     }
 
     public function addform(){

@@ -14,61 +14,29 @@ Manajemen Data Satuan
 
 
 <?= $this->section('isi')?>
-
 <?= session()->getFlashdata('sukses'); ?>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="col-lg grid-margin">
+            <table class="table table-striped table-bordered" style="width: 100%;" id="tablelistdata">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Satuan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-<?= form_open('satuan/index'); ?>
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Cari data satuan" aria-label="cari-satuan"
-        aria-describedby="button-addon2" name="cari" value="<?= $cari; ?>">
-    <div class="input-group-append">
-        <button class="btn btn-outline-primary" type="submit" id="tombolcari" name="tombolcari">
-            <i class="fa fa-search"></i>
-        </button>
+                </tbody>
+            </table>
+
+        </div>
     </div>
 </div>
-<?= form_close(); ?>
+<?= $this->endSection('isi')?>
 
-<table class="table table-striped table-borderd" style="width: 100%;">
-    <thead>
-        <tr>
-            <th style="width: 5%;">No</th>
-            <th>Nama Satuan</th>
-            <th style="width: 15%;">Aksi</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <?php 
-            $nomor=1;
-            foreach ($tampildata as $row) :
-        ?>
-        <tr>
-            <td><?= $nomor++; ?></td>
-            <td><?= $row['satnama']; ?></td>
-            <td>
-                <button type="button" class="btn btn-info" title="edit data" onclick="edit('<?= $row['satid']; ?>')">
-                    <i class="fa fa-edit"></i>
-                </button>
-
-                <form method="POST" action="/satuan/hapus/<?= $row['satid']?>" style="display:inline;"
-                    onsubmit="hapus()">
-                    <input type="hidden" value="DELETE" name="_method">
-                    <button type="submit" class="btn btn-danger" title="hapus data">
-                        <i class="fa fa-trash-alt"></i>
-                    </button>
-                </form>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-
-</table>
-
-<div class="float-left mt-4">
-    <?= $pager->links('satuan','paging'); ?>
-</div>
-
+<?= $this->Section('jspage')?>
 <script>
 function edit(id) {
     window.location = ('editform/' + id);
@@ -82,6 +50,26 @@ function hapus(id) {
         return false;
     }
 }
-</script>
 
-<?= $this->endSection('isi')?>
+$(document).ready(function() {
+    var tabel = $('#tablelistdata').DataTable({
+        processing: true,
+        serverSide: true,
+        scrollX: true,
+        ajax: "<?= site_url('satuan/listtabeldata') ?>",
+        columns: [{
+                data: '',
+                orderable: false
+            },
+            {
+                data: 'satnama'
+            },
+            {
+                data: 'aksi',
+                orderable: false
+            },
+        ]
+    });
+});
+</script>
+<?= $this->endSection('jspage')?>

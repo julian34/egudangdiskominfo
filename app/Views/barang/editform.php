@@ -12,12 +12,10 @@ Form Edit Data
 ]) ?>
 <?= $this->endSection('subjudul')?>
 
-
 <?= $this->section('isi')?>
 <?= form_open_multipart('barang/editprosess'); ?>
 
 <?= session()->getFlashdata('errors'); ?>
-
 <div class="form-group row">
     <?= form_label('Kode Barang','brgkode',[
         'class' => 'col-sm-2 col-form-label',
@@ -116,7 +114,9 @@ Form Edit Data
         'class' => 'col-sm-2 col-form-label',
         ]); ?>
     <div class="col-sm-10">
-        <img src="<?= base_url().'/'.$gambarbarang; ?>" class="img-thumbnail" style="width:50%" alt="gambar barang">
+        <img src="<?= $gambarbarang == "default-150x150.png" ? base_url()."/dist/img/default-150x150.png" : 
+            base_url().$gambarbarang; ?>" class="img-thumbnail" style="width:50" alt="gambar
+        barang">
     </div>
 </div>
 

@@ -1,0 +1,313 @@
+ERROR - 2022-06-04 00:00:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`detailpinjambarang`.`detbrgkode`' at line 1
+CRITICAL - 2022-06-04 00:00:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`detailpinjambarang`.`detbrgkode`' at line 1
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FR...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FR...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FR...')
+#3 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(402): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FR...')
+#4 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(1436): CodeIgniter\Database\MySQLi\Connection->_fieldData('`JOIN ``barang`...')
+#5 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(351): CodeIgniter\Database\BaseConnection->getFieldData('JOIN `barang` O...')
+#6 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+#7 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#8 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#9 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(104): Hermawan\DataTables\DataTable::of(Object(App\Models\Modeldetailpinjambarang))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->listdetailitem('INV2205240001')
+#11 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#12 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2022-06-04 00:01:12 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`brgkode``=``detbrgkode`' at line 1
+CRITICAL - 2022-06-04 00:01:12 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`brgkode``=``detbrgkode`' at line 1
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FR...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FR...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FR...')
+#3 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(402): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FR...')
+#4 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(1436): CodeIgniter\Database\MySQLi\Connection->_fieldData('`JOIN ``barang`...')
+#5 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(351): CodeIgniter\Database\BaseConnection->getFieldData('JOIN `barang` O...')
+#6 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+#7 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#8 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#9 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(104): Hermawan\DataTables\DataTable::of(Object(App\Models\Modeldetailpinjambarang))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->listdetailitem('INV2205240001')
+#11 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#12 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+ERROR - 2022-06-04 00:01:46 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`barang`.`brgkode``=``detbrgkode`' at line 1
+CRITICAL - 2022-06-04 00:01:46 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`barang`.`brgkode``=``detbrgkode`' at line 1
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FR...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FR...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FR...')
+#3 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(402): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FR...')
+#4 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(1436): CodeIgniter\Database\MySQLi\Connection->_fieldData('`JOIN ``barang`...')
+#5 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(351): CodeIgniter\Database\BaseConnection->getFieldData('JOIN `barang` O...')
+#6 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+#7 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#8 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#9 C:\xampp\htdocs\simidisko\app\Controllers\Pinjambarang.php(104): Hermawan\DataTables\DataTable::of(Object(App\Models\Modeldetailpinjambarang))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Pinjambarang->listdetailitem('INV2205240001')
+#11 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjambarang))
+#12 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2022-06-04 00:24:00 --> Call to undefined method App\Models\Modelpinjambarang::cekFaktur
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(234): CodeIgniter\Model->__call('cekFaktur', Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->printInvPdf('b6eff3d7fdd81ef...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-04 01:32:53 --> Undefined property: stdClass::$kodeinv
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(81): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 81, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Kembalibarang->App\Controllers\{closure}(Object(stdClass))
+#2 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(104): Hermawan\DataTables\DataTable->toJson(true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->listtabeldata()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-04 01:33:28 --> Undefined property: stdClass::$kodeinv
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(81): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 81, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Kembalibarang->App\Controllers\{closure}(Object(stdClass))
+#2 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(104): Hermawan\DataTables\DataTable->toJson(true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->listtabeldata()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-04 01:38:28 --> Undefined index: kegiatan
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(147): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 147, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('4cd4ce407f35f77...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-04 01:44:48 --> Undefined index: kegiatan
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(147): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 147, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-04 01:52:52 --> Undefined index: kegiatan
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(147): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 147, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-06-04 01:53:41 --> Column 'kodeinv' in where clause is ambiguous
+CRITICAL - 2022-06-04 01:53:41 --> Column 'kodeinv' in where clause is ambiguous
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\simidisko\app\Models\Modelkembalibarang.php(31): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(141): App\Models\Modelkembalibarang->cekFaktur('b6eff3d7fdd81ef...')
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-06-04 01:53:58 --> Column 'kodeinv' in where clause is ambiguous
+CRITICAL - 2022-06-04 01:53:58 --> Column 'kodeinv' in where clause is ambiguous
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `pinjamb...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pinjamb...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pinjamb...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT `pinjamb...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\simidisko\app\Models\Modelkembalibarang.php(32): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(141): App\Models\Modelkembalibarang->cekFaktur('b6eff3d7fdd81ef...')
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-06-04 01:54:00 --> Column 'kodeinv' in where clause is ambiguous
+CRITICAL - 2022-06-04 01:54:00 --> Column 'kodeinv' in where clause is ambiguous
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `pinjamb...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pinjamb...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pinjamb...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT `pinjamb...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\simidisko\app\Models\Modelkembalibarang.php(32): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(141): App\Models\Modelkembalibarang->cekFaktur('b6eff3d7fdd81ef...')
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-06-04 01:54:20 --> Column 'kodeinv' in where clause is ambiguous
+CRITICAL - 2022-06-04 01:54:20 --> Column 'kodeinv' in where clause is ambiguous
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `pinjamb...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pinjamb...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pinjamb...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT `pinjamb...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\simidisko\app\Models\Modelkembalibarang.php(32): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(141): App\Models\Modelkembalibarang->cekFaktur('b6eff3d7fdd81ef...')
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-06-04 01:54:22 --> Column 'kodeinv' in where clause is ambiguous
+CRITICAL - 2022-06-04 01:54:22 --> Column 'kodeinv' in where clause is ambiguous
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `pinjamb...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pinjamb...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pinjamb...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT `pinjamb...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\simidisko\app\Models\Modelkembalibarang.php(32): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(141): App\Models\Modelkembalibarang->cekFaktur('b6eff3d7fdd81ef...')
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-06-04 01:54:57 --> Undefined index: jnsstakholder
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-06-04 01:55:26 --> Unknown column 'jnsstakeholder' in 'field list'
+CRITICAL - 2022-06-04 01:55:26 --> Unknown column 'jnsstakeholder' in 'field list'
+#0 C:\xampp\htdocs\simidisko\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `pinjamb...', 0)
+#1 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pinjamb...')
+#2 C:\xampp\htdocs\simidisko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pinjamb...')
+#3 C:\xampp\htdocs\simidisko\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT `pinjamb...', Array, false)
+#4 C:\xampp\htdocs\simidisko\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\simidisko\app\Models\Modelkembalibarang.php(32): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(141): App\Models\Modelkembalibarang->cekFaktur('b6eff3d7fdd81ef...')
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('b6eff3d7fdd81ef...')
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-06-04 02:06:09 --> Undefined variable: jnsstakeholder
+#0 C:\xampp\htdocs\simidisko\app\Views\kembalibarang\formedit.php(45): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 45, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('kembalibarang/f...', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(153): view('kembalibarang/f...', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('d18b81ee5823cf0...')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-04 02:37:35 --> Undefined index: idkembarang
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(146): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 146, Array)
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->edit('d18b81ee5823cf0...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-04 02:43:33 --> Undefined property: stdClass::$idkembrg
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 98, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Kembalibarang->App\Controllers\{closure}(Object(stdClass))
+#2 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(104): Hermawan\DataTables\DataTable->toJson(true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->listtabeldata()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-04 02:43:38 --> Undefined property: stdClass::$idkembrg
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 98, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Kembalibarang->App\Controllers\{closure}(Object(stdClass))
+#2 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(104): Hermawan\DataTables\DataTable->toJson(true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->listtabeldata()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-04 02:43:47 --> Undefined property: stdClass::$idkembrg
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 98, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Kembalibarang->App\Controllers\{closure}(Object(stdClass))
+#2 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(104): Hermawan\DataTables\DataTable->toJson(true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->listtabeldata()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-04 02:44:37 --> Undefined property: stdClass::$idkembrg
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 98, Array)
+#1 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Kembalibarang->App\Controllers\{closure}(Object(stdClass))
+#2 C:\xampp\htdocs\simidisko\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 C:\xampp\htdocs\simidisko\app\Controllers\Kembalibarang.php(104): Hermawan\DataTables\DataTable->toJson(true)
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Kembalibarang->listtabeldata()
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kembalibarang))
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-04 03:15:07 --> Undefined variable: gambarbaran
+#0 C:\xampp\htdocs\simidisko\app\Views\barang\editform.php(120): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 120, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('barang/editform', Array, true)
+#4 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(195): view('barang/editform', Array)
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editform('TIKMUL0008')
+#6 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#7 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-04 04:30:00 --> Too few arguments to function App\Models\Modelkembalibarang::laporanpb(), 0 passed in C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php on line 99 and exactly 2 expected
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(99): App\Models\Modelkembalibarang->laporanpb()
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->listtabeldata()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-04 04:30:58 --> Too few arguments to function App\Models\Modelkembalibarang::laporanpb(), 0 passed in C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php on line 99 and exactly 2 expected
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(99): App\Models\Modelkembalibarang->laporanpb()
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->listtabeldata()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-04 12:05:09 --> Array to string conversion
+#0 C:\xampp\htdocs\simidisko\system\Common.php(1021): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 1021, Array)
+#1 C:\xampp\htdocs\simidisko\system\Helpers\form_helper.php(153): stringify_attributes(Array)
+#2 C:\xampp\htdocs\simidisko\system\Helpers\form_helper.php(402): form_input('submitprint', 'Print', Array, 'submit')
+#3 C:\xampp\htdocs\simidisko\app\Views\laporan\viewdata.php(32): form_submit('submitprint', 'Print', Array)
+#4 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('laporan/viewdat...', Array, true)
+#7 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(60): view('laporan/viewdat...', Array)
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->index()
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}

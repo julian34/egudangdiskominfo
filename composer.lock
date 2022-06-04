@@ -4,8 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ccf434dd5c463502d5fd1a59941faa5",
+    "content-hash": "d19774ee81a8db736f2be9508fb7dbf7",
     "packages": [
+        {
+            "name": "codeigniter4/framework",
+            "version": "v4.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeigniter4/framework.git",
+                "reference": "4ec623a6b8269dd09f570ab514e5864276bb7f56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeigniter4/framework/zipball/4ec623a6b8269dd09f570ab514e5864276bb7f56",
+                "reference": "4ec623a6b8269dd09f570ab514e5864276bb7f56",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "kint-php/kint": "^4.0",
+                "laminas/laminas-escaper": "^2.9",
+                "php": "^7.3 || ^8.0",
+                "psr/log": "^1.1"
+            },
+            "require-dev": {
+                "codeigniter/coding-standard": "^1.1",
+                "fakerphp/faker": "^1.9",
+                "friendsofphp/php-cs-fixer": "^3.1",
+                "mikey179/vfsstream": "^1.6",
+                "nexusphp/cs-config": "^3.3",
+                "phpunit/phpunit": "^9.1",
+                "predis/predis": "^1.1"
+            },
+            "suggest": {
+                "ext-fileinfo": "Improves mime type detection for files"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "CodeIgniter\\": "system/"
+                },
+                "exclude-from-classmap": [
+                    "**/Database/Migrations/**"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The CodeIgniter framework v4",
+            "homepage": "https://codeigniter.com",
+            "support": {
+                "forum": "http://forum.codeigniter.com/",
+                "slack": "https://codeigniterchat.slack.com",
+                "source": "https://github.com/codeigniter4/CodeIgniter4"
+            },
+            "time": "2022-02-26T00:51:52+00:00"
+        },
         {
             "name": "dompdf/dompdf",
             "version": "v1.2.2",
@@ -74,6 +132,108 @@
                 "source": "https://github.com/dompdf/dompdf/tree/v1.2.2"
             },
             "time": "2022-04-27T13:50:54+00:00"
+        },
+        {
+            "name": "greenlion/php-sql-parser",
+            "version": "v4.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/greenlion/PHP-SQL-Parser.git",
+                "reference": "a5d5c292d97271c95140192e6f0e962916e39b50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/greenlion/PHP-SQL-Parser/zipball/a5d5c292d97271c95140192e6f0e962916e39b50",
+                "reference": "a5d5c292d97271c95140192e6f0e962916e39b50",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "analog/analog": "^1.0.6",
+                "phpunit/phpunit": "^9.5.13",
+                "squizlabs/php_codesniffer": "^1.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPSQLParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Swanhart",
+                    "email": "greenlion@gmail.com",
+                    "homepage": "http://code.google.com/u/greenlion@gmail.com/",
+                    "role": "Owner"
+                },
+                {
+                    "name": "André Rothe",
+                    "email": "phosco@gmx.de",
+                    "homepage": "https://www.phosco.info",
+                    "role": "Committer"
+                }
+            ],
+            "description": "A pure PHP SQL (non validating) parser w/ focus on MySQL dialect of SQL",
+            "homepage": "https://github.com/greenlion/PHP-SQL-Parser",
+            "keywords": [
+                "creator",
+                "mysql",
+                "parser",
+                "sql"
+            ],
+            "support": {
+                "issues": "https://github.com/greenlion/PHP-SQL-Parser/issues",
+                "source": "https://github.com/greenlion/PHP-SQL-Parser"
+            },
+            "time": "2022-02-01T09:26:56+00:00"
+        },
+        {
+            "name": "hermawan/codeigniter4-datatables",
+            "version": "v0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hermawanramadhan/CodeIgniter4-DataTables.git",
+                "reference": "b3ffc89d449520ce6e0c41a69c8a949302b8dd1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hermawanramadhan/CodeIgniter4-DataTables/zipball/b3ffc89d449520ce6e0c41a69c8a949302b8dd1a",
+                "reference": "b3ffc89d449520ce6e0c41a69c8a949302b8dd1a",
+                "shasum": ""
+            },
+            "require": {
+                "codeigniter4/framework": "^4",
+                "greenlion/php-sql-parser": ">=4.5",
+                "php": ">=7.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hermawan\\DataTables\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hermawan Ramadhan",
+                    "email": "hermawanramadhan@gmail.com"
+                }
+            ],
+            "description": "Serverside Datatables library for CodeIgniter4",
+            "support": {
+                "issues": "https://github.com/hermawanramadhan/CodeIgniter4-DataTables/issues",
+                "source": "https://github.com/hermawanramadhan/CodeIgniter4-DataTables/tree/v0.6.1"
+            },
+            "time": "2022-05-25T15:13:25+00:00"
         },
         {
             "name": "kint-php/kint",

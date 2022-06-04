@@ -81,7 +81,7 @@ defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest auto
 // //pembuatan base dinamis
 // $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://'.$_SERVER['HTTP_HOST'] : 'http://'.$_SERVER['HTTP_HOST'];
 //
-    $protocol = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
-    $protocol .= "://". @$_SERVER['HTTP_HOST'];
-    $protocol .=     str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']); 
-defined('BASE') || define('BASE',$protocol);
+//     $protocol = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+//     $protocol .= "://". @$_SERVER['HTTP_HOST'];
+//     $protocol .=     str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']); 
+// defined('BASE') || define('BASE',$protocol);

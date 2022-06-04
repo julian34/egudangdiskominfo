@@ -13,6 +13,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "dompdf/dompdf": "^1.2",
+        "hermawan/codeigniter4-datatables": "^0.6.1",
         "kint-php/kint": "^4.0",
         "laminas/laminas-escaper": "^2.9",
         "myth/auth": "^1.0",

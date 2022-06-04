@@ -14,6 +14,8 @@ use App\Models\Modeldetailpinjambarang;
 
 use App\Models\Modelbarang;
 
+
+use \Hermawan\DataTables\DataTable;
 use App\Libraries\MY_TCPDF AS TCPDF;
 
 class Lpb extends BaseController
@@ -73,6 +75,51 @@ class Lpb extends BaseController
             ];
             
             echo json_encode($json);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
+    }
+
+    public function listtabeldata(){
+        if($this->request->isAJAX()){
+
+
+            $tanggal    = $this->request->getPost('tanggal');
+            $tglawal    = $this->request->getPost('startDate');
+            $tglakhir   = $this->request->getPost('endDate');
+            // $data = explode(' - ', $tanggal);
+            // $data  = [
+            //     'tampildata' => $this->mKembali->laporanpb($tglawal,$tglakhir)->get()
+            // ];
+
+            // $json = [
+            //     'data'     => view('laporan/tabeldata',$data) 
+            // ];
+
+            $builder    =  $this->mKembali->laporanpb($tglawal,$tglakhir);
+            return DataTable::of($builder)->addNumbering()
+            ->add('tanggalpemakaian', function($row){
+                $hari = $this->hari(date('D', strtotime($row->tglpinjam)));
+                return $hari.", ".date('d-m-Y',strtotime($row->tglpinjam));
+            })
+            ->add('tanggalpengembalian', function($row){
+                $hari = $this->hari(date('D', strtotime($row->tglkembali)));
+                return $hari.", ".date('d-m-Y',strtotime($row->tglkembali));
+            })
+            ->add('jmlalat', function($row){
+                $db       = \Config\Database::connect();
+                $jmlItem  = $db->table('detailpinjambarang')->where('detkodeinv',$row->kkdinv)->countAllResults();
+                return 
+                "<span style='cursor:pointer; font-weight: bold; color:blue'
+                onclick='detailItem(\"$row->kkdinv\")'>".number_format($jmlItem, 0, ',', '.')."</span>";
+            })->postQuery(function($builder){
+
+                $builder->orderBy('tglpinjam', 'desc');
+        
+            })
+           ->toJson(TRUE);
+            
+            // echo json_encode($json);
         }else{
             exit('maaf tidak bisa dipanggil');
         }

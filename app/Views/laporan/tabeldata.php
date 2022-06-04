@@ -10,14 +10,14 @@ form_submit('submitprint','Print',[
 <?= form_close(); ?>
 <br />
 <div>
-    <table class="table table-striped table-borderd" style="width: 100%;">
+    <table class="table table-striped table-bordered" style="width: 100%;">
         <thead>
             <tr>
                 <th style="width: 5%;">No</th>
                 <th>Invoice</th>
                 <th>Kegiatan</th>
-                <th>Tanggal Pinjam</th>
-                <th>Tanggal Kembali</th>
+                <th>Tanggal Pemakaian</th>
+                <th>Tanggal Pengembalian</th>
                 <th>Stakeholder</th>
                 <th>Lokasi</th>
                 <th>Jumlah Item</th>

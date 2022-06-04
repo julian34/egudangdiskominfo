@@ -13,4 +13,8 @@ class Modelsatuan extends Model
     public function cariData($cari) {
         return $this->table('satuan')->like('satnama',$cari);
     }
+
+    public function tampildata(){
+        return $this->table('satuan')->select('satnama, satid');
+    }
 }

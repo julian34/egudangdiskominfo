@@ -16,80 +16,31 @@ Input Barang Masuk
 <?= $this->section('isi')?>
 
 <?= session()->getFlashdata('sukses'); ?>
-<?= form_open('barangmasuk/data'); ?>
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Cari Berdasarkan Faktur..." aria-label="cari-barang"
-        aria-describedby="button-addon2" name="cari" value="<?= $cari; ?>" autofocus>
-    <div class="input-group-append">
-        <button class="btn btn-outline-primary" type="submit" id="tombolcari" name="tombolcari">
-            <i class="fa fa-search"></i>
-        </button>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="col-lg grid-margin">
+            <table class="table table-striped table-bordered" style="width: 100%;" id="tablelistdata">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th>Faktur</th>
+                        <th>Tanggal</th>
+                        <th>Jumlah Item</th>
+                        <th style="width: 15%;">Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-<?= form_close(); ?>
-<span class="badge badge-success">
-    <h5><?= "Total Data : ".$totaldata; ?> </h5>
-</span>
-<br />
-<table class="table table-striped table-borderd" style="width: 100%;">
-    <thead>
-        <tr>
-            <th style="width: 5%;">No</th>
-            <th>Faktur</th>
-            <th>Tanggal</th>
-            <th>Jumlah Item</th>
-            <th style="width: 15%;">Aksi</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <?php 
-            $nomor=1 + (($nohal - 1) * 5);
-            // $nomor = 1;
-            foreach ($tampildata as $row) :
-        ?>
-        <tr>
-            <td><?= $nomor++; ?></td>
-            <td><?= $row['faktur']; ?></td>
-            <td><?= date('d-m-Y',strtotime($row['tglfaktur'])); ?></td>
-            <td>
-                <?php 
-                    $db = \Config\Database::connect();
-                    $jmlItem = $db->table('detailbarangmasuk')->where('detfaktur',$row['faktur'])->countAllResults();
-                ?>
-                <span style="cursor:pointer; font-weight: bold; color:blue"
-                    onclick="detailItem('<?= $row['faktur']; ?>')"><?= number_format($jmlItem, 0, ",", "."); ?></span>
-            </td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info" title="edit data"
-                    onclick="edit('<?= sha1($row['faktur']); ?>')">
-                    <i class="fa fa-edit"></i>
-                </button>
-
-                <form method="POST" action="/barangmasuk/hapusTransaksi/<?= $row['faktur']?>" style="display:inline;"
-                    onsubmit="hapus()">
-                    <input type="hidden" value="DELETE" name="_method">
-                    <button type="submit" class="btn btn-sm btn-danger" title="hapus data">
-                        <i class="fa fa-trash-alt"></i>
-                    </button>
-                </form>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-
-<div class="float-left mt-4">
-    <?= $pager->links('barangmasuk','paging'); ?>
-</div>
-
-
 <div class="viewModal" style="display: none;"></div>
 <?= $this->endSection('isi')?>
 
 <?= $this->Section('jspage')?>
-
-
 <script>
 function detailItem(faktur) {
     // alert('muncul');
@@ -104,6 +55,27 @@ function detailItem(faktur) {
             $('.viewModal').html(response.data).show();
             $('#modalDetailItem').modal('show');
             $('#modalDetailItemTitle').text('Detail Item | No. Faktur : ' + faktur);
+            $('#tabeldetailitem').DataTable({
+                processing: true,
+                serverSide: true,
+                scrollX: true,
+                ajax: "<?= site_url('barangmasuk/listdetailitem') ?>/" + faktur,
+                columns: [{
+                        data: '',
+                        orderable: false
+                    },
+                    {
+                        data: 'brgkode'
+                    },
+                    {
+                        data: 'brgnama'
+                    },
+                    {
+                        data: 'detjml',
+                        orderable: false
+                    }
+                ]
+            });
         },
         error: function(xhr, ajaxOptions, thrownError) {
             alert(xhr.status + '\n' + thrownError);
@@ -123,6 +95,33 @@ function hapus(id) {
         return false;
     }
 }
-</script>
 
+$(document).ready(function() {
+    var tabel = $('#tablelistdata').DataTable({
+        processing: true,
+        serverSide: true,
+        scrollX: true,
+        ajax: "<?= site_url('barangmasuk/listtabeldata') ?>",
+        columns: [{
+                data: '',
+                orderable: false
+            },
+            {
+                data: 'faktur'
+            },
+            {
+                data: 'tglfaktur'
+            },
+            {
+                data: 'jmlalat',
+                orderable: false
+            },
+            {
+                data: 'aksi',
+                orderable: false
+            },
+        ]
+    });
+});
+</script>
 <?= $this->endSection('jspage')?>

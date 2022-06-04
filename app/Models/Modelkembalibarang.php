@@ -12,21 +12,24 @@ class Modelkembalibarang extends Model
     protected $useTimestamps    = true; 
 
     public function tampildata(){
-        return $this->table('kembalibarang')->select('pinjambarang.kodeinv as kkdinv, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
+        return $this->table('kembalibarang')->select('pinjambarang.kodeinv as kkdinv, ,idkembrg, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
                     ->join('pinjambarang','pinjambarang.kodeinv=kembalibarang.kodeinv');
     }
    
     
     public function tampildata_cari($cari){
-        return $this->table('kembalibarang')->select('pinjambarang.kodeinv as kodeinv, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
+        return $this->table('kembalibarang')->select('pinjambarang.kodeinv as kodeinv, ,idkembrg, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
                     ->join('pinjambarang','pinjambarang.kodeinv=kembalibarang.kodeinv')
                     ->like('kembalibarang.kodeinv',$cari);
     }
 
 
     public function cekFaktur($faktur){
-        return $this->table('kembalibarang')->getWhere([
-            'sha1(kodeinv)' => $faktur
+        return $this->table('kembalibarang')
+        ->select('pinjambarang.kodeinv as kodeinv,idkembrg,kegiatan, tglpinjam, tglkembali,stakeholder,jnsstakholder,lokasi')
+        ->join('pinjambarang','pinjambarang.kodeinv=kembalibarang.kodeinv')
+        ->getWhere([
+            'sha1(pinjambarang.kodeinv)' => $faktur
         ]);
     }
 
@@ -35,11 +38,11 @@ class Modelkembalibarang extends Model
         $array = ['tglpinjam >=' => date('Y-m-d',strtotime($startDate)), 'tglpinjam <=' => date('Y-m-d',strtotime($endDate))];
         
         return $this->table('kembalibarang')
-        ->select('pinjambarang.kodeinv as kkdinv, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
+        ->select('pinjambarang.kodeinv as kkdinv, ,idkembrg, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
         ->join('pinjambarang','pinjambarang.kodeinv=kembalibarang.kodeinv')
         ->where($array)
-        ->groupBy('tglpinjam')
-        ->orderBy('tglpinjam', 'ASC');
+        ->orderBy('pinjambarang.tglpinjam', 'DESC')
+        ->groupBy('pinjambarang.tglpinjam');
     }
     
 }

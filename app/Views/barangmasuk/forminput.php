@@ -387,7 +387,12 @@ $(document).ready(function() {
                     if (e.sukses) {
                         dataTemp();
                         rform();
-                        alert(e.sukses);
+                        Swal.fire({
+                            title: 'Item Ditambahkan!',
+                            text: e.success,
+                            icon: 'success'
+                        });
+
                     }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {

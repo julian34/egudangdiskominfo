@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Modelkategori;
 
+use \Hermawan\DataTables\DataTable;
+
 class Kategori extends BaseController
 {   
     protected $vd;
@@ -18,30 +20,32 @@ class Kategori extends BaseController
     
     public function index()
     {
-        //
+        return view('kategori/index');
+    }
 
-        $tombolcari = $this->request->getPost('tombolcari');
+    public function listtabeldata(){
+        if($this->request->isAJAX()){
+            $builder    = $this->md->tampildata();
+            return DataTable::of($builder)->addNumbering()
+            ->add('aksi', function($row){
+                return 
+                "<button type='button' class='btn btn-sm btn-info' title='edit data'
+                onclick='edit(\"$row->katid\")'><i class='fa fa-edit'></i>
+                </button>
+                <form method='POST' action='/kategori/hapus/$row->katid' style='display:inline;' onsubmit='hapus()'><input type='hidden' value='DELETE' name='_method'>
+                    <button type='submit' class='btn btn-sm btn-danger' title='hapus data'>
+                    <i class='fa fa-trash-alt'></i>
+                    </button>
+                </form>";
+            })->postQuery(function($builder){
 
-        if(isset($tombolcari)){
-            $cari = $this->request->getPost('cari');
-            session()->set('cari_kategori',$cari);
-            redirect()->to('/kategori/index');
-        }else{
-            $cari = session()->get('cari_kategori');
-        }
-
-        $dataKategori = $cari ? $this->md->cariData($cari)->paginate(5, 'kategori') : $this->md->paginate(5, 'kategori');
-
-        $nohal = $this->request->getVar('page_kategori') ? $this->request->getVar('page_kategori') : 1;
-        $data = [
-            // 'tampildata' => $this->md->findAll()
-            'tampildata' => $dataKategori,
-            'pager'      => $this->md->pager,
-            'nohal'      => $nohal,
-            'cari'       => $cari 
-        ];
+                $builder->orderBy('katnama', 'asc');
         
-        return view('kategori/index', $data);
+            })
+            ->toJson(TRUE);
+            }else{
+            exit('maaf tidak bisa dipanggil');
+            }
     }
 
     public function addform(){
