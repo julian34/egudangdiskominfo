@@ -41,6 +41,7 @@ class Modelkembalibarang extends Model
         ->select('pinjambarang.kodeinv as kkdinv, ,idkembrg, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
         ->join('pinjambarang','pinjambarang.kodeinv=kembalibarang.kodeinv')
         ->where($array)
+        ->orderBy('pinjambarang.tglpinjam', 'DESC')
         ->groupBy('pinjambarang.tglpinjam');
     }
     

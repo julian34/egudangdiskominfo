@@ -112,6 +112,10 @@ class Lpb extends BaseController
                 return 
                 "<span style='cursor:pointer; font-weight: bold; color:blue'
                 onclick='detailItem(\"$row->kkdinv\")'>".number_format($jmlItem, 0, ',', '.')."</span>";
+            })->postQuery(function($builder){
+
+                $builder->orderBy('tglpinjam', 'desc');
+        
             })
            ->toJson(TRUE);
             

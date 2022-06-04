@@ -224,6 +224,11 @@ class Barangmasuk extends BaseController
                     <i class='fa fa-trash-alt'></i>
                 </button>
             </form>";
+            })
+            ->postQuery(function($builder){
+
+                $builder->orderBy('tglfaktur', 'desc');
+        
             })->toJson(TRUE);
         }else{
             exit('maaf tidak bisa dipanggil');

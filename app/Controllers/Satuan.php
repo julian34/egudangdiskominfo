@@ -38,6 +38,10 @@ class Satuan extends BaseController
                     <i class='fa fa-trash-alt'></i>
                     </button>
                 </form>";
+            })->postQuery(function($builder){
+
+                $builder->orderBy('satnama', 'asc');
+        
             })
             ->toJson(TRUE);
             }else{

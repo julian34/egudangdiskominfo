@@ -44,7 +44,11 @@ class Barang extends BaseController
                     <i class='fa fa-trash-alt'></i>
                     </button>
                 </form>";
-            }, 'last')
+            }, 'last')->postQuery(function($builder){
+
+                $builder->orderBy('brgnama', 'asc');
+        
+            })
             ->toJson();
             }else{
             exit('maaf tidak bisa dipanggil');

@@ -16,8 +16,8 @@ form_submit('submitprint','Print',[
                 <th style="width: 5%;">No</th>
                 <th>Invoice</th>
                 <th>Kegiatan</th>
-                <th>Tanggal Pinjam</th>
-                <th>Tanggal Kembali</th>
+                <th>Tanggal Pemakaian</th>
+                <th>Tanggal Pengembalian</th>
                 <th>Stakeholder</th>
                 <th>Lokasi</th>
                 <th>Jumlah Item</th>

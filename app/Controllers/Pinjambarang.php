@@ -65,6 +65,11 @@ class Pinjambarang extends BaseController
                     <i class='fa fa-trash-alt'></i>
                 </button>
             </form>";
+            })
+            ->postQuery(function($builder){
+
+                $builder->orderBy('tglpinjam', 'desc');
+        
             })->toJson(TRUE);
         }else{
             exit('maaf tidak bisa dipanggil');
