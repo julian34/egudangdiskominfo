@@ -205,7 +205,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
             </div>
-            <strong>Copyright &copy; 2022-<?= date('Y') ?> <a href="https://adminlte.io">Dinas Komunikasi Dan
+            <strong>Copyright &copy; 2022-<?= date('Y') ?> <a href="https://diskominfo.papua.go.id">Dinas Komunikasi Dan
                     Informatika Provinsi
                     Papua</a>.</strong> All rights
             reserved.

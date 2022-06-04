@@ -280,3 +280,34 @@ CRITICAL - 2022-06-04 03:15:07 --> Undefined variable: gambarbaran
 #8 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #10 {main}
+CRITICAL - 2022-06-04 04:30:00 --> Too few arguments to function App\Models\Modelkembalibarang::laporanpb(), 0 passed in C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php on line 99 and exactly 2 expected
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(99): App\Models\Modelkembalibarang->laporanpb()
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->listtabeldata()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-04 04:30:58 --> Too few arguments to function App\Models\Modelkembalibarang::laporanpb(), 0 passed in C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php on line 99 and exactly 2 expected
+#0 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(99): App\Models\Modelkembalibarang->laporanpb()
+#1 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->listtabeldata()
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-04 12:05:09 --> Array to string conversion
+#0 C:\xampp\htdocs\simidisko\system\Common.php(1021): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 1021, Array)
+#1 C:\xampp\htdocs\simidisko\system\Helpers\form_helper.php(153): stringify_attributes(Array)
+#2 C:\xampp\htdocs\simidisko\system\Helpers\form_helper.php(402): form_input('submitprint', 'Print', Array, 'submit')
+#3 C:\xampp\htdocs\simidisko\app\Views\laporan\viewdata.php(32): form_submit('submitprint', 'Print', Array)
+#4 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('laporan/viewdat...', Array, true)
+#7 C:\xampp\htdocs\simidisko\app\Controllers\Lpb.php(60): view('laporan/viewdat...', Array)
+#8 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Lpb->index()
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lpb))
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}

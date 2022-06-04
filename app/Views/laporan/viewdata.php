@@ -21,9 +21,41 @@ Laporan Penggunaan Peralatan
         <input type="text" class="form-control float-right" name="datefilter" id="reservation" value="<?= $cari; ?>">
     </div>
 </div>
-<div class="listdatalpb" style="display: none;"></div>
+<!-- <div class="listdatalpb" style="display: none;"></div> -->
+<?= form_open('lpb/printLap'); ?>
+<div class="input-group mb-3">
+    <input type="hidden" id='tglawal' name="tglawal">
+    <input type="hidden" id='tglakhir' name="tglakhir">
+</div>
+<?= 
+form_submit('submitprint','Print',[
+    'class'=>'btn btn-info tombolprint',
+    'style'=>'display: none;']);?>
+<?= form_close(); ?>
+<br />
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="col-lg grid-margin">
+            <table class="table table-striped table-bordered" style="width: 100%;" id="tablelistdata">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th>Invoice</th>
+                        <th>Kegiatan</th>
+                        <th style="width: 15%;">Tanggal Pemakaian</th>
+                        <th style="width: 15%;">Tanggal Pegembalian</th>
+                        <th>Stakeholder</th>
+                        <th>Lokasi</th>
+                        <th>Jumlah Item</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 <div class="viewModal" style="display: none;"></div>
 <?= $this->endSection('isi')?>
 
@@ -78,6 +110,7 @@ function print() {
 }
 
 
+
 // function listdata() {
 //     startdate = moment(event.start).format('YYYY-MM-DD');
 //     enddate = moment(event.end).format('Y-MM-DD');
@@ -106,6 +139,61 @@ function print() {
 $(document).ready(function() {
     var start = moment().subtract(29, 'days');
     var end = moment();
+    // var table = $('#tablelistdata').DataTable({
+    //     scrollX: true,
+    // });
+    // 
+
+    var table = $('#tablelistdata').DataTable({
+        scrollX: true,
+        searching: false,
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "<?= site_url('lpb/listtabeldata') ?>",
+            type: "POST",
+            data: function(d) {
+                d.startDate = $('#tglawal').val();
+                d.endDate = $('#tglakhir').val();
+            }
+        },
+        columns: [{
+                data: '',
+                orderable: false
+            },
+            {
+                data: 'kkdinv',
+                orderable: false
+            },
+            {
+                data: 'kegiatan',
+                orderable: false
+            },
+            {
+                data: 'tanggalpemakaian',
+                name: 'tglpinjam',
+                orderable: false
+            },
+            {
+                data: 'tanggalpengembalian',
+                name: 'tglkembali',
+                orderable: false
+            },
+            {
+                data: 'stakeholder',
+                orderable: false
+            },
+            {
+                data: 'lokasi',
+                orderable: false
+
+            },
+            {
+                data: 'jmlalat',
+                orderable: false
+            },
+        ]
+    });
 
     function cb(start, end) {
         console.log("Callback has been called!");
@@ -125,6 +213,8 @@ $(document).ready(function() {
                 $('.listdatalpb').html(response.data);
                 $('#tglawal').val(start.format('MMMM D, YYYY'));
                 $('#tglakhir').val(end.format('MMMM D, YYYY'));
+                table.ajax.reload();
+                $('.tombolprint').show();
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 alert(xhr.status + '\n' + thrownError);
@@ -151,7 +241,7 @@ $(document).ready(function() {
                     .endOf('month')
                 ]
             },
-            opens: 'left',
+            opens: 'right',
             buttonClasses: ['btn btn-default'],
             applyClass: 'btn-small btn-primary',
             cancelClass: 'btn-small',

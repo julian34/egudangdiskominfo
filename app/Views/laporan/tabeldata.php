@@ -10,7 +10,7 @@ form_submit('submitprint','Print',[
 <?= form_close(); ?>
 <br />
 <div>
-    <table class="table table-striped table-borderd" style="width: 100%;">
+    <table class="table table-striped table-bordered" style="width: 100%;">
         <thead>
             <tr>
                 <th style="width: 5%;">No</th>

@@ -12,12 +12,10 @@ Form Edit Data
 ]) ?>
 <?= $this->endSection('subjudul')?>
 
-
 <?= $this->section('isi')?>
 <?= form_open_multipart('barang/editprosess'); ?>
 
 <?= session()->getFlashdata('errors'); ?>
-
 <div class="form-group row">
     <?= form_label('Kode Barang','brgkode',[
         'class' => 'col-sm-2 col-form-label',
