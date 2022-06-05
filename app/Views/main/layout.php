@@ -54,11 +54,11 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?= base_url() ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
-                            alt="User Image">
+                        <img src="<?= user()->user_image == 'default.svg' ? base_url('/dist/img/user2-160x160.jpg') :  base_url('img/users_image/'. user()->user_image);   ?>"
+                            class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#"
+                        <a href="<?= site_url('usermag/showdetail/'. user()->id) ?>"
                             class="d-block"><?= (user()->username != null) ? strtoupper(user()->username) : 'Administrator'; ?></a>
                     </div>
                 </div>
@@ -119,18 +119,6 @@
                             <a href="<?=site_url('usermag/index')?>" class="nav-link">
                                 <i class="nav-icon fa fa-users"></i>
                                 <p class="text">Users</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?=site_url()?>" class="nav-link">
-                                <i class="nav-icon fa fa-user-circle"></i>
-                                <p class="text">Group</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?=site_url()?>" class="nav-link">
-                                <i class="nav-icon fa fa-user-secret"></i>
-                                <p class="text">Permission</p>
                             </a>
                         </li>
                         <?php endif; ?>

@@ -347,10 +347,8 @@ class Usermag extends BaseController
         //  dd($data['user']);
 
         if(empty($data['user'])){
-            return redirect()->to('user-list');
+            return redirect()->to('usermag/index');
         }
-
-        $data['title'] = 'User Detail';
-        return view('admin/userlist/detail',$data);
+        return view('users/detail_user',$data);
     }
 }
