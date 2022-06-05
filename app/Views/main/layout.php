@@ -113,6 +113,7 @@
                                 <p class="text">Penggunaan Barang</p>
                             </a>
                         </li>
+                        <?php if(in_groups('admin')): ?>
                         <li class="nav-header">SETTING</li>
                         <li class="nav-item">
                             <a href="<?=site_url('usermag/index')?>" class="nav-link">
@@ -132,6 +133,7 @@
                                 <p class="text">Permission</p>
                             </a>
                         </li>
+                        <?php endif; ?>
                     </ul>
                 </nav>
 

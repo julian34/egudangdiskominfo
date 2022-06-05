@@ -132,7 +132,7 @@ class Usermag extends BaseController
                      $ext        = $img->getClientExtension();
                      $newName    = strtolower($this->request->getPost('username')).".".$ext;
                      // $img->move(WRITEPATH . 'img/user_picture', $newName);
-                     $img->move(ROOTPATH . 'public/img/user_picture', $newName);
+                     $img->move(ROOTPATH . 'public/img/users_image', $newName);
                      if ($img->isValid() && ! $img->hasMoved()){   
                          $data['success'] = 0;
                          $data['token']   = csrf_hash(); 
@@ -190,17 +190,17 @@ class Usermag extends BaseController
         //gambar
         $valisdasi = ['role'            => ['label' => 'Role', 'rules' => 'required']];
         //password
-        if(!empty($this->request->getPost('password'))){
+        if($this->request->getPost('password') != NULL){
                 $valisdasi['password']          = ['label' => 'Password', 'rules' => 'min_length[6]'];
                 $valisdasi['repeatpassword']    = ['label' => 'Repeat Password', 'rules' => 'matches[password]'];
-                $datainput['password'] = $this->request->getPost('password');
+                $datainput['password']          = $this->request->getPost('password');
         }
         //username&email
         $useredit = $this->qlist_data($id)->get()->getrow();
         //username
         if($useredit->username != $this->request->getPost('username')){
             $valisdasi['username']   = ['label' => 'Username', 'rules' => 'required|min_length[6]|alpha_numeric|is_unique[users.username]'];
-            $datainput['username']  = $this->request->getPost('username');
+            $datainput['username']   = $this->request->getPost('username');
         }else{
             $valisdasi['username']   = ['label' => 'Username', 'rules' => 'required|min_length[6]|alpha_numeric|'];
         }
@@ -211,13 +211,6 @@ class Usermag extends BaseController
         }else{
             $valisdasi['email'] = ['label' => 'Email', 'rules' => 'required|valid_email'];
         }
-            // ,
-            // 'username'        => ['label' => 'Username', 'rules' => 'required|min_length[6]|alpha_numeric'.$rvuser],
-            // 'email'           => ['label' => 'Email', 'rules' => 'required|valid_email'.$rvemail],
-            // 'password'        => ['label' => 'Password', 'rules' => $rvpassword],
-            // 'repeatpassword'  => ['label' => 'Repeat Password', 'rules' => $rvrepeatpassword],
-
-        // $data['success'] = $this->request->getFile('picture');
         
         $file = $this->request->getFile('userfile');
 
