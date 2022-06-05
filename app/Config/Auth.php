@@ -171,7 +171,7 @@ class Auth extends \Myth\Auth\Config\Auth
 	 *
 	 * @var bool
 	 */
-	public $allowRemembering = TRUE;
+	public $allowRemembering = NULL;
 
 	/**
 	 * --------------------------------------------------------------------

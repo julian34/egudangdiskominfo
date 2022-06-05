@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
+use Config\Services;
 use App\Models\UserModel;
 
 use CodeIgniter\Files\File;
@@ -11,8 +12,12 @@ use Myth\Auth\Authorization\GroupModel;
 use Myth\Auth\Entities\User;
 use \Hermawan\DataTables\DataTable;
 
+use CodeIgniter\API\ResponseTrait;
+
 class Usermag extends BaseController
 {
+    use ResponseTrait;
+    
     public function __construct()
     {   
         $this->db = \Config\Database::connect();
@@ -26,7 +31,7 @@ class Usermag extends BaseController
         $this->session = service('session');
 		$this->config = config('Auth');
 		$this->auth = service('authentication');
-        $this->authorize = $auth = service('authorization');
+        // $this->authorize = $auth = service('authorization');
     }
 
     public function index()
@@ -177,6 +182,7 @@ class Usermag extends BaseController
     }
 
     public function update($id = null){  
+        if($this->request->isAJAX()){
         $data['error']      = "";
         $data['success']    = ""; 
         $data['token'] = csrf_hash();  
@@ -291,6 +297,9 @@ class Usermag extends BaseController
         ];      
 
         return $this->response->setJSON($response);
+    }else{
+        exit('maaf tidak bisa dipanggil');
+    }
     }
 
     public function delete($id = null){
@@ -323,6 +332,7 @@ class Usermag extends BaseController
     }
 
     public function getdata($id = null){
+        if($this->request->isAJAX()){
         if(!empty($id)){
             $query          = $this->qlist_data($id)->get();
             $data['user']   = $query->getRow();
@@ -338,6 +348,9 @@ class Usermag extends BaseController
             ];
         }
         return $this->response->setJSON($response);
+    }else{
+        exit('maaf tidak bisa dipanggil');
+    }
     }
 
     public function showdetail($id = null){
