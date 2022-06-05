@@ -115,7 +115,7 @@ function eddata(e) {
 }
 
 function hapus_data(e) {
-    $link = '<?= site_url('user-delete')?>/' + e;
+    $link = '<?= site_url('usermag/delete')?>/' + e;
     Swal.fire({
         title: 'Apakah Anda Yakin?',
         text: "Data ini akan dihapus dan tidak bisa digunakan kembali",
@@ -148,9 +148,8 @@ function hapus_data(e) {
                 showConfirmButton: false,
                 timer: 1500
             });
-            $('#master-data-list').DataTable().ajax.reload();
+            $('#tablelistdata').DataTable().ajax.reload();
         }
-
     })
 }
 
