@@ -297,9 +297,9 @@ class Usermag extends BaseController
         ];      
 
         return $this->response->setJSON($response);
-    }else{
-        exit('maaf tidak bisa dipanggil');
-    }
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        }
     }
 
     public function delete($id = null){
@@ -333,35 +333,183 @@ class Usermag extends BaseController
 
     public function getdata($id = null){
         if($this->request->isAJAX()){
-        if(!empty($id)){
-            $query          = $this->qlist_data($id)->get();
-            $data['user']   = $query->getRow();
-            $response = [
-                'success'   => true,
-                'msg'       => "Data Berhasil",
-                'user'      => $data
-            ];      
+            if(!empty($id)){
+                $query          = $this->qlist_data($id)->get();
+                $data['user']   = $query->getRow();
+                $response = [
+                    'success'   => true,
+                    'msg'       => "Data Berhasil",
+                    'user'      => $data
+                ];      
+            }else{
+                $response = [
+                    'success'   => false,
+                    'msg'       => "Data Gagal",
+                ];
+            }
+            return $this->response->setJSON($response);
         }else{
-            $response = [
-                'success'   => false,
-                'msg'       => "Data Gagal",
-            ];
+            exit('maaf tidak bisa dipanggil');
         }
-        return $this->response->setJSON($response);
-    }else{
-        exit('maaf tidak bisa dipanggil');
     }
-    }
+
 
     public function showdetail($id = null){
         $query = $this->qlist_data($id)->get();
         $data['user'] = $query->getRow();
         
         //  dd($data['user']);
-
+        $data['groups'] = $this->groups->get();
         if(empty($data['user'])){
             return redirect()->to('usermag/index');
         }
         return view('users/detail_user',$data);
+    }
+
+    public function getdataprofile(){
+        if($this->request->isAJAX()){
+            $iduser     = $this->request->getPost('user');
+            $userdata['user']   = $this->_getdataprofile($iduser)->get()->getRowArray();
+            $data       = [
+                'success'   => true,
+                'msg'       => "Data Berhasil",
+                'user'      => $userdata
+            ];
+            return $this->response->setJSON($data);
+        }else{
+            exit('maaf tidak bisa dipanggil');
+        } 
+    }
+
+    private function _getdataprofile($id){
+        $this->builder->select('users.id as userid, username, email, groups.name as role, user_image as picture, fullname')
+                      ->join('auth_groups_users as roles', 'roles.user_id = users.id','left')
+                      ->join('auth_groups as groups', 'groups.id = roles.group_id','left')
+                      ->Where([
+            'sha1(users.id)' => $id
+        ]);
+            
+        return $this->builder;
+    }
+
+    public function updateprofile($id = null){
+        if($this->request->isAJAX()){
+            $data['error']      = "";
+            $data['success']    = ""; 
+            $data['token'] = csrf_hash();  
+            $validation = \Config\Services::validation();
+    
+            $datainput = [
+                'fullname'      => $this->request->getPost('fullname'),
+                'role'          => $this->request->getPost('role'),
+            ]; 
+    
+            //gambar
+            $valisdasi = ['role'            => ['label' => 'Role', 'rules' => 'required']];
+            //password
+            if($this->request->getPost('password') != NULL){
+                    $valisdasi['password']          = ['label' => 'Password', 'rules' => 'min_length[6]'];
+                    $valisdasi['repeatpassword']    = ['label' => 'Repeat Password', 'rules' => 'matches[password]'];
+                    $datainput['password']          = $this->request->getPost('password');
+            }
+            //username&email
+            $useredit = $this->qlist_data($id)->get()->getrow();
+            //username
+            if($useredit->username != $this->request->getPost('username')){
+                $valisdasi['username']   = ['label' => 'Username', 'rules' => 'required|min_length[6]|alpha_numeric|is_unique[users.username]'];
+                $datainput['username']   = $this->request->getPost('username');
+            }else{
+                $valisdasi['username']   = ['label' => 'Username', 'rules' => 'required|min_length[6]|alpha_numeric|'];
+            }
+            //email
+            if($useredit->email != $this->request->getPost('email')){
+                $valisdasi['email'] = ['label' => 'Email', 'rules' => 'required|valid_email|is_unique[users.email]'];
+                $datainput['email'] = $this->request->getPost('email');
+            }else{
+                $valisdasi['email'] = ['label' => 'Email', 'rules' => 'required|valid_email'];
+            }
+            
+            $file = $this->request->getFile('userfile');
+    
+            // $request->getFiles();
+            $request = \Config\Services::request();
+            $files = $request->getFiles();
+            if ($_FILES['picture']['name']) {
+                    $validated = $this->validate([
+                        'picture' => [
+                            'uploaded[picture]',
+                            'mime_in[picture,image/jpg,image/jpeg,image/gif,image/png]',
+                            'max_size[picture,1096]',
+                        ],
+                    ]);
+                    $data['error'] = array('picture' => 'Please select a valid picture');
+            }
+        
+    
+            $input = $validation->setRules($valisdasi);
+    
+           
+    
+            if ($validation->withRequest($this->request)->run() == FALSE){
+                $data['success']    = 0;
+                $data['error']      = $validation->getErrors();// Error response
+                $data['token']      = csrf_hash(); 
+             }else{
+                if($_FILES['picture']['name']){
+                    $img        = $this->request->getFile('picture');
+                    $ext        = $img->getClientExtension();
+                    $newName    = strtolower($this->request->getPost('username')).".".$ext;
+                    // $img->move(WRITEPATH . 'img/user_picture', $newName);
+                    $img->move(ROOTPATH . 'public/img/users_image', $newName);
+                    if ($img->isValid() && ! $img->hasMoved()){   
+                        $data['success'] = 0;
+                        $data['token']   = csrf_hash(); 
+                        $data['error']   = "";
+                    } else {
+                        $data['success']    = 1;
+                        $data['token']      = csrf_hash(); 
+                        $data['error']      = "The picture has already been moved";
+                        $datainput['user_image'] = $newName; 
+                    }
+                }
+    
+                $users = model(UserModel::class);
+                if(!$users->update($id, $datainput)){
+                    $data['success'] = 0;
+                    $data['token']   = csrf_hash(); 
+                    $data['error']   = "Error update to database";;
+                }else{
+                    $groupModel = model(GroupModel::class);
+                    
+                    $usgrp = $groupModel->getGroupsForUser($id);
+                    
+                    foreach ($usgrp as $row)
+                    {
+                            $nmgroup = $row['name'];
+                            $idgroup = $row['group_id'];
+                    }
+                    
+                    if($nmgroup !==  $this->request->getPost('role')){
+                        if($groupModel->removeUserFromGroup($id,$idgroup)){
+                            $newgroup   = $this->groups->select()->where('name',$datainput['role'])->get()->getRow();
+                            $groupModel->addUserToGroup($id,$newgroup->id);   
+                        }
+                    }        
+                    
+                    $data['success']    = 1;
+                    $data['token']      = csrf_hash(); 
+                }
+             }
+    
+             $response = [
+                'success'   => $data['success'],
+                'msg'       => $data['error'],
+                'token'     => $data['token'],
+            ];      
+    
+            return $this->response->setJSON($response);
+            }else{
+                exit('maaf tidak bisa dipanggil');
+            }
     }
 }

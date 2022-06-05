@@ -337,3 +337,19 @@ CRITICAL - 2022-06-05 23:41:35 --> Trying to get property 'picture' of non-objec
 #4 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #6 {main}
+CRITICAL - 2022-06-05 23:51:39 --> Undefined variable: groups
+#0 C:\xampp\htdocs\simidisko\app\Views\users\forminput.php(78): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 78, Array)
+#1 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\simidisko\system\View\View.php(424): CodeIgniter\View\View->render('users/forminput', NULL, true)
+#4 C:\xampp\htdocs\simidisko\app\Views\users\detail_user.php(80): CodeIgniter\View\View->include('users/forminput')
+#5 C:\xampp\htdocs\simidisko\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\simidisko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\simidisko\system\Common.php(1089): CodeIgniter\View\View->render('users/detail_us...', Array, true)
+#8 C:\xampp\htdocs\simidisko\app\Controllers\Usermag.php(365): view('users/detail_us...', Array)
+#9 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Usermag->showdetail('1')
+#10 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usermag))
+#11 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#14 {main}

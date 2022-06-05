@@ -54,7 +54,7 @@ Detail User
                                     <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Action</h6>
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <a href="#" class="btn btn-warning">
+                                            <a class="btn btn-warning" onclick='eddata()'>
                                                 <span class="text">Edit User</span>
                                             </a>
                                         </div>
@@ -77,7 +77,10 @@ Detail User
 
 </div>
 <!-- /.container-fluid -->
+<?= $this->include('users/forminput'); ?>
 <?= $this->endSection('isi')?>
+
+
 
 <?= $this->section('csspage')?>
 <style>
@@ -216,3 +219,137 @@ h6 {
 }
 </style>
 <?= $this->endSection('csspage')?>
+
+<?= $this->Section('jspage')?>
+<script>
+function eddata() {
+    $('#form')[0].reset();
+    var arr = ['username', 'email', 'password', 'repeatpassword', 'role', 'picture'];
+    var pic = document.getElementById('blah');
+    pic.src = "<?= base_url(); ?>/icon/Upload-PNG-Images.png"
+
+    $('#modal-form').modal('show');
+    $('.modal-title').text('Edit User');
+    $('#label-password').text('Password');
+    $('#label-repeatpassword').text('Repeat Password');
+    for (let i = 0; i < arr.length; i++) {
+        var elemen = arr[i];
+        console.log(elemen)
+        elemen = document.getElementById(elemen);
+        elemen.classList.remove("is-invalid");
+        $('#invalid-feedback-' + arr[i]).text('');
+    }
+
+    $.ajax({
+        type: "post",
+        url: "<?= base_url('usermag/getdataprofile'); ?>",
+        data: {
+            user: '<?= sha1($user->userid) ?>'
+        },
+        dataType: "json",
+        success: function(data) {
+            if (data.success == 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Data Gagal Dimuat',
+                    footer: '<a>Silahkan Cek Kembali</a>'
+                });
+            } else {
+                document.getElementById("fullname").value = data.user['user']['fullname'];
+                document.getElementById("username").value = data.user['user']['username'];
+                document.getElementById("email").value = data.user['user']['email'];
+                const text = data.user['user']['role'];
+                const $select = document.querySelector('#role');
+                const $options = Array.from($select.options);
+                const optionToSelect = $options.find(item => item.text === text);
+                optionToSelect.selected = true;
+                // if(data.user['user']['user_image'] !== "default.svg"){
+                //     document.getElementById("user_image").value = data.user['user']['user_image'];
+                // }  
+                document.getElementById("btnSave").onclick = function() {
+                    save(data.user['user']['userid']);
+                };
+
+            }
+        }
+    });
+}
+
+
+function readURL(input, id) {
+    id = id || '#blah';
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $(id)
+                .attr('src', e.target.result)
+                .width(200)
+                .height(150);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function save(e) {
+    // $('#send_form').prop('disabled');
+    var url;
+    var element;
+
+    url = "<?php echo site_url('usermag/updateprofile')?>/" + e;
+
+    event.preventDefault();
+    var form_data = new FormData($('#form')[0]);
+    // ajax adding data to database
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: form_data,
+        dataType: "JSON",
+        processData: false,
+        contentType: false,
+        success: function(data) {
+            if (data.success == 0) {
+                $('.txt_csrfname').val(data.token);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Inputan Tidak Valid',
+                    footer: '<a>Silahkan Cek Kembali</a>'
+                });
+                var arr = ['username', 'email', 'password', 'repeatpassword', 'role', 'picture'];
+                for (let i = 0; i < arr.length; i++) {
+                    var elemen = arr[i];
+                    console.log(elemen)
+                    elemen = document.getElementById(elemen);
+                    elemen.classList.remove("is-invalid");
+                    $('#invalid-feedback-' + arr[i]).text('');
+                }
+
+                for (var key in data.msg) {
+                    var elemen = key;
+                    // console.log(key);
+                    elemen = document.getElementById(key);
+                    elemen.classList.add("is-invalid");
+                    for (var key1 in data.msg[key]) {
+                        $('#invalid-feedback-' + key).text(data.msg[key]);
+                        // console.log('#invalid-feedback-'+key+'|'+data.msg[key])
+                    }
+                }
+            } else {
+                $('#form')[0].reset();
+                $('.txt_csrfname').val(data.token);
+                //if success close modal and reload ajax table
+                $('#modal-form').modal('hide');
+                window.location.reload();
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            $('#modal-form').modal('hide');
+            alert('Error adding / update data');
+        }
+    });
+}
+</script>
+
+<?= $this->endSection('jspage')?>
