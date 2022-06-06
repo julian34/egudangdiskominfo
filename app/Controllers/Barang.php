@@ -55,16 +55,16 @@ class Barang extends BaseController
             }
     }
 
-        public function addform(){
+    public function addform(){
         $selects = [
         'slkategori' => $this->kategori->findAll(),
         'slsatuan' => $this->satuan->findAll(),
         'kdbrg' => $this->barang->renderKode()
         ];
         return view('barang/addform',$selects);
-        }
+    }
 
-        public function addprosess(){
+    public function addprosess(){
         $valid = [
         'brgkode' => [
         'label' => 'Kode Barang',
@@ -184,9 +184,9 @@ class Barang extends BaseController
 
         }
 
-        }
+    }
 
-        public function editform($id){
+    public function editform($id){
         $rwd = $this->barang->find($id);
         if($rwd){
         $data = [

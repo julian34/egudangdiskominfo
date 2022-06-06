@@ -36,6 +36,7 @@ Transaksi Pinjam Peralatan
             <option></option>
             <option>Pemerintah</option>
             <option>Swasta</option>
+            <option>Lembaga</option>
         </select>
     </div>
     <div class="form-group col-md-4">
