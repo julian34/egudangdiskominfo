@@ -15,7 +15,6 @@ class Modelkembalibarang extends Model
         return $this->table('kembalibarang')->select('pinjambarang.kodeinv as kkdinv, ,idkembrg, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
                     ->join('pinjambarang','pinjambarang.kodeinv=kembalibarang.kodeinv');
     }
-   
     
     public function tampildata_cari($cari){
         return $this->table('kembalibarang')->select('pinjambarang.kodeinv as kodeinv, ,idkembrg, kegiatan, tglpinjam, tglkembali,stakeholder,lokasi')
