@@ -27,15 +27,26 @@ class Main extends BaseController
         $query_grafikpai = "SELECT  jnsstakholder AS jns, COUNT(jnsstakholder) AS 'jumlah'  FROM pinjambarang GROUP BY jnsstakholder";
         $datagarfikpai   = $this->db->query($query_grafikpai)->getResultArray();
         
+        $query_grafikbar = "SELECT MONTH(tglpinjam) AS bulan , COUNT(kodeinv) AS datapinjam FROM pinjambarang WHERE YEAR(tglpinjam) = YEAR(NOW()) GROUP BY MONTH(tglpinjam);";
+        $datagarfikbar   = $this->db->query($query_grafikbar)->getResultArray();
+
         foreach ($datagarfikpai as $key  => $value) {
             $pai[$key]   = $value['jns'];
             $jml[$key]   = $value['jumlah'];
         }
-        
+
+        foreach ($datagarfikbar as $key  => $value) {
+            $bar[$key]      = $this->bulan($value['bulan']);
+            $barjml[$key]   = $value['datapinjam'];
+        }
+
         $json = [
-            'label' => $pai,
-            'dtg'   => $jml
+            'label'     => $pai,
+            'dtg'       => $jml,
+            'labelbar'  => $bar,
+            'databar'   => $barjml
         ];
+        
         return $this->response->setJSON($json);
     }
 
@@ -105,4 +116,60 @@ class Main extends BaseController
         return $hari_ini;
     }
     
+    function bulan($m){
+        switch($m){
+            case '1':
+                $hari_ini = "Januari";
+            break;
+     
+            case '2':			
+                $hari_ini = "Februari";
+            break;
+     
+            case '3':
+                $hari_ini = "Maret";
+            break;
+     
+            case '4':
+                $hari_ini = "April";
+            break;
+     
+            case '5':
+                $hari_ini = "Mei";
+            break;
+     
+            case '6':
+                $hari_ini = "Juni";
+            break;
+     
+            case '7':
+                $hari_ini = "Juli";
+            break;
+
+            case '8':
+                $hari_ini = "Agustus";
+            break;
+
+            case '9':
+                $hari_ini = "September";
+            break;
+
+            case '10':
+                $hari_ini = "Oktober";
+            break;
+
+            case '11':
+                $hari_ini = "November";
+            break;
+
+            case '12':
+                $hari_ini = "Desember";
+            break;
+            
+            default:
+                $hari_ini = "Tidak di ketahui";		
+            break;
+        }
+        return $hari_ini;
+    }
 }
