@@ -471,3 +471,51 @@ CRITICAL - 2022-06-06 18:58:42 --> unlink(TIKMUL0016.jpg): No such file or direc
 #5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #7 {main}
+CRITICAL - 2022-06-06 19:07:54 --> File not found: C:\xampp\tmp\phpFE8E.tmp
+#0 C:\xampp\htdocs\simidisko\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('C:\\xampp\\tmp\\ph...')
+#1 C:\xampp\htdocs\simidisko\system\Images\Handlers\BaseHandler.php(148): CodeIgniter\Files\File->__construct('C:\\xampp\\tmp\\ph...', true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(302): CodeIgniter\Images\Handlers\BaseHandler->withFile('C:\\xampp\\tmp\\ph...')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-06-06 19:08:44 --> File not found: JBL-EON208P.jpg
+#0 C:\xampp\htdocs\simidisko\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('JBL-EON208P.jpg')
+#1 C:\xampp\htdocs\simidisko\system\Images\Handlers\BaseHandler.php(148): CodeIgniter\Files\File->__construct('JBL-EON208P.jpg', true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(302): CodeIgniter\Images\Handlers\BaseHandler->withFile('JBL-EON208P.jpg')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-06-06 19:09:34 --> Unable to save the image. Please make sure the image and file directory are writable.
+#0 C:\xampp\htdocs\simidisko\system\Images\Handlers\GDHandler.php(245): CodeIgniter\Images\Exceptions\ImageException::forSaveFailed()
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(302): CodeIgniter\Images\Handlers\GDHandler->save('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-06-06 19:09:59 --> unlink(C:\xampp\htdocs\simidisko\public/upload/TIKMUL0016.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp...', 'C:\\xampp\\htdocs...', 295, Array)
+#1 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(295): unlink('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-06-06 19:13:33 --> File not found: C:\xampp\tmp\php29B4.tmp
+#0 C:\xampp\htdocs\simidisko\system\Files\File.php(46): CodeIgniter\Files\Exceptions\FileNotFoundException::forFileNotFound('C:\\xampp\\tmp\\ph...')
+#1 C:\xampp\htdocs\simidisko\system\Images\Handlers\BaseHandler.php(148): CodeIgniter\Files\File->__construct('C:\\xampp\\tmp\\ph...', true)
+#2 C:\xampp\htdocs\simidisko\app\Controllers\Barang.php(301): CodeIgniter\Images\Handlers\BaseHandler->withFile('C:\\xampp\\tmp\\ph...')
+#3 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(832): App\Controllers\Barang->editprosess()
+#4 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barang))
+#5 C:\xampp\htdocs\simidisko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\simidisko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\simidisko\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}

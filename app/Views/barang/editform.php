@@ -115,7 +115,7 @@ Form Edit Data
         ]); ?>
     <div class="col-sm-10">
         <img src="<?= $gambarbarang == "default-150x150.png" ? base_url()."/dist/img/default-150x150.png" : 
-            base_url().'/upload/'.$gambarbarang; ?>" class="img-thumbnail" style="width:50" alt="gambar
+            base_url().'/upload/thum/'.$gambarbarang; ?>" class="img-thumbnail" style="width:150px" alt="gambar
         barang">
     </div>
 </div>

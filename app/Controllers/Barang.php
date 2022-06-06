@@ -132,7 +132,7 @@ class Barang extends BaseController
         return redirect()->to('/barang/addform');
         }else{
 
-        $pathGambar = 'default-150x150.png';
+        $nmgambar  = 'default-150x150.png';
         $gambar = $_FILES['brggambar']['name'];
 
         $data = [
@@ -142,15 +142,20 @@ class Barang extends BaseController
         'brgsatid' => $this->request->getVar('brgsatid'),
         'brgharga' => $this->request->getVar('brgharga'),
         'brgstok' => $this->request->getVar('brgstok'),
-        'brggambar' => $pathGambar,
+        'brggambar' => $nmgambar,
         ];
 
 
-        if($gambar != NULL){
-        $namaFileGambar = $data['brgkode'];
-        $fileGambar = $this->request->getFile('brggambar');
-        $fileGambar->move('upload', $namaFileGambar. '.' . $fileGambar->getExtension());
-        $pathGambar = 'upload/'.$fileGambar->getName();
+        if($_FILES['brggambar']['name']){
+            $namaFileGambar = $data['brgkode'];
+            $fileGambar = $this->request->getFile('brggambar');
+            $image = \Config\Services::image()
+            ->withFile( $fileGambar)
+            ->resize(150, 150, true)
+            ->save(ROOTPATH .'public/upload/thum/'.$namaFileGambar. '.' . $fileGambar->getExtension());
+            $fileGambar->move(ROOTPATH .'public/upload', $namaFileGambar. '.' . $fileGambar->getExtension());
+            $pathGambar = 'upload/'.$fileGambar->getName();
+            $nmgambar = $fileGambar->getName();
         }
 
 
@@ -161,7 +166,7 @@ class Barang extends BaseController
         'brgsatid' => $this->request->getVar('brgsatid'),
         'brgharga' => $this->request->getVar('brgharga'),
         'brgstok' => $this->request->getVar('brgstok'),
-        'brggambar' => $pathGambar,
+        'brggambar' => $nmgambar,
         ];
 
         $this->barang->insert($data);
@@ -296,6 +301,11 @@ class Barang extends BaseController
         }
         $namaFileGambar = $data['brgkode'];
         $fileGambar = $this->request->getFile('brggambar');
+        $image = \Config\Services::image()
+        ->withFile( $fileGambar)
+        ->resize(150, 150, true)
+        ->save(ROOTPATH .'public/upload/thum/'.$namaFileGambar. '.' . $fileGambar->getExtension());
+        
         $fileGambar->move(ROOTPATH .'public/upload', $namaFileGambar. '.' . $fileGambar->getExtension());
         $pathGambar = 'upload/'.$fileGambar->getName();
         $nmgambar = $fileGambar->getName();
