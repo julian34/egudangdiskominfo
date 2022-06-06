@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\AdminFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -26,6 +27,8 @@ class Filters extends BaseConfig
         'login'         => \Myth\Auth\Filters\LoginFilter::class,
         'role'          => \Myth\Auth\Filters\RoleFilter::class,
         'permission'    => \Myth\Auth\Filters\PermissionFilter::class,
+        'admin'         => AdminFilter::class,
+        'staff'         => StaffFilter::class,
     ];
 
     /**
@@ -68,5 +71,10 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'login' => ['before' => ['admin/*', 'staff/*']],
+        'staff' => ['before' => ['staff/*']],
+        'admin' => ['before' => ['usermag/index','usermag/store','usermag/update/(:num)','usermag/delete/(:num)']]
+        
+    ];
 }
