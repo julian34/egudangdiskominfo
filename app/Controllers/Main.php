@@ -12,7 +12,8 @@ class Main extends BaseController
 {
     public function __construct()
     {
-        $this->mKembali          = new Modelkembalibarang;
+        $this->mKembali         = new Modelkembalibarang;
+        $this->db               = \Config\Database::connect();
     }
 
     public function index()
@@ -22,7 +23,20 @@ class Main extends BaseController
     }
 
     public function datadashboard(){
+
+        $query_grafikpai = "SELECT  jnsstakholder AS jns, COUNT(jnsstakholder) AS 'jumlah'  FROM pinjambarang GROUP BY jnsstakholder";
+        $datagarfikpai   = $this->db->query($query_grafikpai)->getResultArray();
         
+        foreach ($datagarfikpai as $key  => $value) {
+            $pai[$key]   = $value['jns'];
+            $jml[$key]   = $value['jumlah'];
+        }
+        
+        $json = [
+            'label' => $pai,
+            'dtg'   => $jml
+        ];
+        return $this->response->setJSON($json);
     }
 
     public function listdatatabel(){

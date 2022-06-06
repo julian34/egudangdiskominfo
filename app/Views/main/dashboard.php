@@ -18,7 +18,7 @@ Dashboard
                 <!-- PIE CHART -->
                 <div class="card card-danger">
                     <div class="card-header">
-                        <h3 class="card-title">Pie Chart</h3>
+                        <h3 class="card-title">Jenis Stakeholder</h3>
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -43,7 +43,7 @@ Dashboard
                 <!-- BAR CHART -->
                 <div class="card card-success">
                     <div class="card-header">
-                        <h3 class="card-title">Bar Chart</h3>
+                        <h3 class="card-title">Pemakaian Peralatan Perbulan</h3>
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -100,7 +100,7 @@ Dashboard
 <script src="<?=base_url()?>/plugins/chart.js/Chart.min.js"></script>
 <script>
 $(document).ready(function() {
-
+    var donutData;
     var table = $('#tablelistdata').DataTable({
         scrollX: true,
         searching: false,
@@ -145,37 +145,42 @@ $(document).ready(function() {
         ]
     });
 
-    //-------------
-    //- PIE CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var donutData = {
-        labels: [
-            'Chrome',
-            'IE',
-            'FireFox',
-            'Safari',
-            'Opera',
-            'Navigator',
-        ],
-        datasets: [{
-            data: [700, 500, 400, 600, 300, 100],
-            backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
-        }]
-    }
-    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-    var pieData = donutData;
-    var pieOptions = {
-        maintainAspectRatio: false,
-        responsive: true,
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    new Chart(pieChartCanvas, {
-        type: 'pie',
-        data: pieData,
-        options: pieOptions
-    })
+    $.ajax({
+        type: "POST",
+        url: "<?= site_url('main/datadashboard') ?>",
+        dataType: "json",
+        success: function(response) {
+            // alert(response.pai.toString());
+            var donutData = {
+                labels: response.label,
+                datasets: [{
+                    data: response.dtg,
+                    backgroundColor: ['#00c0ef', '#00a65a'],
+                }]
+            }
+
+            //-------------
+            //- PIE CHART -
+            //-------------
+            // Get context with jQuery - using jQuery's .get() method.
+
+            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+            var pieData = donutData;
+            var pieOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            new Chart(pieChartCanvas, {
+                type: 'pie',
+                data: pieData,
+                options: pieOptions
+            })
+
+        }
+    });
+
 
     var areaChartData = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
