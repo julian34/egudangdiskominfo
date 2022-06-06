@@ -203,14 +203,15 @@ $(document).ready(function() {
             var barChartData = $.extend(true, {}, areaChartData)
 
             var barChartOptions = {
-                // responsive: true,
-                // maintainAspectRatio: false,
-                // datasetFill: false,
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false,
                 scales: {
-                    x: {
-                        min: 0,
-                        max: 100
-                    }
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
                 }
             }
 
