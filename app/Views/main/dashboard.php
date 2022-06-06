@@ -71,7 +71,162 @@ Dashboard
 </section>
 <!-- /.content -->
 <!-- /.content-wrapper -->
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="col-lg grid-margin">
+            <table class="table table-striped table-bordered" style="width: 100%;" id="tablelistdata">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">No</th>
+                        <th>Invoice</th>
+                        <th>Kegiatan</th>
+                        <th style="width: 15%;">Tanggal Pemakaian</th>
+                        <th style="width: 15%;">Tanggal Pegembalian</th>
+                        <th>Stakeholder</th>
+                        <th>Lokasi</th>
+                        <th>Jumlah Item</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 <?= $this->endSection('isi')?>
 
 <?= $this->Section('jspage')?>
+<script src="<?=base_url()?>/plugins/chart.js/Chart.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    var table = $('#tablelistdata').DataTable({
+        scrollX: true,
+        searching: false,
+        processing: true,
+        serverSide: true,
+        ajax: "<?= site_url('main/listdatatabel') ?>",
+        columns: [{
+                data: '',
+                orderable: false
+            },
+            {
+                data: 'kkdinv',
+                orderable: false
+            },
+            {
+                data: 'kegiatan',
+                orderable: false
+            },
+            {
+                data: 'tanggalpemakaian',
+                name: 'tglpinjam',
+                orderable: false
+            },
+            {
+                data: 'tanggalpengembalian',
+                name: 'tglkembali',
+                orderable: false
+            },
+            {
+                data: 'stakeholder',
+                orderable: false
+            },
+            {
+                data: 'lokasi',
+                orderable: false
+
+            },
+            {
+                data: 'jmlalat',
+                orderable: false
+            },
+        ]
+    });
+
+    //-------------
+    //- PIE CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var donutData = {
+        labels: [
+            'Chrome',
+            'IE',
+            'FireFox',
+            'Safari',
+            'Opera',
+            'Navigator',
+        ],
+        datasets: [{
+            data: [700, 500, 400, 600, 300, 100],
+            backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+        }]
+    }
+    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+    var pieData = donutData;
+    var pieOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    new Chart(pieChartCanvas, {
+        type: 'pie',
+        data: pieData,
+        options: pieOptions
+    })
+
+    var areaChartData = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+                label: 'Digital Goods',
+                backgroundColor: 'rgba(60,141,188,0.9)',
+                borderColor: 'rgba(60,141,188,0.8)',
+                pointRadius: false,
+                pointColor: '#3b8bba',
+                pointStrokeColor: 'rgba(60,141,188,1)',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: 'rgba(60,141,188,1)',
+                data: [28, 48, 40, 19, 86, 27, 90]
+            },
+            {
+                label: 'Electronics',
+                backgroundColor: 'rgba(210, 214, 222, 1)',
+                borderColor: 'rgba(210, 214, 222, 1)',
+                pointRadius: false,
+                pointColor: 'rgba(210, 214, 222, 1)',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: 'rgba(220,220,220,1)',
+                data: [65, 59, 80, 81, 56, 55, 40]
+            },
+        ]
+    }
+
+    //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#barChart').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    var temp1 = areaChartData.datasets[1]
+    barChartData.datasets[0] = temp1
+    barChartData.datasets[1] = temp0
+
+    var barChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        datasetFill: false
+    }
+
+    new Chart(barChartCanvas, {
+        type: 'bar',
+        data: barChartData,
+        options: barChartOptions
+    })
+
+
+});
+</script>
 <?= $this->endSection('jspage')?>
