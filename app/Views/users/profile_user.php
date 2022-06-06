@@ -77,7 +77,7 @@ Profile User
 
 </div>
 <!-- /.container-fluid -->
-<?= $this->include('users/forminput'); ?>
+<?= $this->include('users/formedit'); ?>
 <?= $this->endSection('isi')?>
 
 

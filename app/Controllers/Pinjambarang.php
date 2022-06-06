@@ -17,8 +17,7 @@ use \Hermawan\DataTables\DataTable;
 class Pinjambarang extends BaseController
 {
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->mPinjam          = new Modelpinjambarang;
         $this->mDetPinjam       = new Modeldetailpinjambarang;
         $this->mTemDetPinjam    = new Modeltemdetailpinjambarang;
@@ -26,8 +25,7 @@ class Pinjambarang extends BaseController
         $this->mdbarang         = new Modelbarang();
     }
 
-    public function index()
-    {
+    public function index(){
         //
         return view('pinjambarang/viewdata');
     }

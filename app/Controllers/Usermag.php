@@ -18,8 +18,7 @@ class Usermag extends BaseController
 {
     use ResponseTrait;
     
-    public function __construct()
-    {   
+    public function __construct(){   
         $this->db = \Config\Database::connect();
         $this->config = config('Auth');
 
@@ -34,8 +33,7 @@ class Usermag extends BaseController
         // $this->authorize = $auth = service('authorization');
     }
 
-    public function index()
-    {
+    public function index(){
         $data['groups'] = $this->groups->get();
         return view('users/index',$data);
     }
@@ -353,7 +351,6 @@ class Usermag extends BaseController
         }
     }
 
-
     public function showdetail($id = null){
         $query = $this->qlist_data($id)->get();
         $data['user'] = $query->getRow();
@@ -382,9 +379,7 @@ class Usermag extends BaseController
     }
 
     private function _getdataprofile($id){
-        $this->builder->select('users.id as userid, username, email, groups.name as role, user_image as picture, fullname')
-                      ->join('auth_groups_users as roles', 'roles.user_id = users.id','left')
-                      ->join('auth_groups as groups', 'groups.id = roles.group_id','left')
+        $this->builder->select('users.id as userid, username, email, user_image as picture, fullname')
                       ->Where([
             'sha1(users.id)' => $id
         ]);
@@ -401,11 +396,9 @@ class Usermag extends BaseController
     
             $datainput = [
                 'fullname'      => $this->request->getPost('fullname'),
-                'role'          => $this->request->getPost('role'),
             ]; 
     
             //gambar
-            $valisdasi = ['role'            => ['label' => 'Role', 'rules' => 'required']];
             //password
             if($this->request->getPost('password') != NULL){
                     $valisdasi['password']          = ['label' => 'Password', 'rules' => 'min_length[6]'];
@@ -479,23 +472,6 @@ class Usermag extends BaseController
                     $data['token']   = csrf_hash(); 
                     $data['error']   = "Error update to database";;
                 }else{
-                    $groupModel = model(GroupModel::class);
-                    
-                    $usgrp = $groupModel->getGroupsForUser($id);
-                    
-                    foreach ($usgrp as $row)
-                    {
-                            $nmgroup = $row['name'];
-                            $idgroup = $row['group_id'];
-                    }
-                    
-                    if($nmgroup !==  $this->request->getPost('role')){
-                        if($groupModel->removeUserFromGroup($id,$idgroup)){
-                            $newgroup   = $this->groups->select()->where('name',$datainput['role'])->get()->getRow();
-                            $groupModel->addUserToGroup($id,$newgroup->id);   
-                        }
-                    }        
-                    
                     $data['success']    = 1;
                     $data['token']      = csrf_hash(); 
                 }

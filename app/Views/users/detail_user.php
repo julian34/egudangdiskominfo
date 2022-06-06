@@ -77,7 +77,7 @@ Detail User
 
 </div>
 <!-- /.container-fluid -->
-<?= $this->include('users/forminput'); ?>
+<?= $this->include('users/formedit'); ?>
 <?= $this->endSection('isi')?>
 
 
@@ -221,10 +221,11 @@ h6 {
 <?= $this->endSection('csspage')?>
 
 <?= $this->Section('jspage')?>
+<script src="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <script>
 function eddata() {
     $('#form')[0].reset();
-    var arr = ['username', 'email', 'password', 'repeatpassword', 'role', 'picture'];
+    var arr = ['username', 'email', 'password', 'repeatpassword', 'picture'];
     var pic = document.getElementById('blah');
     pic.src = "<?= base_url(); ?>/icon/Upload-PNG-Images.png"
 
@@ -259,14 +260,6 @@ function eddata() {
                 document.getElementById("fullname").value = data.user['user']['fullname'];
                 document.getElementById("username").value = data.user['user']['username'];
                 document.getElementById("email").value = data.user['user']['email'];
-                const text = data.user['user']['role'];
-                const $select = document.querySelector('#role');
-                const $options = Array.from($select.options);
-                const optionToSelect = $options.find(item => item.text === text);
-                optionToSelect.selected = true;
-                // if(data.user['user']['user_image'] !== "default.svg"){
-                //     document.getElementById("user_image").value = data.user['user']['user_image'];
-                // }  
                 document.getElementById("btnSave").onclick = function() {
                     save(data.user['user']['userid']);
                 };
@@ -317,7 +310,7 @@ function save(e) {
                     text: 'Inputan Tidak Valid',
                     footer: '<a>Silahkan Cek Kembali</a>'
                 });
-                var arr = ['username', 'email', 'password', 'repeatpassword', 'role', 'picture'];
+                var arr = ['username', 'email', 'password', 'repeatpassword', 'picture'];
                 for (let i = 0; i < arr.length; i++) {
                     var elemen = arr[i];
                     console.log(elemen)
