@@ -11,9 +11,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
+    <link rel="stylesheet" href="<?= base_url() ?>/dist/css/lightbox.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+
     <?= $this->renderSection('csspage'); ?>
 </head>
 
@@ -212,6 +214,7 @@
 
     <!-- jQuery -->
     <script src="<?= base_url() ?>/plugins/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>/dist/js/lightbox.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="<?= base_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
@@ -220,6 +223,7 @@
     <!-- <script src="<?= base_url() ?>/dist/js/demo.js"></script> -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
     <?= $this->renderSection('jspage'); ?>
 
 </body>

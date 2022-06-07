@@ -39,6 +39,7 @@ Manajemen Data Barang
 <?= $this->endSection('isi')?>
 
 <?= $this->Section('jspage')?>
+<script src="<?= base_url() ?>/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <script>
 function edit(id) {
     window.location = ('editform/' + id);
@@ -52,16 +53,53 @@ function hapus(id) {
         return false;
     }
 }
+
+function opengambar(e) {
+    // e.preventDefault();
+    Swal.fire({
+        title: e,
+        text: e,
+        imageUrl: '<?=base_url('upload')?>/' + e,
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: e,
+    })
+}
+
 $(document).ready(function() {
     var tabel = $('#tablelistdata').DataTable({
         processing: true,
         serverSide: true,
         scrollX: true,
         ajax: "<?= site_url('barang/listtabeldata') ?>",
-        columnDefs: [{
-            targets: [0, -1],
-            orderable: false
-        }, ]
+        columns: [{
+                data: '',
+                orderable: false
+            },
+            {
+                data: 'brgkode'
+            },
+            {
+                data: 'nama_gambar'
+            },
+            {
+                data: 'katnama'
+            },
+            {
+                data: 'satnama'
+            },
+            {
+                data: 'brgharga'
+            },
+            {
+                data: 'brgstok',
+                orderable: false
+            },
+            {
+                data: 'aksi',
+                orderable: false
+            }
+        ]
     });
 });
 </script>

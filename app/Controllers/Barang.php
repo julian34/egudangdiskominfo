@@ -34,6 +34,16 @@ class Barang extends BaseController
             ->format('brgharga', function($value){
                 return 'Rp. '.number_format($value, 0,'.',',').',-';
             })
+            ->add('nama_gambar', function($row){
+
+                $onclick = "";
+
+                if($row->brggambar != 'default-150x150.png'){
+                    $onclick = "style='cursor:pointer; font-weight: bold; color:blue' onclick='opengambar(\"$row->brggambar\")'";
+                }
+
+                return "<span $onclick>$row->brgnama<span>";
+            })
             ->add('aksi', function($row){
                 return 
                 "<button type='button' class='btn btn-sm btn-info' title='edit data'
@@ -49,7 +59,7 @@ class Barang extends BaseController
                 $builder->orderBy('brgnama', 'asc');
         
             })
-            ->toJson();
+            ->toJson(true);
             }else{
             exit('maaf tidak bisa dipanggil');
             }
