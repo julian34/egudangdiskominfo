@@ -72,9 +72,7 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        'login' => ['before' => ['admin/*', 'staff/*']],
-        'staff' => ['before' => ['staff/*']],
-        'admin' => ['before' => ['usermag/index','usermag/store','usermag/update/(:num)','usermag/delete/(:num)']]
-        
+        'staff' => ['before' => ['usermag/showdetail/(:num)']],
+        'admin' => ['before' => ['usermag','usermag/index','usermag/store','usermag/update/(:num)','usermag/delete/(:num)']]
     ];
 }
