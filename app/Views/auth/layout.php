@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="">
-    <title>AdminLTE 3 | Log in (v2)</title>
+    <title>::. SIDIA .::</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
