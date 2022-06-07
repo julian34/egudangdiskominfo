@@ -216,7 +216,7 @@ class Barang extends BaseController
         }
         }
 
-        public function editprosess(){
+    public function editprosess(){
 
         $valid = [
             'brgnama' => [
@@ -337,7 +337,8 @@ class Barang extends BaseController
         }
         }
 
-        public function hapus($id){
+    
+    public function hapus($id){
             $rwd = $this->barang->find($id);
 
             if($rwd){
@@ -359,7 +360,7 @@ class Barang extends BaseController
             }else{
             exit('Data Tidak Ditemukan');
             }
-        }
+    }
 
 
 
