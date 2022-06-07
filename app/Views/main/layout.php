@@ -59,7 +59,8 @@
                     </div>
                     <div class="info">
                         <a href="<?= site_url('usermag/showdetail/'. user()->id) ?>"
-                            class="d-block"><?= (user()->username != null) ? strtoupper(user()->username) : 'Administrator'; ?></a>
+                            class="d-block"><?= (user()->username != null) ? strtoupper(user()->username) : 'Administrator'; ?>
+                        </a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
