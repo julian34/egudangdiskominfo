@@ -110,8 +110,7 @@ class Lpb extends BaseController
                 $db       = \Config\Database::connect();
                 $jmlItem  = $db->table('detailpinjambarang')->where('detkodeinv',$row->kkdinv)->countAllResults();
                 return 
-                "<span style='cursor:pointer; font-weight: bold; color:blue'
-                onclick='detailItem(\"$row->kkdinv\")'>".number_format($jmlItem, 0, ',', '.')."</span>";
+                number_format($jmlItem, 0, ',', '.');
             })->postQuery(function($builder){
 
                 $builder->orderBy('tglpinjam', 'desc');

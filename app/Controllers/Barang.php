@@ -39,7 +39,7 @@ class Barang extends BaseController
                 $onclick = "";
 
                 if($row->brggambar != 'default-150x150.png'){
-                    $onclick = "style='cursor:pointer; font-weight: bold; color:blue' onclick='opengambar(\"$row->brggambar\")'";
+                    $onclick = "style='cursor:pointer; font-weight: bold; color:black' onclick='opengambar(\"$row->brggambar\")'";
                 }
 
                 return "<span $onclick>$row->brgnama<span>";
