@@ -146,13 +146,13 @@ class Barang extends BaseController
         $gambar = $_FILES['brggambar']['name'];
 
         $data = [
-        'brgkode' => $this->request->getVar('brgkode'),
-        'brgnama' => $this->request->getVar('brgnama'),
-        'brgkatid' => $this->request->getVar('brgkatid'),
-        'brgsatid' => $this->request->getVar('brgsatid'),
-        'brgharga' => $this->request->getVar('brgharga'),
-        'brgstok' => $this->request->getVar('brgstok'),
-        'brggambar' => $nmgambar,
+            'brgkode' => $this->request->getVar('brgkode'),
+            'brgnama' => $this->request->getVar('brgnama'),
+            'brgkatid' => $this->request->getVar('brgkatid'),
+            'brgsatid' => $this->request->getVar('brgsatid'),
+            'brgharga' => $this->request->getVar('brgharga'),
+            'brgstok' => $this->request->getVar('brgstok'),
+            'brggambar' => $nmgambar,
         ];
 
 

@@ -1,0 +1,18 @@
+__ci_last_regenerate|i:1663654576;_ci_previous_url|s:36:"http://localhost:8080/barang/addform";logged_in|s:1:"1";errors|s:712:"<div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-ban"></i> Error!</h5>
+            <!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>Nama Barang Tidak Boleh Kosong</li>
+					<li>Kategori Tidak Boleh Kosong</li>
+					<li>Satuan Tidak Boleh Kosong</li>
+					<li>Harga Barang Tidak Boleh Kosong</li>
+					<li>Stok Barang Tidak Boleh Kosong</li>
+					<li>Gambar Barang is not a valid uploaded file.</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+
+        </div>";__ci_vars|a:1:{s:6:"errors";s:3:"old";}
